@@ -1,0 +1,107 @@
+----------------------------------------------------------------------------------
+-- Company: 
+-- Engineer: 
+-- 
+-- Create Date:    20:01:14 09/30/2025 
+-- Design Name: 
+-- Module Name:    Instruccion - Behavioral 
+-- Project Name: 
+-- Target Devices: 
+-- Tool versions: 
+-- Description: 
+--
+-- Dependencies: 
+--
+-- Revision: 
+-- Revision 0.01 - File Created
+-- Additional Comments: 
+--
+----------------------------------------------------------------------------------
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+-- Uncomment the following library declaration if using
+-- arithmetic functions with Signed or Unsigned values
+--use IEEE.NUMERIC_STD.ALL;
+
+-- Uncomment the following library declaration if instantiating
+-- any Xilinx primitives in this code.
+--library UNISIM;
+--use UNISIM.VComponents.all;
+
+entity instruccion is
+    Port ( clk : in  STD_LOGIC;
+           clr : in  STD_LOGIC;
+           inicio : in  STD_LOGIC;
+           d : in  STD_LOGIC_VECTOR (3 downto 0);
+           r : in  STD_LOGIC_VECTOR (3 downto 0);
+           suma : out  STD_LOGIC_VECTOR (3 downto 0);
+           N : out  STD_LOGIC;
+           C : out  STD_LOGIC;
+           Z : out  STD_LOGIC);
+end instruccion;
+
+architecture Behavioral of instruccion is
+
+component ruta is
+    Port ( clk : in  STD_LOGIC;
+           clr : in  STD_LOGIC;
+			  s : in STD_LOGIC;
+           sd : in  STD_LOGIC_VECTOR (1 downto 0);
+           sr : in  STD_LOGIC_VECTOR (1 downto 0);
+			  se : in STD_LOGIC_VECTOR (1 downto 0);
+           D : in  STD_LOGIC_VECTOR (3 downto 0);
+           R : in  STD_LOGIC_VECTOR (3 downto 0);
+           N : out  STD_LOGIC;
+           C : out  STD_LOGIC;
+           Z : out  STD_LOGIC;
+			  debug_d_aux_antes_suma: out std_logic_vector(3 downto 0);
+    debug_r_aux_antes_suma: out std_logic_vector(3 downto 0);
+    debug_suma_calculada : out std_logic_vector(4 downto 0);
+
+           suma : out  STD_LOGIC_VECTOR (3 downto 0));
+end component;
+
+component control is
+    Port ( clk : in  STD_LOGIC;
+           clr : in  STD_LOGIC;
+           inicio : in  STD_LOGIC;
+           s : out  STD_LOGIC;
+           sd : out  STD_LOGIC_VECTOR (1 downto 0);
+			  se : out STD_LOGIC_VECTOR (1 downto 0);
+           sr : out  STD_LOGIC_VECTOR (1 downto 0));
+end component;
+
+signal rd_aux,rr_aux,re_aux : std_logic_vector(1 downto 0);
+signal s_aux: std_logic;
+signal debug_d_aux_antes_suma_int : std_logic_vector(3 downto 0);
+    signal debug_r_aux_antes_suma_int : std_logic_vector(3 downto 0);
+    signal debug_suma_calculada_int : std_logic_vector(4 downto 0);
+
+begin
+
+cto1: ruta port map(clk=>clk,
+	clr=>clr,
+	s=>s_aux,
+	sd=>rd_aux,
+	sr=>rr_aux,
+	se=>re_aux,
+	D=>d,
+	R=>r,
+	debug_d_aux_antes_suma=>debug_d_aux_antes_suma_int,
+    debug_r_aux_antes_suma=>debug_r_aux_antes_suma_int,
+    debug_suma_calculada=>debug_suma_calculada_int,
+	N=>N,
+	C=>C,
+	Z=>Z,
+	suma=>suma);
+	
+cto2:control port map(clk=>clk,
+clr=>clr,
+inicio=>inicio,
+s=>s_aux,
+se=>re_aux,
+sd=>rd_aux,
+sr=>rr_aux);
+
+end Behavioral;
