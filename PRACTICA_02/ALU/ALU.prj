@@ -1,0 +1,2 @@
+vhdl work "../RegistroALU/RegistroALU.vhd"
+vhdl work "ALU.vhd"

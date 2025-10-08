@@ -1,0 +1,103 @@
+----------------------------------------------------------------------------------
+-- Company: 
+-- Engineer: 
+-- 
+-- Create Date:    18:12:36 10/06/2025 
+-- Design Name: 
+-- Module Name:    InstruccionALU - Behavioral 
+-- Project Name: 
+-- Target Devices: 
+-- Tool versions: 
+-- Description: 
+--
+-- Dependencies: 
+--
+-- Revision: 
+-- Revision 0.01 - File Created
+-- Additional Comments: 
+--
+----------------------------------------------------------------------------------
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+-- Uncomment the following library declaration if using
+-- arithmetic functions with Signed or Unsigned values
+--use IEEE.NUMERIC_STD.ALL;
+
+-- Uncomment the following library declaration if instantiating
+-- any Xilinx primitives in this code.
+--library UNISIM;
+--use UNISIM.VComponents.all;
+
+entity instruccion is
+    Port ( clk : in  STD_LOGIC;
+           clr : in  STD_LOGIC;
+			  sel : in  STD_LOGIC_VECTOR (2 downto 0); 
+           inicio : in  STD_LOGIC;
+           D : in  STD_LOGIC_VECTOR (7 downto 0);
+           R : in  STD_LOGIC_VECTOR (7 downto 0);
+           F : out  STD_LOGIC_VECTOR (7 downto 0);
+           C : out  STD_LOGIC;
+           N : out  STD_LOGIC;
+           Z : out  STD_LOGIC);
+end instruccion;
+
+architecture Behavioral of instruccion is
+
+component ALU is
+    Port ( clk : in  STD_LOGIC;
+           clr : in  STD_LOGIC;
+			  s : in STD_LOGIC;
+           sd : in  STD_LOGIC_VECTOR (1 downto 0);
+           sr : in  STD_LOGIC_VECTOR (1 downto 0);
+			  se : in STD_LOGIC_VECTOR (1 downto 0);
+			  sel : in  STD_LOGIC_VECTOR (2 downto 0);
+           D : in  STD_LOGIC_VECTOR (7 downto 0);
+           R : in  STD_LOGIC_VECTOR (7 downto 0);
+           F : out  STD_LOGIC_VECTOR (7 downto 0);
+           C : out  STD_LOGIC;
+			  N : out STD_LOGIC;
+           Z : out  STD_LOGIC);
+end component;
+
+component control is
+    Port ( clk : in  STD_LOGIC;
+           clr : in  STD_LOGIC;
+           inicio : in  STD_LOGIC;
+           s : out  STD_LOGIC;
+           sd : out  STD_LOGIC_VECTOR (1 downto 0);
+			  se : out STD_LOGIC_VECTOR (1 downto 0);
+           sr : out  STD_LOGIC_VECTOR (1 downto 0));
+end component;
+
+signal rd_aux,rr_aux,re_aux : std_logic_vector(1 downto 0);
+signal s_aux: std_logic;
+signal debug_d_aux_antes_suma_int : std_logic_vector(3 downto 0);
+signal debug_r_aux_antes_suma_int : std_logic_vector(3 downto 0);
+signal debug_suma_calculada_int : std_logic_vector(4 downto 0);
+
+begin
+
+cto1: ALU port map (clk=>clk,
+						  clr=>clr,
+						  s=>s_aux,
+						  sd=>rd_aux,
+						  sr=>rr_aux,
+						  se=>re_aux,
+						  sel=>sel,
+						  D=>D,
+						  R=>R,
+						  F=>F,
+						  C=>C,
+						  N=>N,
+						  Z=>Z);
+						  
+cto2: control port map(clk=>clk,
+							 clr=>clr,
+							 inicio=>inicio,
+							 s=>s_aux,
+							 se=>re_aux,
+							 sd=>rd_aux,
+							 sr=>rr_aux);
+
+end Behavioral;

@@ -1,0 +1,465 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.11 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.11 secs
+ 
+--> Reading design: instruccion.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "instruccion.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "instruccion"
+Output Format                      : NGC
+Target Device                      : xc7a100t-3-csg324
+
+---- Source Options
+Top Module Name                    : instruccion
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 32
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Parsing VHDL file "F:\ADC\Prac2LAB\RegistroALU\RegistroALU.vhd" into library work
+Parsing entity <Registro_ALU>.
+Parsing architecture <Behavioral> of entity <registro_alu>.
+Parsing VHDL file "F:\ADC\Prac2LAB\Control\Control.vhd" into library work
+Parsing entity <control>.
+Parsing architecture <Behavioral> of entity <control>.
+Parsing VHDL file "F:\ADC\Prac2LAB\ALU\ALU.vhd" into library work
+Parsing entity <ALU>.
+Parsing architecture <Behavioral> of entity <alu>.
+Parsing VHDL file "F:\ADC\Prac2LAB\InstruccionALU\InstruccionALU.vhd" into library work
+Parsing entity <instruccion>.
+Parsing architecture <Behavioral> of entity <instruccion>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating entity <instruccion> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <ALU> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <Registro_ALU> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <control> (architecture <Behavioral>) from library <work>.
+WARNING:Xst:2972 - "F:\ADC\Prac2LAB\ALU\ALU.vhd" line 86. All outputs of instance <fuente> of block <Registro_ALU> are unconnected in block <ALU>. Underlying logic will be removed.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <instruccion>.
+    Related source file is "F:\ADC\Prac2LAB\InstruccionALU\InstruccionALU.vhd".
+    Summary:
+	no macro.
+Unit <instruccion> synthesized.
+
+Synthesizing Unit <ALU>.
+    Related source file is "F:\ADC\Prac2LAB\ALU\ALU.vhd".
+INFO:Xst:3210 - "F:\ADC\Prac2LAB\ALU\ALU.vhd" line 86: Output port <Q> of the instance <fuente> is unconnected or connected to loadless signal.
+    Found 9-bit adder for signal <GND_6_o_GND_6_o_add_1_OUT> created at line 68.
+    Found 9-bit subtractor for signal <GND_6_o_GND_6_o_sub_3_OUT<8:0>> created at line 69.
+    Found 9-bit 8-to-1 multiplexer for signal <F_aux> created at line 67.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred   8 Multiplexer(s).
+Unit <ALU> synthesized.
+
+Synthesizing Unit <Registro_ALU>.
+    Related source file is "F:\ADC\Prac2LAB\RegistroALU\RegistroALU.vhd".
+    Found 8-bit register for signal <q_aux>.
+    Summary:
+	inferred   8 D-type flip-flop(s).
+	inferred   2 Multiplexer(s).
+Unit <Registro_ALU> synthesized.
+
+Synthesizing Unit <control>.
+    Related source file is "F:\ADC\Prac2LAB\Control\Control.vhd".
+    Found 2-bit register for signal <edo_pres>.
+    Found finite state machine <FSM_0> for signal <edo_pres>.
+    -----------------------------------------------------------------------
+    | States             | 4                                              |
+    | Transitions        | 5                                              |
+    | Inputs             | 1                                              |
+    | Outputs            | 7                                              |
+    | Clock              | clk (rising_edge)                              |
+    | Reset              | clr (positive)                                 |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | espera                                         |
+    | Power Up State     | espera                                         |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Summary:
+	inferred   1 Finite State Machine(s).
+Unit <control> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 1
+ 9-bit addsub                                          : 1
+# Registers                                            : 2
+ 8-bit register                                        : 2
+# Multiplexers                                         : 12
+ 8-bit 2-to-1 multiplexer                              : 6
+ 9-bit 2-to-1 multiplexer                              : 6
+# FSMs                                                 : 1
+# Xors                                                 : 1
+ 9-bit xor2                                            : 1
+
+=========================================================================
+INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 1
+ 9-bit addsub                                          : 1
+# Registers                                            : 16
+ Flip-Flops                                            : 16
+# Multiplexers                                         : 40
+ 1-bit 2-to-1 multiplexer                              : 32
+ 8-bit 2-to-1 multiplexer                              : 2
+ 9-bit 2-to-1 multiplexer                              : 6
+# FSMs                                                 : 1
+# Xors                                                 : 1
+ 9-bit xor2                                            : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <FSM_0> on signal <edo_pres[1:2]> with gray encoding.
+--------------------
+ State  | Encoding
+--------------------
+ espera | 00
+ carga  | 01
+ suma   | 11
+ final  | 10
+--------------------
+
+Optimizing unit <instruccion> ...
+
+Optimizing unit <ALU> ...
+
+Optimizing unit <Registro_ALU> ...
+WARNING:Xst:1710 - FF/Latch <cto1/estado/q_aux_3> (without init value) has a constant value of 0 in block <instruccion>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <cto1/estado/q_aux_7> of sequential type is unconnected in block <instruccion>.
+WARNING:Xst:2677 - Node <cto1/estado/q_aux_6> of sequential type is unconnected in block <instruccion>.
+WARNING:Xst:2677 - Node <cto1/estado/q_aux_5> of sequential type is unconnected in block <instruccion>.
+WARNING:Xst:2677 - Node <cto1/estado/q_aux_4> of sequential type is unconnected in block <instruccion>.
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block instruccion, actual ratio is 0.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 13
+ Flip-Flops                                            : 13
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : instruccion.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 66
+#      LUT1                        : 1
+#      LUT2                        : 2
+#      LUT3                        : 14
+#      LUT4                        : 2
+#      LUT5                        : 18
+#      LUT6                        : 9
+#      MUXCY                       : 8
+#      MUXF7                       : 3
+#      XORCY                       : 9
+# FlipFlops/Latches                : 13
+#      FDC                         : 3
+#      FDCE                        : 10
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 32
+#      IBUF                        : 21
+#      OBUF                        : 11
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 7a100tcsg324-3 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:              13  out of  126800     0%  
+ Number of Slice LUTs:                   46  out of  63400     0%  
+    Number used as Logic:                46  out of  63400     0%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:     46
+   Number with an unused Flip Flop:      33  out of     46    71%  
+   Number with an unused LUT:             0  out of     46     0%  
+   Number of fully used LUT-FF pairs:    13  out of     46    28%  
+   Number of unique control sets:         3
+
+IO Utilization: 
+ Number of IOs:                          33
+ Number of bonded IOBs:                  33  out of    210    15%  
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                1  out of     32     3%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 13    |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -3
+
+   Minimum period: 1.299ns (Maximum Frequency: 769.764MHz)
+   Minimum input arrival time before clock: 3.648ns
+   Maximum output required time after clock: 0.650ns
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 1.299ns (frequency: 769.764MHz)
+  Total number of paths / destination ports: 53 / 23
+-------------------------------------------------------------------------
+Delay:               1.299ns (Levels of Logic = 1)
+  Source:            cto2/edo_pres_FSM_FFd1 (FF)
+  Destination:       cto1/destino/q_aux_7 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: cto2/edo_pres_FSM_FFd1 to cto1/destino/q_aux_7
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q             14   0.361   0.439  cto2/edo_pres_FSM_FFd1 (cto2/edo_pres_FSM_FFd1)
+     LUT2:I0->O            7   0.097   0.307  cto1/destino/_n0017_inv1 (cto1/destino/_n0017_inv)
+     FDCE:CE                   0.095          cto1/destino/q_aux_1
+    ----------------------------------------
+    Total                      1.299ns (0.553ns logic, 0.746ns route)
+                                       (42.6% logic, 57.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 564 / 25
+-------------------------------------------------------------------------
+Offset:              3.648ns (Levels of Logic = 11)
+  Source:            D<0> (PAD)
+  Destination:       cto1/estado/q_aux_2 (FF)
+  Destination Clock: clk rising
+
+  Data Path: D<0> to cto1/estado/q_aux_2
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             6   0.001   0.534  D_0_IBUF (D_0_IBUF)
+     LUT3:I0->O            1   0.097   0.000  cto1/Mmux_F_aux1_rs_lut<0> (cto1/Mmux_F_aux1_rs_lut<0>)
+     MUXCY:S->O            1   0.353   0.000  cto1/Mmux_F_aux1_rs_cy<0> (cto1/Mmux_F_aux1_rs_cy<0>)
+     MUXCY:CI->O           1   0.023   0.000  cto1/Mmux_F_aux1_rs_cy<1> (cto1/Mmux_F_aux1_rs_cy<1>)
+     MUXCY:CI->O           1   0.023   0.000  cto1/Mmux_F_aux1_rs_cy<2> (cto1/Mmux_F_aux1_rs_cy<2>)
+     MUXCY:CI->O           1   0.023   0.000  cto1/Mmux_F_aux1_rs_cy<3> (cto1/Mmux_F_aux1_rs_cy<3>)
+     MUXCY:CI->O           1   0.023   0.000  cto1/Mmux_F_aux1_rs_cy<4> (cto1/Mmux_F_aux1_rs_cy<4>)
+     XORCY:CI->O           1   0.370   0.511  cto1/Mmux_F_aux1_rs_xor<5> (cto1/Mmux_F_aux1_split<5>)
+     LUT5:I2->O            2   0.097   0.697  cto1/Mmux_F_aux763 (cto1/Mmux_F_aux7_split<5>)
+     LUT6:I0->O            1   0.097   0.693  cto1/estado/mux101_SW0 (N10)
+     LUT6:I0->O            1   0.097   0.000  cto1/estado/mux101 (cto1/estado/s1s0[1]_q_aux[7]_wide_mux_0_OUT<2>)
+     FDCE:D                    0.008          cto1/estado/q_aux_2
+    ----------------------------------------
+    Total                      3.648ns (1.212ns logic, 2.437ns route)
+                                       (33.2% logic, 66.8% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 11 / 11
+-------------------------------------------------------------------------
+Offset:              0.650ns (Levels of Logic = 1)
+  Source:            cto1/destino/q_aux_0 (FF)
+  Destination:       F<0> (PAD)
+  Source Clock:      clk rising
+
+  Data Path: cto1/destino/q_aux_0 to F<0>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              3   0.361   0.289  cto1/destino/q_aux_0 (cto1/destino/q_aux_0)
+     OBUF:I->O                 0.000          F_0_OBUF (F<0>)
+    ----------------------------------------
+    Total                      0.650ns (0.361ns logic, 0.289ns route)
+                                       (55.5% logic, 44.5% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |    1.299|         |         |         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 8.00 secs
+Total CPU time to Xst completion: 8.22 secs
+ 
+--> 
+
+Total memory usage is 4616884 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    6 (   0 filtered)
+Number of infos    :    2 (   0 filtered)
+

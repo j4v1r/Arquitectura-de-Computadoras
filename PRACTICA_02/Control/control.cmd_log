@@ -1,0 +1,5 @@
+xst -intstyle ise -ifn "F:/ADC/Prac2LAB/Control/control.xst" -ofn "F:/ADC/Prac2LAB/Control/control.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx16-csg324-3 control.ngc control.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o control_map.ncd control.ngd control.pcf 
+par -w -intstyle ise -ol high -mt off control_map.ncd control.ncd control.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml control.twx control.ncd -o control.twr control.pcf 

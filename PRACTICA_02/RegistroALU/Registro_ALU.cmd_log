@@ -1,0 +1,5 @@
+xst -intstyle ise -ifn "F:/ADC/Prac2LAB/RegistroALU/Registro_ALU.xst" -ofn "F:/ADC/Prac2LAB/RegistroALU/Registro_ALU.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx16-csg324-3 Registro_ALU.ngc Registro_ALU.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o Registro_ALU_map.ncd Registro_ALU.ngd Registro_ALU.pcf 
+par -w -intstyle ise -ol high -mt off Registro_ALU_map.ncd Registro_ALU.ncd Registro_ALU.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml Registro_ALU.twx Registro_ALU.ncd -o Registro_ALU.twr Registro_ALU.pcf 
