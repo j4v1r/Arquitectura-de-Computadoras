@@ -1,0 +1,38 @@
+xst -intstyle ise -ifn "F:/ADC/Prac1LAB/Instruccion2/instruccion.xst" -ofn "F:/ADC/Prac1LAB/Instruccion2/instruccion.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx16-csg324-3 instruccion.ngc instruccion.ngd  
+xst -intstyle ise -ifn "F:/ADC/Prac1LAB/Instruccion2/instruccion.xst" -ofn "F:/ADC/Prac1LAB/Instruccion2/instruccion.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc F:/ADC/Prac1LAB/Instruccion/pines.ucf -p xc6slx16-csg324-3 instruccion.ngc instruccion.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o instruccion_map.ncd instruccion.ngd instruccion.pcf 
+par -w -intstyle ise -ol high -mt off instruccion_map.ncd instruccion.ncd instruccion.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml instruccion.twx instruccion.ncd -o instruccion.twr instruccion.pcf 
+bitgen -intstyle ise -f instruccion.ut instruccion.ncd 
+xst -intstyle ise -ifn "F:/ADC/Prac1LAB/Instruccion2/instruccion.xst" -ofn "F:/ADC/Prac1LAB/Instruccion2/instruccion.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc F:/ADC/Prac1LAB/Instruccion/pines.ucf -p xc6slx16-csg324-3 instruccion.ngc instruccion.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o instruccion_map.ncd instruccion.ngd instruccion.pcf 
+par -w -intstyle ise -ol high -mt off instruccion_map.ncd instruccion.ncd instruccion.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml instruccion.twx instruccion.ncd -o instruccion.twr instruccion.pcf 
+bitgen -intstyle ise -f instruccion.ut instruccion.ncd 
+xst -intstyle ise -ifn "F:/ADC/Prac1LAB/Instruccion2/instruccion.xst" -ofn "F:/ADC/Prac1LAB/Instruccion2/instruccion.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc F:/ADC/Prac1LAB/Instruccion/pines.ucf -p xc6slx16-csg324-3 instruccion.ngc instruccion.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o instruccion_map.ncd instruccion.ngd instruccion.pcf 
+par -w -intstyle ise -ol high -mt off instruccion_map.ncd instruccion.ncd instruccion.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml instruccion.twx instruccion.ncd -o instruccion.twr instruccion.pcf 
+bitgen -intstyle ise -f instruccion.ut instruccion.ncd 
+xst -intstyle ise -ifn "F:/ADC/Prac1LAB/Instruccion2/instruccion.xst" -ofn "F:/ADC/Prac1LAB/Instruccion2/instruccion.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc F:/ADC/Prac1LAB/Instruccion/pines.ucf -p xc6slx16-csg324-3 instruccion.ngc instruccion.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o instruccion_map.ncd instruccion.ngd instruccion.pcf 
+par -w -intstyle ise -ol high -mt off instruccion_map.ncd instruccion.ncd instruccion.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml instruccion.twx instruccion.ncd -o instruccion.twr instruccion.pcf 
+bitgen -intstyle ise -f instruccion.ut instruccion.ncd 
+xst -intstyle ise -ifn "F:/ADC/Prac1LAB/Instruccion2/instruccion.xst" -ofn "F:/ADC/Prac1LAB/Instruccion2/instruccion.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc F:/ADC/Prac1LAB/Instruccion/pines.ucf -p xc6slx16-csg324-3 instruccion.ngc instruccion.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o instruccion_map.ncd instruccion.ngd instruccion.pcf 
+par -w -intstyle ise -ol high -mt off instruccion_map.ncd instruccion.ncd instruccion.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml instruccion.twx instruccion.ncd -o instruccion.twr instruccion.pcf 
+bitgen -intstyle ise -f instruccion.ut instruccion.ncd 
+xst -intstyle ise -ifn "F:/ADC/Prac1LAB/Instruccion2/instruccion.xst" -ofn "F:/ADC/Prac1LAB/Instruccion2/instruccion.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc F:/ADC/Prac1LAB/Instruccion/pines.ucf -p xc6slx16-csg324-3 instruccion.ngc instruccion.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o instruccion_map.ncd instruccion.ngd instruccion.pcf 
+par -w -intstyle ise -ol high -mt off instruccion_map.ncd instruccion.ncd instruccion.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml instruccion.twx instruccion.ncd -o instruccion.twr instruccion.pcf 
+bitgen -intstyle ise -f instruccion.ut instruccion.ncd 

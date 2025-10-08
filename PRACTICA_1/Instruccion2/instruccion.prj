@@ -1,0 +1,4 @@
+vhdl work "../Registro/Registro.vhd"
+vhdl work "../Ruta/Ruta.vhd"
+vhdl work "../Control/Control.vhd"
+vhdl work "../Instruccion/Instruccion.vhd"

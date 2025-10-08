@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=F:\ADC\Prac1LAB\Instruccion2\instruccion.ncd
+OUTFILE=F:\ADC\Prac1LAB\Instruccion2\instruccion.bit
+FAMILY=Spartan6
+PART=xc6slx16-3csg324
+WORKINGDIR=F:\ADC\Prac1LAB\Instruccion2
+LICENSE=WebPack
+USER_INFO=__0_0_0
