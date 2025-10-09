@@ -1,0 +1,7 @@
+Botones pueden ser 16 sino se concatenan
+Divisor de frecuencia necesario
+LEDs apuntan al program counter
+Push buttons de S1S0
+instrucción NORMAL 00 debe quedar el SP
+Subrutina (01) PC se carga con una dirección, se pone la dirección con los botones, en la pila se carga PC+1
+(10) PC se carga con lo que estaba en la pila
