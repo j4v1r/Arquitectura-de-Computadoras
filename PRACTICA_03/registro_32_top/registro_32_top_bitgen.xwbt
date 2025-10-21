@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=F:\ADC\Prac3LAB\registro_32_top\registro_32_top.ncd
+OUTFILE=F:\ADC\Prac3LAB\registro_32_top\registro_32_top.bit
+FAMILY=Artix7
+PART=xc7a100t-3csg324
+WORKINGDIR=F:\ADC\Prac3LAB\registro_32_top
+LICENSE=WebPack
+USER_INFO=__0_0_0

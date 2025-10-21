@@ -1,0 +1,21 @@
+xst -intstyle ise -ifn "F:/ADC/Prac3LAB/registro_32_top/registro_32_top.xst" -ofn "F:/ADC/Prac3LAB/registro_32_top/registro_32_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc7a100t-csg324-3 registro_32_top.ngc registro_32_top.ngd  
+xst -intstyle ise -ifn "F:/ADC/Prac3LAB/registro_32_top/registro_32_top.xst" -ofn "F:/ADC/Prac3LAB/registro_32_top/registro_32_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc7a100t-csg324-3 registro_32_top.ngc registro_32_top.ngd  
+xst -intstyle ise -ifn "F:/ADC/Prac3LAB/registro_32_top/registro_32_top.xst" -ofn "F:/ADC/Prac3LAB/registro_32_top/registro_32_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc7a100t-csg324-3 registro_32_top.ngc registro_32_top.ngd  
+map -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o registro_32_top_map.ncd registro_32_top.ngd registro_32_top.pcf 
+par -w -intstyle ise -ol high -mt off registro_32_top_map.ncd registro_32_top.ncd registro_32_top.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml registro_32_top.twx registro_32_top.ncd -o registro_32_top.twr registro_32_top.pcf 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc7a100t-csg324-3 registro_32_top.ngc registro_32_top.ngd  
+map -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o registro_32_top_map.ncd registro_32_top.ngd registro_32_top.pcf 
+par -w -intstyle ise -ol high -mt off registro_32_top_map.ncd registro_32_top.ncd registro_32_top.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml registro_32_top.twx registro_32_top.ncd -o registro_32_top.twr registro_32_top.pcf 
+bitgen -intstyle ise -f registro_32_top.ut registro_32_top.ncd 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc registro_32_top.ucf -p xc7a100t-csg324-3 registro_32_top.ngc registro_32_top.ngd  
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc registro_32_top.ucf -p xc7a100t-csg324-3 registro_32_top.ngc registro_32_top.ngd  
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc registro_32_top.ucf -p xc7a100t-csg324-3 registro_32_top.ngc registro_32_top.ngd  
+map -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o registro_32_top_map.ncd registro_32_top.ngd registro_32_top.pcf 
+par -w -intstyle ise -ol high -mt off registro_32_top_map.ncd registro_32_top.ncd registro_32_top.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml registro_32_top.twx registro_32_top.ncd -o registro_32_top.twr registro_32_top.pcf -ucf registro_32_top.ucf 
+bitgen -intstyle ise -f registro_32_top.ut registro_32_top.ncd 

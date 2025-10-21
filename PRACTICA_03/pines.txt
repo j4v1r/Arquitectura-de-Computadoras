@@ -1,0 +1,60 @@
+# Archivo de restricciones para Nexys 4 - registro_32_top
+# Xilinx ISE/PlanAhead
+
+# RELOJ - 100 MHz
+NET "clk" LOC = "E3" | IOSTANDARD = "LVCMOS33";
+NET "clk" TNM_NET = "clk";
+TIMESPEC "TS_clk" = PERIOD "clk" 10 ns;
+
+# BOTONES (btn0, btn1, btn2)
+NET "btn0" LOC = "U18" | IOSTANDARD = "LVCMOS33";  # BTNU - Up
+NET "btn1" LOC = "T18" | IOSTANDARD = "LVCMOS33";  # BTNL - Left  
+NET "btn2" LOC = "W17" | IOSTANDARD = "LVCMOS33";  # BTNR - Right
+
+# SWITCHES (clr, clr0, clr1, clr2, en_w, dato_I[7:0])
+NET "clr"  LOC = "V17" | IOSTANDARD = "LVCMOS33";  # SW0
+NET "clr0" LOC = "V16" | IOSTANDARD = "LVCMOS33";  # SW1
+NET "clr1" LOC = "W16" | IOSTANDARD = "LVCMOS33";  # SW2
+NET "clr2" LOC = "W15" | IOSTANDARD = "LVCMOS33";  # SW3
+NET "en_w" LOC = "V15" | IOSTANDARD = "LVCMOS33";  # SW4
+
+# dato_I[7:0] - 8 switches para entrada de datos
+NET "dato_I<0>" LOC = "W14" | IOSTANDARD = "LVCMOS33";  # SW5
+NET "dato_I<1>" LOC = "W13" | IOSTANDARD = "LVCMOS33";  # SW6
+NET "dato_I<2>" LOC = "V2"  | IOSTANDARD = "LVCMOS33";  # SW7
+NET "dato_I<3>" LOC = "T3"  | IOSTANDARD = "LVCMOS33";  # SW8
+NET "dato_I<4>" LOC = "T2"  | IOSTANDARD = "LVCMOS33";  # SW9
+NET "dato_I<5>" LOC = "R3"  | IOSTANDARD = "LVCMOS33";  # SW10
+NET "dato_I<6>" LOC = "W2"  | IOSTANDARD = "LVCMOS33";  # SW11
+NET "dato_I<7>" LOC = "U1"  | IOSTANDARD = "LVCMOS33";  # SW12
+
+# LEDS - Salidas O_r[7:0] y O_d[7:0]
+# O_r[7:0] - LEDs 0-7
+NET "O_r<0>" LOC = "L1" | IOSTANDARD = "LVCMOS33";  # LD0
+NET "O_r<1>" LOC = "P1" | IOSTANDARD = "LVCMOS33";  # LD1
+NET "O_r<2>" LOC = "N3" | IOSTANDARD = "LVCMOS33";  # LD2
+NET "O_r<3>" LOC = "P3" | IOSTANDARD = "LVCMOS33";  # LD3
+NET "O_r<4>" LOC = "U3" | IOSTANDARD = "LVCMOS33";  # LD4
+NET "O_r<5>" LOC = "T3" | IOSTANDARD = "LVCMOS33";  # LD5
+NET "O_r<6>" LOC = "R3" | IOSTANDARD = "LVCMOS33";  # LD6
+NET "O_r<7>" LOC = "T2" | IOSTANDARD = "LVCMOS33";  # LD7
+
+# O_d[7:0] - LEDs 8-15
+NET "O_d<0>" LOC = "T1" | IOSTANDARD = "LVCMOS33";  # LD8
+NET "O_d<1>" LOC = "R2" | IOSTANDARD = "LVCMOS33";  # LD9
+NET "O_d<2>" LOC = "N2" | IOSTANDARD = "LVCMOS33";  # LD10
+NET "O_d<3>" LOC = "M3" | IOSTANDARD = "LVCMOS33";  # LD11
+NET "O_d<4>" LOC = "V1" | IOSTANDARD = "LVCMOS33";  # LD12
+NET "O_d<5>" LOC = "U1" | IOSTANDARD = "LVCMOS33";  # LD13
+NET "O_d<6>" LOC = "P2" | IOSTANDARD = "LVCMOS33";  # LD14
+NET "O_d<7>" LOC = "N1" | IOSTANDARD = "LVCMOS33";  # LD15
+
+# Configuración de pull-ups para entradas
+NET "clr"  PULLUP;
+NET "clr0" PULLUP;
+NET "clr1" PULLUP;
+NET "clr2" PULLUP;
+NET "en_w" PULLUP;
+NET "btn0" PULLUP;
+NET "btn1" PULLUP;
+NET "btn2" PULLUP;

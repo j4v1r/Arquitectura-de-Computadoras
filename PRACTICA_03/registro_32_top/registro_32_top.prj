@@ -1,0 +1,8 @@
+vhdl work "../registro_32/registro_32.vhd"
+vhdl work "../mux_32_1/mux_32_1.vhd"
+vhdl work "../dec_5_32/dec_5_32.vhd"
+vhdl work "../eliminador_r/eliminador_r.vhd"
+vhdl work "../div_18/div_18.vhd"
+vhdl work "../cont_32/cont_32.vhd"
+vhdl work "../archivo_registros/archivo_registros.vhd"
+vhdl work "registro_32_top.vhd"

@@ -1,0 +1,5 @@
+xst -intstyle ise -ifn "F:/ADC/Prac3LAB/eliminador_r/eliminador_r.xst" -ofn "F:/ADC/Prac3LAB/eliminador_r/eliminador_r.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc7a100t-csg324-3 eliminador_r.ngc eliminador_r.ngd  
+map -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o eliminador_r_map.ncd eliminador_r.ngd eliminador_r.pcf 
+par -w -intstyle ise -ol high -mt off eliminador_r_map.ncd eliminador_r.ncd eliminador_r.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml eliminador_r.twx eliminador_r.ncd -o eliminador_r.twr eliminador_r.pcf 

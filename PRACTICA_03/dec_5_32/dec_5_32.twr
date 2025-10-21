@@ -1,0 +1,243 @@
+--------------------------------------------------------------------------------
+Release 14.7 Trace  (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\trce.exe -intstyle ise -v 3 -s 3
+-n 3 -fastpaths -xml dec_5_32.twx dec_5_32.ncd -o dec_5_32.twr dec_5_32.pcf
+
+Design file:              dec_5_32.ncd
+Physical constraint file: dec_5_32.pcf
+Device,package,speed:     xc7a100t,csg324,C,-3 (PRODUCTION 1.10 2013-10-13)
+Report level:             verbose report
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:2698 - No timing constraints found, doing default enumeration.
+INFO:Timing:3412 - To improve timing, see the Timing Closure User Guide (UG612).
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Pad to Pad
+---------------+---------------+---------+
+Source Pad     |Destination Pad|  Delay  |
+---------------+---------------+---------+
+en_w           |O<0>           |    5.337|
+en_w           |O<1>           |    5.522|
+en_w           |O<2>           |    5.499|
+en_w           |O<3>           |    5.675|
+en_w           |O<4>           |    5.544|
+en_w           |O<5>           |    5.652|
+en_w           |O<6>           |    5.468|
+en_w           |O<7>           |    5.715|
+en_w           |O<8>           |    5.801|
+en_w           |O<9>           |    6.053|
+en_w           |O<10>          |    5.945|
+en_w           |O<11>          |    6.038|
+en_w           |O<12>          |    6.183|
+en_w           |O<13>          |    6.284|
+en_w           |O<14>          |    6.042|
+en_w           |O<15>          |    6.248|
+en_w           |O<16>          |    6.400|
+en_w           |O<17>          |    6.511|
+en_w           |O<18>          |    6.405|
+en_w           |O<19>          |    6.641|
+en_w           |O<20>          |    6.640|
+en_w           |O<21>          |    6.775|
+en_w           |O<22>          |    6.660|
+en_w           |O<23>          |    6.890|
+en_w           |O<24>          |    6.905|
+en_w           |O<25>          |    7.030|
+en_w           |O<26>          |    6.920|
+en_w           |O<27>          |    6.657|
+en_w           |O<28>          |    6.882|
+en_w           |O<29>          |    7.147|
+en_w           |O<30>          |    7.325|
+en_w           |O<31>          |    7.015|
+sel_w_d<0>     |O<0>           |    5.203|
+sel_w_d<0>     |O<1>           |    5.677|
+sel_w_d<0>     |O<2>           |    5.655|
+sel_w_d<0>     |O<3>           |    5.899|
+sel_w_d<0>     |O<4>           |    6.088|
+sel_w_d<0>     |O<5>           |    5.986|
+sel_w_d<0>     |O<6>           |    5.749|
+sel_w_d<0>     |O<7>           |    5.769|
+sel_w_d<0>     |O<8>           |    5.841|
+sel_w_d<0>     |O<9>           |    6.275|
+sel_w_d<0>     |O<10>          |    6.100|
+sel_w_d<0>     |O<11>          |    6.393|
+sel_w_d<0>     |O<12>          |    6.358|
+sel_w_d<0>     |O<13>          |    6.308|
+sel_w_d<0>     |O<14>          |    6.532|
+sel_w_d<0>     |O<15>          |    6.510|
+sel_w_d<0>     |O<16>          |    6.484|
+sel_w_d<0>     |O<17>          |    6.894|
+sel_w_d<0>     |O<18>          |    6.609|
+sel_w_d<0>     |O<19>          |    6.909|
+sel_w_d<0>     |O<20>          |    6.753|
+sel_w_d<0>     |O<21>          |    7.044|
+sel_w_d<0>     |O<22>          |    6.699|
+sel_w_d<0>     |O<23>          |    6.519|
+sel_w_d<0>     |O<24>          |    6.765|
+sel_w_d<0>     |O<25>          |    6.808|
+sel_w_d<0>     |O<26>          |    6.303|
+sel_w_d<0>     |O<27>          |    6.626|
+sel_w_d<0>     |O<28>          |    6.733|
+sel_w_d<0>     |O<29>          |    6.650|
+sel_w_d<0>     |O<30>          |    6.649|
+sel_w_d<0>     |O<31>          |    6.874|
+sel_w_d<1>     |O<0>           |    4.979|
+sel_w_d<1>     |O<1>           |    5.223|
+sel_w_d<1>     |O<2>           |    5.208|
+sel_w_d<1>     |O<3>           |    5.325|
+sel_w_d<1>     |O<4>           |    5.531|
+sel_w_d<1>     |O<5>           |    5.432|
+sel_w_d<1>     |O<6>           |    5.712|
+sel_w_d<1>     |O<7>           |    6.021|
+sel_w_d<1>     |O<8>           |    5.741|
+sel_w_d<1>     |O<9>           |    5.784|
+sel_w_d<1>     |O<10>          |    5.680|
+sel_w_d<1>     |O<11>          |    5.911|
+sel_w_d<1>     |O<12>          |    5.906|
+sel_w_d<1>     |O<13>          |    6.015|
+sel_w_d<1>     |O<14>          |    5.915|
+sel_w_d<1>     |O<15>          |    6.121|
+sel_w_d<1>     |O<16>          |    6.130|
+sel_w_d<1>     |O<17>          |    6.242|
+sel_w_d<1>     |O<18>          |    6.139|
+sel_w_d<1>     |O<19>          |    6.375|
+sel_w_d<1>     |O<20>          |    6.371|
+sel_w_d<1>     |O<21>          |    6.506|
+sel_w_d<1>     |O<22>          |    6.395|
+sel_w_d<1>     |O<23>          |    6.819|
+sel_w_d<1>     |O<24>          |    6.635|
+sel_w_d<1>     |O<25>          |    6.769|
+sel_w_d<1>     |O<26>          |    6.663|
+sel_w_d<1>     |O<27>          |    7.164|
+sel_w_d<1>     |O<28>          |    7.246|
+sel_w_d<1>     |O<29>          |    6.949|
+sel_w_d<1>     |O<30>          |    7.451|
+sel_w_d<1>     |O<31>          |    7.388|
+sel_w_d<2>     |O<0>           |    5.088|
+sel_w_d<2>     |O<1>           |    5.517|
+sel_w_d<2>     |O<2>           |    5.494|
+sel_w_d<2>     |O<3>           |    5.455|
+sel_w_d<2>     |O<4>           |    5.217|
+sel_w_d<2>     |O<5>           |    6.059|
+sel_w_d<2>     |O<6>           |    5.543|
+sel_w_d<2>     |O<7>           |    6.094|
+sel_w_d<2>     |O<8>           |    5.829|
+sel_w_d<2>     |O<9>           |    5.845|
+sel_w_d<2>     |O<10>          |    5.861|
+sel_w_d<2>     |O<11>          |    6.161|
+sel_w_d<2>     |O<12>          |    6.018|
+sel_w_d<2>     |O<13>          |    6.158|
+sel_w_d<2>     |O<14>          |    5.935|
+sel_w_d<2>     |O<15>          |    6.000|
+sel_w_d<2>     |O<16>          |    6.022|
+sel_w_d<2>     |O<17>          |    5.930|
+sel_w_d<2>     |O<18>          |    6.195|
+sel_w_d<2>     |O<19>          |    5.977|
+sel_w_d<2>     |O<20>          |    5.985|
+sel_w_d<2>     |O<21>          |    5.883|
+sel_w_d<2>     |O<22>          |    5.751|
+sel_w_d<2>     |O<23>          |    5.792|
+sel_w_d<2>     |O<24>          |    6.318|
+sel_w_d<2>     |O<25>          |    5.977|
+sel_w_d<2>     |O<26>          |    5.916|
+sel_w_d<2>     |O<27>          |    6.116|
+sel_w_d<2>     |O<28>          |    6.055|
+sel_w_d<2>     |O<29>          |    6.102|
+sel_w_d<2>     |O<30>          |    6.095|
+sel_w_d<2>     |O<31>          |    6.198|
+sel_w_d<3>     |O<0>           |    5.325|
+sel_w_d<3>     |O<1>           |    5.261|
+sel_w_d<3>     |O<2>           |    5.235|
+sel_w_d<3>     |O<3>           |    5.661|
+sel_w_d<3>     |O<4>           |    5.657|
+sel_w_d<3>     |O<5>           |    5.564|
+sel_w_d<3>     |O<6>           |    5.841|
+sel_w_d<3>     |O<7>           |    5.972|
+sel_w_d<3>     |O<8>           |    5.877|
+sel_w_d<3>     |O<9>           |    5.973|
+sel_w_d<3>     |O<10>          |    6.020|
+sel_w_d<3>     |O<11>          |    6.251|
+sel_w_d<3>     |O<12>          |    5.938|
+sel_w_d<3>     |O<13>          |    6.036|
+sel_w_d<3>     |O<14>          |    6.253|
+sel_w_d<3>     |O<15>          |    6.459|
+sel_w_d<3>     |O<16>          |    6.316|
+sel_w_d<3>     |O<17>          |    6.426|
+sel_w_d<3>     |O<18>          |    6.476|
+sel_w_d<3>     |O<19>          |    6.711|
+sel_w_d<3>     |O<20>          |    6.554|
+sel_w_d<3>     |O<21>          |    6.698|
+sel_w_d<3>     |O<22>          |    6.739|
+sel_w_d<3>     |O<23>          |    6.945|
+sel_w_d<3>     |O<24>          |    6.818|
+sel_w_d<3>     |O<25>          |    7.093|
+sel_w_d<3>     |O<26>          |    6.947|
+sel_w_d<3>     |O<27>          |    7.053|
+sel_w_d<3>     |O<28>          |    7.089|
+sel_w_d<3>     |O<29>          |    7.207|
+sel_w_d<3>     |O<30>          |    7.020|
+sel_w_d<3>     |O<31>          |    7.230|
+sel_w_d<4>     |O<0>           |    5.160|
+sel_w_d<4>     |O<1>           |    5.413|
+sel_w_d<4>     |O<2>           |    5.390|
+sel_w_d<4>     |O<3>           |    5.518|
+sel_w_d<4>     |O<4>           |    5.529|
+sel_w_d<4>     |O<5>           |    5.842|
+sel_w_d<4>     |O<6>           |    5.797|
+sel_w_d<4>     |O<7>           |    5.434|
+sel_w_d<4>     |O<8>           |    5.337|
+sel_w_d<4>     |O<9>           |    5.960|
+sel_w_d<4>     |O<10>          |    5.595|
+sel_w_d<4>     |O<11>          |    6.123|
+sel_w_d<4>     |O<12>          |    5.933|
+sel_w_d<4>     |O<13>          |    5.813|
+sel_w_d<4>     |O<14>          |    5.898|
+sel_w_d<4>     |O<15>          |    5.867|
+sel_w_d<4>     |O<16>          |    5.912|
+sel_w_d<4>     |O<17>          |    5.879|
+sel_w_d<4>     |O<18>          |    5.840|
+sel_w_d<4>     |O<19>          |    6.288|
+sel_w_d<4>     |O<20>          |    5.979|
+sel_w_d<4>     |O<21>          |    6.304|
+sel_w_d<4>     |O<22>          |    6.078|
+sel_w_d<4>     |O<23>          |    6.237|
+sel_w_d<4>     |O<24>          |    6.072|
+sel_w_d<4>     |O<25>          |    6.074|
+sel_w_d<4>     |O<26>          |    6.286|
+sel_w_d<4>     |O<27>          |    6.100|
+sel_w_d<4>     |O<28>          |    6.511|
+sel_w_d<4>     |O<29>          |    6.581|
+sel_w_d<4>     |O<30>          |    6.183|
+sel_w_d<4>     |O<31>          |    6.651|
+---------------+---------------+---------+
+
+
+Analysis completed Tue Oct 21 09:07:44 2025 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 5002 MB
+
+
+
