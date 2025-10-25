@@ -2,9 +2,9 @@
 -- Company: 
 -- Engineer: 
 -- 
--- Create Date:    12:16:28 10/09/2025 
+-- Create Date:    21:22:31 10/23/2025 
 -- Design Name: 
--- Module Name:    ROM - Behavioral 
+-- Module Name:    sum_sp - Behavioral 
 -- Project Name: 
 -- Target Devices: 
 -- Tool versions: 
@@ -19,6 +19,8 @@
 ----------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
+use IEEE.NUMERIC_STD.ALL;
 
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
@@ -29,15 +31,30 @@ use IEEE.STD_LOGIC_1164.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity ROM is
-    Port ( A : in  STD_LOGIC_VECTOR (15 downto 0);
-           O : out  STD_LOGIC_VECTOR (15 downto 0));
-end ROM;
+entity sum_sp is
+    Port ( A : in  STD_LOGIC_VECTOR (3 downto 0);
+           B : in  STD_LOGIC_VECTOR (3 downto 0);
+           suma : out  STD_LOGIC_VECTOR (3 downto 0));
+end sum_sp;
 
-architecture Behavioral of ROM is
+architecture Behavioral of sum_sp is
+
+signal suma_aux : unsigned(4 downto 0);
 
 begin
 
-O<=x"ef0f" when A=x"0000"
+	process(A,B)
+	begin
+	
+		suma_aux <= ('0' & unsigned(A)) + ('0' & unsigned(B));
+
+		if(suma_aux(4)='1') then
+			suma<=(others => '0');
+		else
+         suma <= STD_LOGIC_VECTOR(suma_aux(3 downto 0));
+		end if;
+		
+	end process;
 
 end Behavioral;
+

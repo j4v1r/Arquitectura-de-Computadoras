@@ -1,0 +1,57 @@
+----------------------------------------------------------------------------------
+-- Company: 
+-- Engineer: 
+-- 
+-- Create Date:    13:58:25 10/23/2025 
+-- Design Name: 
+-- Module Name:    sum_dir - Behavioral 
+-- Project Name: 
+-- Target Devices: 
+-- Tool versions: 
+-- Description: 
+--
+-- Dependencies: 
+--
+-- Revision: 
+-- Revision 0.01 - File Created
+-- Additional Comments: 
+--
+----------------------------------------------------------------------------------
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
+use IEEE.NUMERIC_STD.ALL;
+
+-- Uncomment the following library declaration if using
+-- arithmetic functions with Signed or Unsigned values
+
+-- Uncomment the following library declaration if instantiating
+-- any Xilinx primitives in this code.
+--library UNISIM;
+--use UNISIM.VComponents.all;
+
+entity sum_dir is
+    Port ( A : in  STD_LOGIC_VECTOR (15 downto 0);
+           B : in  STD_LOGIC_VECTOR (15 downto 0);
+           suma : out  STD_LOGIC_VECTOR (15 downto 0));
+end sum_dir;
+
+architecture Behavioral of sum_dir is
+
+signal suma_aux : unsigned(16 downto 0);
+
+begin
+	
+	process(A,B)
+	begin
+		suma_aux <= ('0' & unsigned(A)) + ('0' & unsigned(B));
+
+		if(suma_aux(16)='1') then
+			suma<=(others => '0');
+		else
+         suma <= STD_LOGIC_VECTOR(suma_aux(15 downto 0));
+		end if;
+	end process;
+
+end Behavioral;
+
