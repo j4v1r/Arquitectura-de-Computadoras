@@ -38,20 +38,21 @@ end sum_dir;
 
 architecture Behavioral of sum_dir is
 
-signal suma_aux : unsigned(16 downto 0);
-
 begin
-	
-	process(A,B)
-	begin
-		suma_aux <= ('0' & unsigned(A)) + ('0' & unsigned(B));
 
-		if(suma_aux(16)='1') then
-			suma<=(others => '0');
-		else
-         suma <= STD_LOGIC_VECTOR(suma_aux(15 downto 0));
-		end if;
+	process(A,B)
+	variable temp_sum : unsigned(16 downto 0);
+	begin
+		 temp_sum := ('0' & unsigned(A)) + ('0' & unsigned(B));  -- Cálculo INMEDIATO
+		 
+		 if(temp_sum(16)='1') then  -- Usa el valor CORRECTO e INMEDIATO
+			  suma <= (others => '0');
+		 else
+			  suma <= STD_LOGIC_VECTOR(temp_sum(15 downto 0));  -- Usa valor CORRECTO
+		 end if;
 	end process;
 
 end Behavioral;
+
+
 
