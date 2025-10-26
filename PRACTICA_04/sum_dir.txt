@@ -43,12 +43,12 @@ begin
 	process(A,B)
 	variable temp_sum : unsigned(16 downto 0);
 	begin
-		 temp_sum := ('0' & unsigned(A)) + ('0' & unsigned(B));  -- Cálculo INMEDIATO
+		 temp_sum := ('0' & unsigned(A)) + ('0' & unsigned(B));
 		 
-		 if(temp_sum(16)='1') then  -- Usa el valor CORRECTO e INMEDIATO
+		 if(temp_sum(16)='1') then
 			  suma <= (others => '0');
 		 else
-			  suma <= STD_LOGIC_VECTOR(temp_sum(15 downto 0));  -- Usa valor CORRECTO
+			  suma <= STD_LOGIC_VECTOR(temp_sum(15 downto 0));
 		 end if;
 	end process;
 

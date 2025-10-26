@@ -1,0 +1,76 @@
+----------------------------------------------------------------------------------
+-- Company: 
+-- Engineer: 
+-- 
+-- Create Date:    11:27:48 10/26/2025 
+-- Design Name: 
+-- Module Name:    pc_top - Behavioral 
+-- Project Name: 
+-- Target Devices: 
+-- Tool versions: 
+-- Description: 
+--
+-- Dependencies: 
+--
+-- Revision: 
+-- Revision 0.01 - File Created
+-- Additional Comments: 
+--
+----------------------------------------------------------------------------------
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+-- Uncomment the following library declaration if using
+-- arithmetic functions with Signed or Unsigned values
+--use IEEE.NUMERIC_STD.ALL;
+
+-- Uncomment the following library declaration if instantiating
+-- any Xilinx primitives in this code.
+--library UNISIM;
+--use UNISIM.VComponents.all;
+
+entity pc_top is
+    Port ( clk : in  STD_LOGIC;
+           clr : in  STD_LOGIC;
+			  s1 : in STD_LOGIC;
+			  s0 : in STD_LOGIC;
+           btns : in  STD_LOGIC_VECTOR (15 downto 0);
+           O : out  STD_LOGIC_VECTOR (15 downto 0));
+end pc_top;
+
+architecture Behavioral of pc_top is
+
+component mux_pc_4_1 is
+    Port ( I : in  STD_LOGIC_VECTOR (47 downto 0);
+           s1 : in  STD_LOGIC;
+           s0 : in  STD_LOGIC;			  
+           O : out  STD_LOGIC_VECTOR (15 downto 0));
+end component;
+
+component Program_C is
+    Port ( clk : in  STD_LOGIC;
+           clr : in  STD_LOGIC;
+           I_pc : in  STD_LOGIC_VECTOR (15 downto 0);
+           O_pc : out  STD_LOGIC_VECTOR (15 downto 0));
+end component;
+
+component sum_dir is
+    Port ( A : in  STD_LOGIC_VECTOR (15 downto 0);
+           B : in  STD_LOGIC_VECTOR (15 downto 0);
+           suma : out  STD_LOGIC_VECTOR (15 downto 0));
+end component;
+
+signal i_pc_aux, o_pc_aux, norm_pc_aux: STD_LOGIC_VECTOR(15 downto 0);
+signal mux_aux :  STD_LOGIC_VECTOR(47 downto 0) := (others => '0');
+
+begin
+
+	mux_4_1: mux_pc_4_1 port map(I=>mux_aux,s1=>s1,s0=>s0,O=>i_pc_aux);
+	pc : Program_C port map(clk=>clk,clr=>clr,I_pc=>i_pc_aux,O_pc=>o_pc_aux);
+	sum_pc : sum_dir port map(A=>x"0001",B=>o_pc_aux,suma=>norm_pc_aux);
+
+	mux_aux <= ("0000111100001111" & btns & norm_pc_aux);
+	
+	O<=o_pc_aux;
+	
+end Behavioral;

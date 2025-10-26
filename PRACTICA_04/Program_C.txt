@@ -38,16 +38,24 @@ end Program_C;
 
 architecture Behavioral of Program_C is
 
-signal q_aux : STD_LOGIC_VECTOR (15 downto 0);
+signal q_aux : STD_LOGIC_VECTOR (15 downto 0) := (others=>'0');
+signal primer_ciclo : STD_LOGIC := '1';
 
 begin
 
 	process(clk, clr)
 	begin
 	
-		if(clr='1') then q_aux<= (others =>'0');
+		if(clr='1') then 
+			q_aux<= (others =>'0');
+			primer_ciclo <= '1';
 		elsif(clk'event and clk='1') then 
-			q_aux<=I_pc;
+			if(primer_ciclo='1') then
+				q_aux <= x"0000";
+				primer_ciclo <= '0';
+			else
+				q_aux<=I_pc;
+			end if;
 		end if;
 
 	end process;
