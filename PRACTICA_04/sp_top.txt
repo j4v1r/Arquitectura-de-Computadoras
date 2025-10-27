@@ -1,0 +1,92 @@
+----------------------------------------------------------------------------------
+-- Company: 
+-- Engineer: 
+-- 
+	-- Create Date:    17:33:34 10/26/2025 
+	-- Design Name: 
+	-- Module Name:    sp_top - Behavioral 
+	-- Project Name: 
+	-- Target Devices: 
+	-- Tool versions: 
+	-- Description: 
+	--
+	-- Dependencies: 
+	--
+	-- Revision: 
+	-- Revision 0.01 - File Created
+	-- Additional Comments: 
+	--
+	----------------------------------------------------------------------------------
+	library IEEE;
+	use IEEE.STD_LOGIC_1164.ALL;
+
+	-- Uncomment the following library declaration if using
+	-- arithmetic functions with Signed or Unsigned values
+	--use IEEE.NUMERIC_STD.ALL;
+
+	-- Uncomment the following library declaration if instantiating
+	-- any Xilinx primitives in this code.
+	--library UNISIM;
+	--use UNISIM.VComponents.all;
+
+	entity sp_top is
+		 Port ( clk : in  STD_LOGIC;
+				  clr : in  STD_LOGIC;
+				  s1 : in  STD_LOGIC;
+				  s0 : in  STD_LOGIC;
+				  A : out  STD_LOGIC_VECTOR (3 downto 0));
+	end sp_top;
+
+	architecture Behavioral of sp_top is
+
+	component Stack_Pointer is
+		 Port ( clk : in  STD_LOGIC;
+				  clr : in  STD_LOGIC;
+				  I_sp : in  STD_LOGIC_VECTOR (3 downto 0);
+				  O_sp : out  STD_LOGIC_VECTOR (3 downto 0));
+	end component;
+
+	component mux_sp_2_1 is
+		 Port ( I : in  STD_LOGIC_VECTOR (7 downto 0);
+				  s1 : in  STD_LOGIC;
+				  O : out  STD_LOGIC_VECTOR (3 downto 0));
+	end component;
+
+	component mux_sp_4_1 is
+		 Port ( I : in  STD_LOGIC_VECTOR (11 downto 0);
+				  s1 : in  STD_LOGIC;
+				  s0 : in  STD_LOGIC;
+				  O : out  STD_LOGIC_VECTOR (3 downto 0));
+	end component;
+
+	component sum_sp is
+		 Port ( A : in  STD_LOGIC_VECTOR (3 downto 0);
+				  B : in  STD_LOGIC_VECTOR (3 downto 0);
+				  suma : out  STD_LOGIC_VECTOR (3 downto 0));
+	end component;
+
+	component sp_res is
+		 Port ( A : in  STD_LOGIC_VECTOR (3 downto 0);
+				  B : in  STD_LOGIC_VECTOR (3 downto 0);
+				  resta : out  STD_LOGIC_VECTOR (3 downto 0));
+	end component;
+
+	signal i_sp_aux, o_sp_aux, o_sp_ret_aux, call_aux, ret_aux : STD_LOGIC_VECTOR(3 downto 0);
+	signal mux_4_aux : STD_LOGIC_VECTOR(11 downto 0);
+	signal mux_2_aux : STD_LOGIC_VECTOR(7 downto 0);
+
+	begin
+
+		mux_4_1: mux_sp_4_1 port map(I=>mux_4_aux,s1=>s1,s0=>s0,O=>i_sp_aux);
+		mux_2_1: mux_sp_2_1 port map(I=>mux_2_aux,s1=>s1,O=>o_sp_ret_aux);
+		sp: Stack_Pointer port map(clk=>clk,clr=>clr,I_sp=>i_sp_aux,O_sp=>o_sp_aux);
+	suma_sp : sum_sp port map(A=>"0010",B=>o_sp_aux,suma=>ret_aux);
+	rest_sp : sp_res port map(A=>o_sp_aux,B=>"1110",resta=>call_aux);
+
+	mux_4_aux <= (ret_aux & call_aux & o_sp_aux);
+	mux_2_aux <= (ret_aux & o_sp_aux);
+	
+	A <= o_sp_ret_aux;
+
+end Behavioral;
+
