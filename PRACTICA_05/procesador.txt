@@ -1,0 +1,60 @@
+procesador
+Hay que agregar los puertos de salida ncesarios
+arrivba haciabajo, izq a dercha
+clk
+clr
+portb(7 dwonto 0)
+
+dec_instr
+ext_sig_br
+ext_sig_rjmp
+program_c
+rom
+archivo_registros
+registro 8 bits (port B)
+ALU sel(2 dwonto 0) A,B,F(7 downto 0) Z, out
+S_Reg
+Stack_pointer
+RAM
+
+signal PC_AUX, I_aux, br_mux_aux,offset_aux,I_PC_aux,off_br_aux,off_rjmp_aux,rd_aux,wd_aux (15 downto 0);
+signal O_r_aux, O_d_auxm dato_I_aux, F_aux : (7 DOWNTO 0);
+signal sel_read_d_aux,sel_read_r_aux,sel_w_d_aux (4 dwonto 0);
+signal A_aux,i_sp_aux,o_sp_aux,vall_aux,ret_aux: (3 dwonto 0);
+signal sel_alu_aux : (2 downto 0);
+signal ld_aux,sel_rel_aux,br_aux,en_w_aux,en_port_aux,en_sreg_aux,ld_mov_aux,ret_s_aux,s1_aux,s0_aux,branch_aux,ent_sreg_aux,s_sreg_aux: STD_Logic;
+
+begin
+
+--Multiplexores
+
+	offset_aux<=x"0001" when sel_rel_aux='0' and branch_aux='0' else
+		off_br_aux when sel_r_aux='0' AND branch_aux='1' else
+		off_rjmp_aux;
+
+	branch_aux<=bn_aux when s_reg_aux='0' else
+			br_aux;
+	
+	br_mux_aux<=I_PC_aux when ret_s_aux='0' else
+			rd_aux;
+
+	dato_I_aux<=(I_aux(11 downto 8) & I_aux(3 downto 0)) when ld_mov_aux='0' AND ld_aux='0' else
+	O_r_aux when ld_mov_aux='0' AND ld_aux='1' else
+	F_aux;
+
+
+	i_sp_aux <= o_sp_aux when s1_aux='0' and s0_aux='0' else
+		call_aux when s1_aux='0' and s0_aux='1' else
+		ret_aux;
+
+	A_aux<=o_sp_aux when s1_aux='0' else
+		ret_aux;
+
+--Sumadores
+
+	I_PC_aux <= offset_aux +PC_aux;
+	wd_aux <= PC_aux + x"0001";
+	call_aux <= o_sp_aux - "0010";
+	ret_aux<=o_sp_aux + "0010";
+
+

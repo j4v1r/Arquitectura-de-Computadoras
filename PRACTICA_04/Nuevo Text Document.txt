@@ -5,3 +5,5 @@ Push buttons de S1S0
 instrucción NORMAL 00 debe quedar el SP
 Subrutina (01) PC se carga con una dirección, se pone la dirección con los botones, en la pila se carga PC+1
 (10) PC se carga con lo que estaba en la pila
+
+4 y luego se carga con 01, luego se regresa a 5 con 10
