@@ -1,0 +1,609 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.08 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.08 secs
+ 
+--> Reading design: pc_top.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "pc_top.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "pc_top"
+Output Format                      : NGC
+Target Device                      : xc7a100t-3-csg324
+
+---- Source Options
+Top Module Name                    : pc_top
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 32
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Parsing VHDL file "E:\ADC\Prac4LAB\stack_pointer\stack_pointer.vhd" into library work
+Parsing entity <stack_pointer>.
+Parsing architecture <Behavioral> of entity <stack_pointer>.
+Parsing VHDL file "E:\ADC\Prac4LAB\RAM\RAM.vhd" into library work
+Parsing entity <RAM>.
+Parsing architecture <Behavioral> of entity <ram>.
+Parsing VHDL file "E:\ADC\Prac4LAB\program_c\program_c.vhd" into library work
+Parsing entity <program_c>.
+Parsing architecture <Behavioral> of entity <program_c>.
+Parsing VHDL file "E:\ADC\Prac4LAB\div_27\div_27.vhd" into library work
+Parsing entity <div_27>.
+Parsing architecture <Behavioral> of entity <div_27>.
+Parsing VHDL file "E:\ADC\Prac4LAB\pc_top\pc_top.vhd" into library work
+Parsing entity <pc_top>.
+Parsing architecture <Behavioral> of entity <pc_top>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating entity <pc_top> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <div_27> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <program_c> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <stack_pointer> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <RAM> (architecture <Behavioral>) from library <work>.
+WARNING:Xst:2972 - "E:\ADC\Prac4LAB\pc_top\pc_top.vhd" line 96. All outputs of instance <clk_27> of block <div_27> are unconnected in block <pc_top>. Underlying logic will be removed.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <pc_top>.
+    Related source file is "E:\ADC\Prac4LAB\pc_top\pc_top.vhd".
+INFO:Xst:3210 - "E:\ADC\Prac4LAB\pc_top\pc_top.vhd" line 96: Output port <q> of the instance <clk_27> is unconnected or connected to loadless signal.
+    Found 16-bit adder for signal <norm_pc_aux> created at line 1241.
+    Found 4-bit adder for signal <ret_aux> created at line 1241.
+    Found 4-bit subtractor for signal <call_aux> created at line 73.
+    Summary:
+	inferred   3 Adder/Subtractor(s).
+	inferred   4 Multiplexer(s).
+Unit <pc_top> synthesized.
+
+Synthesizing Unit <program_c>.
+    Related source file is "E:\ADC\Prac4LAB\program_c\program_c.vhd".
+    Found 1-bit register for signal <primer_ciclo>.
+    Found 16-bit register for signal <q_aux>.
+    Summary:
+	inferred  17 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <program_c> synthesized.
+
+Synthesizing Unit <stack_pointer>.
+    Related source file is "E:\ADC\Prac4LAB\stack_pointer\stack_pointer.vhd".
+    Found 1-bit register for signal <primer_ciclo>.
+    Found 4-bit register for signal <q_aux>.
+    Summary:
+	inferred   5 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <stack_pointer> synthesized.
+
+Synthesizing Unit <RAM>.
+    Related source file is "E:\ADC\Prac4LAB\RAM\RAM.vhd".
+    Found 16-bit register for signal <dato<14>>.
+    Found 16-bit register for signal <dato<13>>.
+    Found 16-bit register for signal <dato<12>>.
+    Found 16-bit register for signal <dato<11>>.
+    Found 16-bit register for signal <dato<10>>.
+    Found 16-bit register for signal <dato<9>>.
+    Found 16-bit register for signal <dato<8>>.
+    Found 16-bit register for signal <dato<7>>.
+    Found 16-bit register for signal <dato<6>>.
+    Found 16-bit register for signal <dato<5>>.
+    Found 16-bit register for signal <dato<4>>.
+    Found 16-bit register for signal <dato<3>>.
+    Found 16-bit register for signal <dato<2>>.
+    Found 16-bit register for signal <dato<1>>.
+    Found 16-bit register for signal <dato<0>>.
+    Found 16-bit register for signal <dato<15>>.
+INFO:Xst:3019 - HDL ADVISOR - 256 flip-flops were inferred for signal <dato>. You may be trying to describe a RAM in a way that is incompatible with block and distributed RAM resources available on Xilinx devices, or with a specific template that is not supported. Please review the Xilinx resources documentation and the XST user manual for coding guidelines. Taking advantage of RAM resources will lead to improved device usage and reduced synthesis time.
+    Found 16-bit 16-to-1 multiplexer for signal <RD> created at line 59.
+    Summary:
+	inferred 256 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <RAM> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 3
+ 16-bit adder                                          : 1
+ 4-bit adder                                           : 1
+ 4-bit addsub                                          : 1
+# Registers                                            : 20
+ 1-bit register                                        : 2
+ 16-bit register                                       : 17
+ 4-bit register                                        : 1
+# Multiplexers                                         : 7
+ 16-bit 16-to-1 multiplexer                            : 1
+ 16-bit 2-to-1 multiplexer                             : 3
+ 4-bit 2-to-1 multiplexer                              : 3
+
+=========================================================================
+INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 3
+ 16-bit adder                                          : 1
+ 4-bit adder                                           : 1
+ 4-bit addsub                                          : 1
+# Registers                                            : 278
+ Flip-Flops                                            : 278
+# Multiplexers                                         : 7
+ 16-bit 16-to-1 multiplexer                            : 1
+ 16-bit 2-to-1 multiplexer                             : 3
+ 4-bit 2-to-1 multiplexer                              : 3
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <pc_top> ...
+WARNING:Xst:1710 - FF/Latch <SP/q_aux_0> (without init value) has a constant value of 1 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+
+Optimizing unit <program_c> ...
+
+Optimizing unit <RAM> ...
+WARNING:Xst:1293 - FF/Latch <RAMtop/dato_10_0> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_10_1> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_10_2> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_10_3> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_10_4> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_10_5> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_10_6> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_10_7> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_10_8> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_10_9> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_10_10> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_10_11> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_10_12> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_10_13> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_10_14> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_10_15> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_8_0> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_8_1> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_8_2> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_8_3> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_8_4> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_8_5> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_8_6> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_8_7> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_8_8> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_8_9> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_8_10> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_8_11> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_8_12> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_8_13> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_8_14> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_8_15> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_12_0> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_12_1> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_12_2> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_12_3> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_12_4> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_12_5> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_12_6> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_12_7> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_12_8> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_12_9> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_12_10> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_12_11> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_12_12> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_12_13> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_12_14> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_12_15> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_14_0> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_14_1> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_14_2> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_14_3> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_14_4> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_14_5> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_14_6> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_14_7> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_14_8> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_14_9> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_14_10> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_14_11> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_14_12> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_14_13> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_14_14> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_14_15> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_2_0> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_2_1> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_2_2> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_2_3> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_2_4> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_2_5> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_2_6> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_2_7> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_2_8> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_2_9> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_2_10> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_2_11> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_2_12> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_2_13> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_2_14> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_2_15> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_0_0> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_0_1> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_0_2> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_0_3> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_0_4> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_0_5> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_0_6> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_0_7> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_0_8> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_0_9> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_0_10> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_0_11> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_0_12> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_0_13> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_0_14> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_0_15> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_6_0> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_6_1> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_6_2> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_6_3> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_6_4> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_6_5> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_6_6> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_6_7> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_6_8> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_6_9> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_6_10> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_6_11> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_6_12> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_6_13> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_6_14> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_6_15> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_4_0> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_4_1> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_4_2> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_4_3> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_4_4> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_4_5> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_4_6> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_4_7> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_4_8> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_4_9> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_4_10> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_4_11> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_4_12> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_4_13> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_4_14> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RAMtop/dato_4_15> has a constant value of 0 in block <pc_top>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <SP/primer_ciclo> in Unit <pc_top> is equivalent to the following FF/Latch, which will be removed : <PC/primer_ciclo> 
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block pc_top, actual ratio is 0.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 148
+ Flip-Flops                                            : 148
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : pc_top.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 188
+#      GND                         : 1
+#      INV                         : 1
+#      LUT1                        : 15
+#      LUT3                        : 4
+#      LUT4                        : 62
+#      LUT5                        : 9
+#      LUT6                        : 19
+#      MUXCY                       : 15
+#      MUXF7                       : 30
+#      MUXF8                       : 15
+#      VCC                         : 1
+#      XORCY                       : 16
+# FlipFlops/Latches                : 148
+#      FDC                         : 16
+#      FDCE                        : 128
+#      FDP                         : 4
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 35
+#      IBUF                        : 19
+#      OBUF                        : 16
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 7a100tcsg324-3 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:             148  out of  126800     0%  
+ Number of Slice LUTs:                  110  out of  63400     0%  
+    Number used as Logic:               110  out of  63400     0%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:    159
+   Number with an unused Flip Flop:      11  out of    159     6%  
+   Number with an unused LUT:            49  out of    159    30%  
+   Number of fully used LUT-FF pairs:    99  out of    159    62%  
+   Number of unique control sets:         9
+
+IO Utilization: 
+ Number of IOs:                          36
+ Number of bonded IOBs:                  36  out of    210    17%  
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                1  out of     32     3%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 148   |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -3
+
+   Minimum period: 2.324ns (Maximum Frequency: 430.311MHz)
+   Minimum input arrival time before clock: 2.064ns
+   Maximum output required time after clock: 0.645ns
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 2.324ns (frequency: 430.311MHz)
+  Total number of paths / destination ports: 1935 / 275
+-------------------------------------------------------------------------
+Delay:               2.324ns (Levels of Logic = 18)
+  Source:            PC/q_aux_0 (FF)
+  Destination:       PC/q_aux_15 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: PC/q_aux_0 to PC/q_aux_15
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              2   0.361   0.283  PC/q_aux_0 (PC/q_aux_0)
+     INV:I->O              1   0.113   0.000  Madd_norm_pc_aux_lut<0>_INV_0 (Madd_norm_pc_aux_lut<0>)
+     MUXCY:S->O            1   0.353   0.000  Madd_norm_pc_aux_cy<0> (Madd_norm_pc_aux_cy<0>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_norm_pc_aux_cy<1> (Madd_norm_pc_aux_cy<1>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_norm_pc_aux_cy<2> (Madd_norm_pc_aux_cy<2>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_norm_pc_aux_cy<3> (Madd_norm_pc_aux_cy<3>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_norm_pc_aux_cy<4> (Madd_norm_pc_aux_cy<4>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_norm_pc_aux_cy<5> (Madd_norm_pc_aux_cy<5>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_norm_pc_aux_cy<6> (Madd_norm_pc_aux_cy<6>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_norm_pc_aux_cy<7> (Madd_norm_pc_aux_cy<7>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_norm_pc_aux_cy<8> (Madd_norm_pc_aux_cy<8>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_norm_pc_aux_cy<9> (Madd_norm_pc_aux_cy<9>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_norm_pc_aux_cy<10> (Madd_norm_pc_aux_cy<10>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_norm_pc_aux_cy<11> (Madd_norm_pc_aux_cy<11>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_norm_pc_aux_cy<12> (Madd_norm_pc_aux_cy<12>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_norm_pc_aux_cy<13> (Madd_norm_pc_aux_cy<13>)
+     MUXCY:CI->O           0   0.023   0.000  Madd_norm_pc_aux_cy<14> (Madd_norm_pc_aux_cy<14>)
+     XORCY:CI->O           9   0.370   0.416  Madd_norm_pc_aux_xor<15> (norm_pc_aux<15>)
+     LUT6:I4->O            1   0.097   0.000  PC/Mmux_I_pc[15]_GND_8_o_mux_0_OUT71 (PC/I_pc[15]_GND_8_o_mux_0_OUT<15>)
+     FDC:D                     0.008          PC/q_aux_15
+    ----------------------------------------
+    Total                      2.324ns (1.624ns logic, 0.700ns route)
+                                       (69.9% logic, 30.1% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 566 / 295
+-------------------------------------------------------------------------
+Offset:              2.064ns (Levels of Logic = 5)
+  Source:            s1 (PAD)
+  Destination:       PC/q_aux_15 (FF)
+  Destination Clock: clk rising
+
+  Data Path: s1 to PC/q_aux_15
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            91   0.001   0.627  s1_IBUF (s1_IBUF)
+     LUT3:I0->O           30   0.097   0.386  Mmux_o_sp_ret_aux31 (o_sp_ret_aux<2>)
+     MUXF7:S->O            1   0.335   0.000  RAMtop/Mmux_RD_4_f7_0 (RAMtop/Mmux_RD_4_f71)
+     MUXF8:I0->O           1   0.218   0.295  RAMtop/Mmux_RD_2_f8_0 (rd_aux<10>)
+     LUT6:I5->O            1   0.097   0.000  PC/Mmux_I_pc[15]_GND_8_o_mux_0_OUT21 (PC/I_pc[15]_GND_8_o_mux_0_OUT<10>)
+     FDC:D                     0.008          PC/q_aux_10
+    ----------------------------------------
+    Total                      2.064ns (0.756ns logic, 1.308ns route)
+                                       (36.6% logic, 63.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 16 / 16
+-------------------------------------------------------------------------
+Offset:              0.645ns (Levels of Logic = 1)
+  Source:            PC/q_aux_15 (FF)
+  Destination:       leds<15> (PAD)
+  Source Clock:      clk rising
+
+  Data Path: PC/q_aux_15 to leds<15>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              2   0.361   0.283  PC/q_aux_15 (PC/q_aux_15)
+     OBUF:I->O                 0.000          leds_15_OBUF (leds<15>)
+    ----------------------------------------
+    Total                      0.645ns (0.361ns logic, 0.283ns route)
+                                       (56.0% logic, 44.0% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |    2.324|         |         |         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 10.00 secs
+Total CPU time to Xst completion: 10.24 secs
+ 
+--> 
+
+Total memory usage is 4617416 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :  130 (   0 filtered)
+Number of infos    :    4 (   0 filtered)
+

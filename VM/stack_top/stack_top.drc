@@ -1,0 +1,12 @@
+Release 14.7 Drc P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+Tue Oct 28 09:56:20 2025
+
+drc -z stack_top.ncd stack_top.pcf
+
+WARNING:PhysDesignRules:372 - Gated clock. Clock net mux_4_1/s1_s1_OR_2_o is
+   sourced by a combinatorial pin. This is not good design practice. Use the CE
+   pin to control the loading of data into the flip-flop.
+DRC detected 0 errors and 1 warnings.  Please see the previously displayed
+individual error or warning messages for more details.

@@ -1,0 +1,5 @@
+Contador de 0 a 9 con un display, codificar numeros del 0 al 9 y codificar contador a cada segundo y reset en 9 a 0, se usa delay, 
+
+Proyecto es agregar más displays, como unreloj, agregar maás puertos para multiplexar, leer botones, 
+Reloj programar o reloj, deteniendo o continunando o borrando.
+Marquesinas (Yo)

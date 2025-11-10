@@ -2,9 +2,9 @@
 -- Company: 
 -- Engineer: 
 -- 
--- Create Date:    12:16:28 10/09/2025 
+-- Create Date:    20:12:06 10/21/2025 
 -- Design Name: 
--- Module Name:    ROM - Behavioral 
+-- Module Name:    div_27 - Behavioral 
 -- Project Name: 
 -- Target Devices: 
 -- Tool versions: 
@@ -19,6 +19,7 @@
 ----------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
@@ -29,21 +30,27 @@ use IEEE.STD_LOGIC_1164.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity ROM is
-    Port ( A : in  STD_LOGIC_VECTOR (15 downto 0);
-           O : out  STD_LOGIC_VECTOR (15 downto 0));
-end ROM;
+entity div_27 is
+    Port ( clk : in  STD_LOGIC;
+           clr : in  STD_LOGIC;
+           q : out  STD_LOGIC);
+end div_27;
 
-architecture Behavioral of ROM is
+architecture Behavioral of div_27 is
+
+signal q_aux: STD_LOGIC_VECTOR(27 downto 0);
 
 begin
 
-	O<=x"ef0f" when A=x"0000" else      --ef05 --e005
-		x"0f00" when A=x"0001" else --b905 --e013
-		x"e001" when A=x"0002" else --e0e3 --0f01
-		x"e011" when A=x"0003" else --b9e5 --b905
-		--x"0000" x"0004"      -------------------
-		--x"0000" x"0005"      -------------------
-		x"ffff";
+	process(clk,clr)
+	begin
+		if(clr='1')then q_aux <= (others => '0');
+		elsif(clk'event and clk='1')then
+			q_aux <= q_aux+1;
+		end if;
+	end process;
+	
+	q <= q_aux(27);
 
 end Behavioral;
+

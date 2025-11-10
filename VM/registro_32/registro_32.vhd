@@ -2,9 +2,9 @@
 -- Company: 
 -- Engineer: 
 -- 
--- Create Date:    12:16:28 10/09/2025 
+-- Create Date:    09:55:17 09/23/2025 
 -- Design Name: 
--- Module Name:    ROM - Behavioral 
+-- Module Name:    registro_32 - Behavioral 
 -- Project Name: 
 -- Target Devices: 
 -- Tool versions: 
@@ -29,21 +29,24 @@ use IEEE.STD_LOGIC_1164.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity ROM is
-    Port ( A : in  STD_LOGIC_VECTOR (15 downto 0);
-           O : out  STD_LOGIC_VECTOR (15 downto 0));
-end ROM;
+entity registro_32 is
+    Port ( clk : in  STD_LOGIC;
+           clr : in  STD_LOGIC;
+           en : in  STD_LOGIC;
+           I : in  STD_LOGIC_VECTOR (7 downto 0);
+           Q : out  STD_LOGIC_VECTOR (7 downto 0));
+end registro_32;
 
-architecture Behavioral of ROM is
-
+architecture Behavioral of registro_32 is
+signal q_aux: std_logic_vector(7 downto 0);
+	
 begin
-
-	O<=x"ef0f" when A=x"0000" else      --ef05 --e005
-		x"0f00" when A=x"0001" else --b905 --e013
-		x"e001" when A=x"0002" else --e0e3 --0f01
-		x"e011" when A=x"0003" else --b9e5 --b905
-		--x"0000" x"0004"      -------------------
-		--x"0000" x"0005"      -------------------
-		x"ffff";
-
+	process(clk,clr,en)
+		begin
+			if(clr='1') then q_aux <="00000000";
+			elsif(clk'event and clk='1' and en='1') then 
+				q_aux<=I;
+			end if;
+	end process;
+	Q<= q_aux;
 end Behavioral;

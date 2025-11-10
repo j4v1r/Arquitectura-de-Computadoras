@@ -1,0 +1,6 @@
+xst -intstyle ise -ifn "/home/ise/VM/registro_32/registro_32.xst" -ofn "/home/ise/VM/registro_32/registro_32.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc7a100t-csg324-3 registro_32.ngc registro_32.ngd  
+map -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o registro_32_map.ncd registro_32.ngd registro_32.pcf 
+par -w -intstyle ise -ol high -mt off registro_32_map.ncd registro_32.ncd registro_32.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml registro_32.twx registro_32.ncd -o registro_32.twr registro_32.pcf 
+xst -intstyle ise -ifn "/home/ise/VM/registro_32/registro_32.xst" -ofn "/home/ise/VM/registro_32/registro_32.syr" 

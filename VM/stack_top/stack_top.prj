@@ -1,0 +1,5 @@
+vhdl work "../program_c/program_c.vhd"
+vhdl work "../pc_sum/pc_sum.vhd"
+vhdl work "../mux_pc_4_1/mux_pc_4_1.vhd"
+vhdl work "../div_27/div_27.vhd"
+vhdl work "stack_top.vhd"

@@ -1,0 +1,13 @@
+xst -intstyle ise -ifn "F:/ADC/Prac4LAB/program_c/program_c.xst" -ofn "F:/ADC/Prac4LAB/program_c/program_c.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc7a100t-csg324-3 program_c.ngc program_c.ngd  
+map -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o program_c_map.ncd program_c.ngd program_c.pcf 
+par -w -intstyle ise -ol high -mt off program_c_map.ncd program_c.ncd program_c.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml program_c.twx program_c.ncd -o program_c.twr program_c.pcf 
+xst -intstyle ise -ifn "F:/ADC/Prac4LAB/program_c/program_c.xst" -ofn "F:/ADC/Prac4LAB/program_c/program_c.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc7a100t-csg324-3 program_c.ngc program_c.ngd  
+map -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o program_c_map.ncd program_c.ngd program_c.pcf 
+par -w -intstyle ise -ol high -mt off program_c_map.ncd program_c.ncd program_c.pcf 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc7a100t-csg324-3 program_c.ngc program_c.ngd  
+map -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o program_c_map.ncd program_c.ngd program_c.pcf 
+par -w -intstyle ise -ol high -mt off program_c_map.ncd program_c.ncd program_c.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml program_c.twx program_c.ncd -o program_c.twr program_c.pcf 

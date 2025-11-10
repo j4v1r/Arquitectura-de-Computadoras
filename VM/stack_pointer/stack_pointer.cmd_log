@@ -1,0 +1,13 @@
+xst -intstyle ise -ifn "F:/ADC/Prac4LAB/stack_pointer/stack_pointer.xst" -ofn "F:/ADC/Prac4LAB/stack_pointer/stack_pointer.syr" 
+xst -intstyle ise -ifn "F:/ADC/Prac4LAB/stack_pointer/stack_pointer.xst" -ofn "F:/ADC/Prac4LAB/stack_pointer/stack_pointer.syr" 
+xst -intstyle ise -ifn "F:/ADC/Prac4LAB/stack_pointer/stack_pointer.xst" -ofn "F:/ADC/Prac4LAB/stack_pointer/stack_pointer.syr" 
+xst -intstyle ise -ifn "F:/ADC/Prac4LAB/stack_pointer/stack_pointer.xst" -ofn "F:/ADC/Prac4LAB/stack_pointer/stack_pointer.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc7a100t-csg324-3 stack_pointer.ngc stack_pointer.ngd  
+map -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o stack_pointer_map.ncd stack_pointer.ngd stack_pointer.pcf 
+par -w -intstyle ise -ol high -mt off stack_pointer_map.ncd stack_pointer.ncd stack_pointer.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml stack_pointer.twx stack_pointer.ncd -o stack_pointer.twr stack_pointer.pcf 
+xst -intstyle ise -ifn "F:/ADC/Prac4LAB/stack_pointer/stack_pointer.xst" -ofn "F:/ADC/Prac4LAB/stack_pointer/stack_pointer.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc7a100t-csg324-3 stack_pointer.ngc stack_pointer.ngd  
+map -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o stack_pointer_map.ncd stack_pointer.ngd stack_pointer.pcf 
+par -w -intstyle ise -ol high -mt off stack_pointer_map.ncd stack_pointer.ncd stack_pointer.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml stack_pointer.twx stack_pointer.ncd -o stack_pointer.twr stack_pointer.pcf 

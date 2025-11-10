@@ -1,0 +1,5 @@
+xst -intstyle ise -ifn "/home/ise/VM/dec_instr/dec_instr.xst" -ofn "/home/ise/VM/dec_instr/dec_instr.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc7a100t-csg324-3 dec_instr.ngc dec_instr.ngd  
+map -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o dec_instr_map.ncd dec_instr.ngd dec_instr.pcf 
+par -w -intstyle ise -ol high -mt off dec_instr_map.ncd dec_instr.ncd dec_instr.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml dec_instr.twx dec_instr.ncd -o dec_instr.twr dec_instr.pcf 

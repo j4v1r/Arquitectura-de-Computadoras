@@ -1,0 +1,22 @@
+xst -intstyle ise -ifn "F:/ADC/Prac4LAB/stack_top/stack_top.xst" -ofn "F:/ADC/Prac4LAB/stack_top/stack_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc7a100t-csg324-3 stack_top.ngc stack_top.ngd  
+map -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o stack_top_map.ncd stack_top.ngd stack_top.pcf 
+par -w -intstyle ise -ol high -mt off stack_top_map.ncd stack_top.ncd stack_top.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml stack_top.twx stack_top.ncd -o stack_top.twr stack_top.pcf 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc7a100t-csg324-3 stack_top.ngc stack_top.ngd  
+map -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o stack_top_map.ncd stack_top.ngd stack_top.pcf 
+par -w -intstyle ise -ol high -mt off stack_top_map.ncd stack_top.ncd stack_top.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml stack_top.twx stack_top.ncd -o stack_top.twr stack_top.pcf 
+bitgen -intstyle ise -f stack_top.ut stack_top.ncd 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc stack_top.ucf -p xc7a100t-csg324-3 stack_top.ngc stack_top.ngd  
+map -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o stack_top_map.ncd stack_top.ngd stack_top.pcf 
+par -w -intstyle ise -ol high -mt off stack_top_map.ncd stack_top.ncd stack_top.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml stack_top.twx stack_top.ncd -o stack_top.twr stack_top.pcf -ucf stack_top.ucf 
+bitgen -intstyle ise -f stack_top.ut stack_top.ncd 
+xst -intstyle ise -ifn "F:/ADC/Prac4LAB/stack_top/stack_top.xst" -ofn "F:/ADC/Prac4LAB/stack_top/stack_top.syr" 
+xst -intstyle ise -ifn "F:/ADC/Prac4LAB/stack_top/stack_top.xst" -ofn "F:/ADC/Prac4LAB/stack_top/stack_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc stack_top.ucf -p xc7a100t-csg324-3 stack_top.ngc stack_top.ngd  
+map -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o stack_top_map.ncd stack_top.ngd stack_top.pcf 
+par -w -intstyle ise -ol high -mt off stack_top_map.ncd stack_top.ncd stack_top.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml stack_top.twx stack_top.ncd -o stack_top.twr stack_top.pcf -ucf stack_top.ucf 
+bitgen -intstyle ise -f stack_top.ut stack_top.ncd 

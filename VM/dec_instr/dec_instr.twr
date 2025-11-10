@@ -1,0 +1,307 @@
+--------------------------------------------------------------------------------
+Release 14.7 Trace  (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+/opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/trce -intstyle ise -v 3 -s 3 -n
+3 -fastpaths -xml dec_instr.twx dec_instr.ncd -o dec_instr.twr dec_instr.pcf
+
+Design file:              dec_instr.ncd
+Physical constraint file: dec_instr.pcf
+Device,package,speed:     xc7a100t,csg324,C,-3 (PRODUCTION 1.10 2013-10-13)
+Report level:             verbose report
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:2698 - No timing constraints found, doing default enumeration.
+INFO:Timing:3412 - To improve timing, see the Timing Closure User Guide (UG612).
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Pad to Pad
+---------------+---------------+---------+
+Source Pad     |Destination Pad|  Delay  |
+---------------+---------------+---------+
+I<0>           |en_sreg        |    6.732|
+I<0>           |en_w           |    6.624|
+I<0>           |ret_sub        |    6.602|
+I<0>           |s1             |    6.505|
+I<0>           |sel_alu<1>     |    7.448|
+I<0>           |sel_alu<2>     |    7.677|
+I<0>           |sel_read_r<0>  |    6.702|
+I<0>           |sel_read_r<1>  |    6.773|
+I<0>           |sel_read_r<2>  |    7.068|
+I<0>           |sel_read_r<3>  |    6.762|
+I<0>           |sel_read_r<4>  |    7.138|
+I<1>           |en_sreg        |    7.235|
+I<1>           |en_w           |    7.127|
+I<1>           |ret_sub        |    6.182|
+I<1>           |s1             |    6.085|
+I<1>           |sel_alu<1>     |    7.868|
+I<1>           |sel_alu<2>     |    8.097|
+I<1>           |sel_read_r<0>  |    7.122|
+I<1>           |sel_read_r<1>  |    7.193|
+I<1>           |sel_read_r<2>  |    7.488|
+I<1>           |sel_read_r<3>  |    7.182|
+I<1>           |sel_read_r<4>  |    7.558|
+I<2>           |en_sreg        |    6.879|
+I<2>           |en_w           |    6.771|
+I<2>           |ret_sub        |    6.160|
+I<2>           |s1             |    6.063|
+I<2>           |sel_alu<1>     |    7.313|
+I<2>           |sel_alu<2>     |    7.542|
+I<2>           |sel_read_r<0>  |    6.567|
+I<2>           |sel_read_r<1>  |    6.638|
+I<2>           |sel_read_r<2>  |    6.933|
+I<2>           |sel_read_r<3>  |    6.627|
+I<2>           |sel_read_r<4>  |    7.003|
+I<3>           |en_sreg        |    6.702|
+I<3>           |en_w           |    6.594|
+I<3>           |ret_sub        |    5.991|
+I<3>           |s1             |    5.894|
+I<3>           |sel_alu<1>     |    6.927|
+I<3>           |sel_alu<2>     |    7.156|
+I<3>           |sel_read_r<0>  |    6.181|
+I<3>           |sel_read_r<1>  |    6.252|
+I<3>           |sel_read_r<2>  |    6.547|
+I<3>           |sel_read_r<3>  |    6.241|
+I<3>           |sel_read_r<4>  |    6.617|
+I<4>           |sel_alu<1>     |    7.179|
+I<4>           |sel_alu<2>     |    7.408|
+I<4>           |sel_read_d<0>  |    6.073|
+I<4>           |sel_read_r<0>  |    6.433|
+I<4>           |sel_read_r<1>  |    6.504|
+I<4>           |sel_read_r<2>  |    6.799|
+I<4>           |sel_read_r<3>  |    6.493|
+I<4>           |sel_read_r<4>  |    6.869|
+I<4>           |sel_w_d<0>     |    6.301|
+I<5>           |sel_alu<1>     |    7.023|
+I<5>           |sel_alu<2>     |    7.252|
+I<5>           |sel_read_d<1>  |    6.329|
+I<5>           |sel_read_r<0>  |    6.277|
+I<5>           |sel_read_r<1>  |    6.348|
+I<5>           |sel_read_r<2>  |    6.643|
+I<5>           |sel_read_r<3>  |    6.337|
+I<5>           |sel_read_r<4>  |    6.713|
+I<5>           |sel_w_d<1>     |    6.455|
+I<6>           |sel_alu<1>     |    7.420|
+I<6>           |sel_alu<2>     |    7.649|
+I<6>           |sel_read_d<2>  |    5.633|
+I<6>           |sel_read_r<0>  |    6.674|
+I<6>           |sel_read_r<1>  |    6.745|
+I<6>           |sel_read_r<2>  |    7.040|
+I<6>           |sel_read_r<3>  |    6.734|
+I<6>           |sel_read_r<4>  |    7.110|
+I<6>           |sel_w_d<2>     |    5.787|
+I<7>           |sel_alu<1>     |    7.013|
+I<7>           |sel_alu<2>     |    7.242|
+I<7>           |sel_read_d<3>  |    5.689|
+I<7>           |sel_read_r<0>  |    6.267|
+I<7>           |sel_read_r<1>  |    6.338|
+I<7>           |sel_read_r<2>  |    6.633|
+I<7>           |sel_read_r<3>  |    6.327|
+I<7>           |sel_read_r<4>  |    6.703|
+I<7>           |sel_w_d<3>     |    5.975|
+I<8>           |sel_alu<1>     |    6.890|
+I<8>           |sel_alu<2>     |    7.119|
+I<8>           |sel_read_d<4>  |    5.532|
+I<8>           |sel_read_r<0>  |    6.144|
+I<8>           |sel_read_r<1>  |    6.215|
+I<8>           |sel_read_r<2>  |    6.510|
+I<8>           |sel_read_r<3>  |    6.204|
+I<8>           |sel_read_r<4>  |    6.580|
+I<8>           |sel_w_d<4>     |    5.606|
+I<9>           |sel_alu<1>     |    6.623|
+I<9>           |sel_alu<2>     |    6.852|
+I<9>           |sel_read_r<0>  |    5.877|
+I<9>           |sel_read_r<1>  |    5.948|
+I<9>           |sel_read_r<2>  |    6.243|
+I<9>           |sel_read_r<3>  |    5.937|
+I<9>           |sel_read_r<4>  |    6.313|
+I<10>          |bn             |    5.335|
+I<10>          |br             |    5.062|
+I<10>          |en_sreg        |    6.004|
+I<10>          |en_w           |    5.896|
+I<10>          |l_d            |    5.753|
+I<10>          |ld_mov         |    5.235|
+I<10>          |sel_alu<1>     |    6.878|
+I<10>          |sel_alu<2>     |    7.107|
+I<10>          |sel_read_d<0>  |    6.324|
+I<10>          |sel_read_d<1>  |    6.195|
+I<10>          |sel_read_d<2>  |    6.190|
+I<10>          |sel_read_d<3>  |    6.035|
+I<10>          |sel_read_d<4>  |    6.008|
+I<10>          |sel_read_r<0>  |    6.810|
+I<10>          |sel_read_r<1>  |    6.881|
+I<10>          |sel_read_r<2>  |    7.176|
+I<10>          |sel_read_r<3>  |    6.870|
+I<10>          |sel_read_r<4>  |    7.246|
+I<10>          |sel_w_d<0>     |    6.552|
+I<10>          |sel_w_d<1>     |    6.321|
+I<10>          |sel_w_d<2>     |    6.344|
+I<10>          |sel_w_d<3>     |    6.321|
+I<10>          |sel_w_d<4>     |    6.301|
+I<11>          |bn             |    5.521|
+I<11>          |br             |    5.447|
+I<11>          |en_sreg        |    5.798|
+I<11>          |en_w           |    5.690|
+I<11>          |ld_mov         |    5.071|
+I<11>          |sel_alu<1>     |    6.751|
+I<11>          |sel_alu<2>     |    6.980|
+I<11>          |sel_read_d<0>  |    6.364|
+I<11>          |sel_read_d<1>  |    6.235|
+I<11>          |sel_read_d<2>  |    6.230|
+I<11>          |sel_read_d<3>  |    6.075|
+I<11>          |sel_read_d<4>  |    6.048|
+I<11>          |sel_read_r<0>  |    6.627|
+I<11>          |sel_read_r<1>  |    6.698|
+I<11>          |sel_read_r<2>  |    6.993|
+I<11>          |sel_read_r<3>  |    6.687|
+I<11>          |sel_read_r<4>  |    7.063|
+I<11>          |sel_w_d<0>     |    6.592|
+I<11>          |sel_w_d<1>     |    6.361|
+I<11>          |sel_w_d<2>     |    6.384|
+I<11>          |sel_w_d<3>     |    6.361|
+I<11>          |sel_w_d<4>     |    6.341|
+I<12>          |bn             |    5.978|
+I<12>          |br             |    5.916|
+I<12>          |en_port        |    6.336|
+I<12>          |en_sreg        |    6.667|
+I<12>          |en_w           |    6.559|
+I<12>          |l_d            |    6.569|
+I<12>          |ld_mov         |    6.214|
+I<12>          |ret_sub        |    7.343|
+I<12>          |s0             |    6.405|
+I<12>          |s1             |    7.246|
+I<12>          |sel_alu<0>     |    6.513|
+I<12>          |sel_alu<1>     |    7.130|
+I<12>          |sel_alu<2>     |    7.359|
+I<12>          |sel_read_d<0>  |    7.157|
+I<12>          |sel_read_d<1>  |    7.028|
+I<12>          |sel_read_d<2>  |    7.023|
+I<12>          |sel_read_d<3>  |    6.868|
+I<12>          |sel_read_d<4>  |    6.841|
+I<12>          |sel_read_r<0>  |    6.770|
+I<12>          |sel_read_r<1>  |    6.881|
+I<12>          |sel_read_r<2>  |    6.551|
+I<12>          |sel_read_r<3>  |    6.938|
+I<12>          |sel_read_r<4>  |    6.997|
+I<12>          |sel_w_d<0>     |    7.385|
+I<12>          |sel_w_d<1>     |    7.154|
+I<12>          |sel_w_d<2>     |    7.177|
+I<12>          |sel_w_d<3>     |    7.154|
+I<12>          |sel_w_d<4>     |    7.134|
+I<13>          |bn             |    5.157|
+I<13>          |br             |    5.098|
+I<13>          |en_port        |    5.349|
+I<13>          |en_sreg        |    6.744|
+I<13>          |en_w           |    6.636|
+I<13>          |l_d            |    5.700|
+I<13>          |ld_mov         |    5.273|
+I<13>          |ret_sub        |    6.869|
+I<13>          |s0             |    5.426|
+I<13>          |s1             |    6.772|
+I<13>          |sel_alu<0>     |    6.100|
+I<13>          |sel_alu<1>     |    6.003|
+I<13>          |sel_alu<2>     |    6.232|
+I<13>          |sel_read_d<0>  |    6.729|
+I<13>          |sel_read_d<1>  |    6.600|
+I<13>          |sel_read_d<2>  |    6.595|
+I<13>          |sel_read_d<3>  |    6.440|
+I<13>          |sel_read_d<4>  |    6.413|
+I<13>          |sel_read_r<0>  |    6.357|
+I<13>          |sel_read_r<1>  |    6.483|
+I<13>          |sel_read_r<2>  |    6.498|
+I<13>          |sel_read_r<3>  |    6.540|
+I<13>          |sel_read_r<4>  |    6.599|
+I<13>          |sel_rel        |    5.453|
+I<13>          |sel_w_d<0>     |    6.957|
+I<13>          |sel_w_d<1>     |    6.726|
+I<13>          |sel_w_d<2>     |    6.749|
+I<13>          |sel_w_d<3>     |    6.726|
+I<13>          |sel_w_d<4>     |    6.706|
+I<14>          |bn             |    6.056|
+I<14>          |br             |    5.997|
+I<14>          |en_port        |    6.079|
+I<14>          |en_sreg        |    7.253|
+I<14>          |en_w           |    7.145|
+I<14>          |l_d            |    6.372|
+I<14>          |ld_mov         |    5.831|
+I<14>          |ret_sub        |    7.526|
+I<14>          |s0             |    6.154|
+I<14>          |s1             |    7.429|
+I<14>          |sel_alu<0>     |    6.290|
+I<14>          |sel_alu<1>     |    6.454|
+I<14>          |sel_alu<2>     |    6.683|
+I<14>          |sel_read_d<0>  |    7.254|
+I<14>          |sel_read_d<1>  |    7.125|
+I<14>          |sel_read_d<2>  |    7.120|
+I<14>          |sel_read_d<3>  |    6.965|
+I<14>          |sel_read_d<4>  |    6.938|
+I<14>          |sel_read_r<0>  |    6.547|
+I<14>          |sel_read_r<1>  |    6.662|
+I<14>          |sel_read_r<2>  |    6.875|
+I<14>          |sel_read_r<3>  |    6.719|
+I<14>          |sel_read_r<4>  |    6.945|
+I<14>          |sel_rel        |    6.121|
+I<14>          |sel_w_d<0>     |    7.482|
+I<14>          |sel_w_d<1>     |    7.251|
+I<14>          |sel_w_d<2>     |    7.274|
+I<14>          |sel_w_d<3>     |    7.251|
+I<14>          |sel_w_d<4>     |    7.231|
+I<15>          |bn             |    5.243|
+I<15>          |br             |    5.378|
+I<15>          |en_port        |    5.689|
+I<15>          |en_sreg        |    6.065|
+I<15>          |en_w           |    5.957|
+I<15>          |l_d            |    5.850|
+I<15>          |ld_mov         |    5.490|
+I<15>          |ret_sub        |    5.916|
+I<15>          |s0             |    5.750|
+I<15>          |s1             |    5.819|
+I<15>          |sel_alu<0>     |    5.792|
+I<15>          |sel_alu<1>     |    6.717|
+I<15>          |sel_alu<2>     |    6.946|
+I<15>          |sel_read_d<0>  |    6.629|
+I<15>          |sel_read_d<1>  |    6.500|
+I<15>          |sel_read_d<2>  |    6.495|
+I<15>          |sel_read_d<3>  |    6.340|
+I<15>          |sel_read_d<4>  |    6.313|
+I<15>          |sel_read_r<0>  |    6.049|
+I<15>          |sel_read_r<1>  |    6.168|
+I<15>          |sel_read_r<2>  |    6.039|
+I<15>          |sel_read_r<3>  |    6.225|
+I<15>          |sel_read_r<4>  |    6.284|
+I<15>          |sel_rel        |    5.593|
+I<15>          |sel_w_d<0>     |    6.857|
+I<15>          |sel_w_d<1>     |    6.626|
+I<15>          |sel_w_d<2>     |    6.649|
+I<15>          |sel_w_d<3>     |    6.626|
+I<15>          |sel_w_d<4>     |    6.606|
+---------------+---------------+---------+
+
+
+Analysis completed Mon Nov 10 16:49:21 2025 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 766 MB
+
+
+

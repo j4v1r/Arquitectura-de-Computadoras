@@ -1,0 +1,126 @@
+--------------------------------------------------------------------------------
+Release 14.7 Trace  (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\trce.exe -intstyle ise -v 3 -s 3
+-n 3 -fastpaths -xml stack_top.twx stack_top.ncd -o stack_top.twr stack_top.pcf
+-ucf stack_top.ucf
+
+Design file:              stack_top.ncd
+Physical constraint file: stack_top.pcf
+Device,package,speed:     xc7a100t,csg324,C,-3 (PRODUCTION 1.10 2013-10-13)
+Report level:             verbose report
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:2698 - No timing constraints found, doing default enumeration.
+INFO:Timing:3412 - To improve timing, see the Timing Closure User Guide (UG612).
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Setup/Hold to clock clk
+------------+------------+------------+------------+------------+------------------+--------+
+            |Max Setup to|  Process   |Max Hold to |  Process   |                  | Clock  |
+Source      | clk (edge) |   Corner   | clk (edge) |   Corner   |Internal Clock(s) | Phase  |
+------------+------------+------------+------------+------------+------------------+--------+
+clr         |   -0.186(R)|      FAST  |    2.129(R)|      SLOW  |clk_BUFGP         |   0.000|
+------------+------------+------------+------------+------------+------------------+--------+
+
+Setup/Hold to clock s0
+------------+------------+------------+------------+------------+--------------------+--------+
+            |Max Setup to|  Process   |Max Hold to |  Process   |                    | Clock  |
+Source      | clk (edge) |   Corner   | clk (edge) |   Corner   |Internal Clock(s)   | Phase  |
+------------+------------+------------+------------+------------+--------------------+--------+
+btns<0>     |   -0.569(F)|      FAST  |    1.999(F)|      SLOW  |mux_4_1/s1_s1_OR_2_o|   0.000|
+btns<1>     |   -0.564(F)|      FAST  |    1.983(F)|      SLOW  |mux_4_1/s1_s1_OR_2_o|   0.000|
+btns<2>     |   -0.587(F)|      FAST  |    2.003(F)|      SLOW  |mux_4_1/s1_s1_OR_2_o|   0.000|
+btns<3>     |   -0.619(F)|      FAST  |    2.029(F)|      SLOW  |mux_4_1/s1_s1_OR_2_o|   0.000|
+btns<4>     |   -0.595(F)|      FAST  |    1.920(F)|      SLOW  |mux_4_1/s1_s1_OR_2_o|   0.000|
+btns<5>     |   -0.237(F)|      FAST  |    1.514(F)|      SLOW  |mux_4_1/s1_s1_OR_2_o|   0.000|
+btns<6>     |   -0.298(F)|      FAST  |    1.528(F)|      SLOW  |mux_4_1/s1_s1_OR_2_o|   0.000|
+btns<7>     |   -0.163(F)|      FAST  |    1.341(F)|      SLOW  |mux_4_1/s1_s1_OR_2_o|   0.000|
+btns<8>     |    0.566(F)|      FAST  |    0.510(F)|      SLOW  |mux_4_1/s1_s1_OR_2_o|   0.000|
+btns<9>     |    0.577(F)|      SLOW  |    0.478(F)|      SLOW  |mux_4_1/s1_s1_OR_2_o|   0.000|
+btns<10>    |   -0.435(F)|      FAST  |    1.728(F)|      SLOW  |mux_4_1/s1_s1_OR_2_o|   0.000|
+btns<11>    |   -0.276(F)|      FAST  |    1.535(F)|      SLOW  |mux_4_1/s1_s1_OR_2_o|   0.000|
+btns<12>    |    1.408(F)|      SLOW  |   -0.166(F)|      FAST  |mux_4_1/s1_s1_OR_2_o|   0.000|
+btns<13>    |   -0.310(F)|      FAST  |    1.556(F)|      SLOW  |mux_4_1/s1_s1_OR_2_o|   0.000|
+btns<14>    |   -0.225(F)|      FAST  |    1.409(F)|      SLOW  |mux_4_1/s1_s1_OR_2_o|   0.000|
+btns<15>    |   -0.124(F)|      FAST  |    1.271(F)|      SLOW  |mux_4_1/s1_s1_OR_2_o|   0.000|
+------------+------------+------------+------------+------------+--------------------+--------+
+
+Setup/Hold to clock s1
+------------+------------+------------+------------+------------+--------------------+--------+
+            |Max Setup to|  Process   |Max Hold to |  Process   |                    | Clock  |
+Source      | clk (edge) |   Corner   | clk (edge) |   Corner   |Internal Clock(s)   | Phase  |
+------------+------------+------------+------------+------------+--------------------+--------+
+btns<0>     |   -0.461(F)|      FAST  |    1.800(F)|      SLOW  |mux_4_1/s1_s1_OR_2_o|   0.000|
+btns<1>     |   -0.456(F)|      FAST  |    1.784(F)|      SLOW  |mux_4_1/s1_s1_OR_2_o|   0.000|
+btns<2>     |   -0.479(F)|      FAST  |    1.804(F)|      SLOW  |mux_4_1/s1_s1_OR_2_o|   0.000|
+btns<3>     |   -0.511(F)|      FAST  |    1.830(F)|      SLOW  |mux_4_1/s1_s1_OR_2_o|   0.000|
+btns<4>     |   -0.487(F)|      FAST  |    1.721(F)|      SLOW  |mux_4_1/s1_s1_OR_2_o|   0.000|
+btns<5>     |   -0.129(F)|      FAST  |    1.315(F)|      SLOW  |mux_4_1/s1_s1_OR_2_o|   0.000|
+btns<6>     |   -0.190(F)|      FAST  |    1.329(F)|      SLOW  |mux_4_1/s1_s1_OR_2_o|   0.000|
+btns<7>     |   -0.055(F)|      FAST  |    1.142(F)|      SLOW  |mux_4_1/s1_s1_OR_2_o|   0.000|
+btns<8>     |    0.703(F)|      SLOW  |    0.311(F)|      SLOW  |mux_4_1/s1_s1_OR_2_o|   0.000|
+btns<9>     |    0.739(F)|      SLOW  |    0.279(F)|      SLOW  |mux_4_1/s1_s1_OR_2_o|   0.000|
+btns<10>    |   -0.327(F)|      FAST  |    1.529(F)|      SLOW  |mux_4_1/s1_s1_OR_2_o|   0.000|
+btns<11>    |   -0.168(F)|      FAST  |    1.336(F)|      SLOW  |mux_4_1/s1_s1_OR_2_o|   0.000|
+btns<12>    |    1.570(F)|      SLOW  |   -0.301(F)|      FAST  |mux_4_1/s1_s1_OR_2_o|   0.000|
+btns<13>    |   -0.202(F)|      FAST  |    1.357(F)|      SLOW  |mux_4_1/s1_s1_OR_2_o|   0.000|
+btns<14>    |   -0.117(F)|      FAST  |    1.210(F)|      SLOW  |mux_4_1/s1_s1_OR_2_o|   0.000|
+btns<15>    |   -0.016(F)|      FAST  |    1.072(F)|      SLOW  |mux_4_1/s1_s1_OR_2_o|   0.000|
+------------+------------+------------+------------+------------+--------------------+--------+
+
+Clock to Setup on destination clock clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |    1.913|         |         |         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock s0
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+s0             |         |         |    0.113|    0.113|
+s1             |         |         |   -0.143|   -0.143|
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock s1
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+s0             |         |         |    0.221|    0.221|
+s1             |         |         |   -0.035|   -0.035|
+---------------+---------+---------+---------+---------+
+
+
+Analysis completed Tue Oct 28 09:56:10 2025 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 5002 MB
+
+
+

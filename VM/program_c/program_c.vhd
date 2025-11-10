@@ -2,9 +2,9 @@
 -- Company: 
 -- Engineer: 
 -- 
--- Create Date:    12:16:28 10/09/2025 
+-- Create Date:    11:42:30 10/09/2025 
 -- Design Name: 
--- Module Name:    ROM - Behavioral 
+-- Module Name:    program_c - Behavioral 
 -- Project Name: 
 -- Target Devices: 
 -- Tool versions: 
@@ -29,21 +29,36 @@ use IEEE.STD_LOGIC_1164.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity ROM is
-    Port ( A : in  STD_LOGIC_VECTOR (15 downto 0);
-           O : out  STD_LOGIC_VECTOR (15 downto 0));
-end ROM;
+entity program_c is
+    Port ( clk : in  STD_LOGIC;
+           clr : in  STD_LOGIC;
+           I_pc : in  STD_LOGIC_VECTOR (15 downto 0);
+           O_pc : out  STD_LOGIC_VECTOR (15 downto 0));
+end program_c;
 
-architecture Behavioral of ROM is
+architecture Behavioral of program_c is
+
+signal q_aux : STD_LOGIC_VECTOR (15 downto 0);
+signal primer_ciclo : STD_LOGIC := '1';
 
 begin
 
-	O<=x"ef0f" when A=x"0000" else      --ef05 --e005
-		x"0f00" when A=x"0001" else --b905 --e013
-		x"e001" when A=x"0002" else --e0e3 --0f01
-		x"e011" when A=x"0003" else --b9e5 --b905
-		--x"0000" x"0004"      -------------------
-		--x"0000" x"0005"      -------------------
-		x"ffff";
+	process(clk, clr)
+	begin
+	
+		if(clr='1') then 
+			q_aux<= (others =>'0');
+			primer_ciclo <= '1';
+		elsif(clk'event and clk='1') then 
+			if(primer_ciclo='1') then
+				q_aux <= x"0000";
+				primer_ciclo <= '0';
+			else
+				q_aux<=I_pc;
+			end if;
+		end if;
 
+	end process;
+
+	O_pc<= q_aux;
 end Behavioral;
