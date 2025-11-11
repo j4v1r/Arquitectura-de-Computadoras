@@ -1,0 +1,5 @@
+xst -intstyle ise -ifn "F:/ADC/Prac4LAB/div_27/div_27.xst" -ofn "F:/ADC/Prac4LAB/div_27/div_27.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc7a100t-csg324-3 div_27.ngc div_27.ngd  
+map -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o div_27_map.ncd div_27.ngd div_27.pcf 
+par -w -intstyle ise -ol high -mt off div_27_map.ncd div_27.ncd div_27.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml div_27.twx div_27.ncd -o div_27.twr div_27.pcf 

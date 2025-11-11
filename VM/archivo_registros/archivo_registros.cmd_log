@@ -1,0 +1,5 @@
+xst -intstyle ise -ifn "/home/ise/VM/archivo_registros/archivo_registros.xst" -ofn "/home/ise/VM/archivo_registros/archivo_registros.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc7a100t-csg324-3 archivo_registros.ngc archivo_registros.ngd  
+map -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o archivo_registros_map.ncd archivo_registros.ngd archivo_registros.pcf 
+par -w -intstyle ise -ol high -mt off archivo_registros_map.ncd archivo_registros.ncd archivo_registros.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml archivo_registros.twx archivo_registros.ncd -o archivo_registros.twr archivo_registros.pcf 

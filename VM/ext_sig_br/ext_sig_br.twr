@@ -1,0 +1,68 @@
+--------------------------------------------------------------------------------
+Release 14.7 Trace  (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+/opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/trce -intstyle ise -v 3 -s 3 -n
+3 -fastpaths -xml ext_sig_br.twx ext_sig_br.ncd -o ext_sig_br.twr
+ext_sig_br.pcf
+
+Design file:              ext_sig_br.ncd
+Physical constraint file: ext_sig_br.pcf
+Device,package,speed:     xc7a100t,csg324,C,-3 (PRODUCTION 1.10 2013-10-13)
+Report level:             verbose report
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:2698 - No timing constraints found, doing default enumeration.
+INFO:Timing:3412 - To improve timing, see the Timing Closure User Guide (UG612).
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Pad to Pad
+---------------+---------------+---------+
+Source Pad     |Destination Pad|  Delay  |
+---------------+---------------+---------+
+I<3>           |O<0>           |    4.542|
+I<4>           |O<1>           |    4.640|
+I<5>           |O<2>           |    4.437|
+I<6>           |O<3>           |    4.485|
+I<7>           |O<4>           |    4.447|
+I<8>           |O<5>           |    4.459|
+I<9>           |O<6>           |    4.668|
+I<9>           |O<7>           |    4.680|
+I<9>           |O<8>           |    4.685|
+I<9>           |O<9>           |    4.789|
+I<9>           |O<10>          |    4.893|
+I<9>           |O<11>          |    5.001|
+I<9>           |O<12>          |    5.084|
+I<9>           |O<13>          |    5.184|
+I<9>           |O<14>          |    4.800|
+I<9>           |O<15>          |    4.908|
+---------------+---------------+---------+
+
+
+Analysis completed Tue Nov 11 15:29:24 2025 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 765 MB
+
+
+

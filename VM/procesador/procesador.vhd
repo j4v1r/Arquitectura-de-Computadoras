@@ -56,7 +56,10 @@ component dec_instr is
            s0 : out  STD_LOGIC);
 end component;
 
---ext_sig_br
+component ext_sig_br is
+    Port ( I : in  STD_LOGIC_VECTOR (15 downto 0);
+           O : out  STD_LOGIC_VECTOR (15 downto 0));
+end component;
 --ext_sig_rjmp
 
 component program_c is
@@ -101,7 +104,7 @@ component ALU is
            Z : out  STD_LOGIC);
 end component;
 
-component S_Reg is
+component s_reg is
     Port ( clk : in  STD_LOGIC;
            clr : in  STD_LOGIC;
            en : in  STD_LOGIC;
@@ -109,7 +112,7 @@ component S_Reg is
            sal_sreg : out  STD_LOGIC);
 end component;
 
-component Stack_Pointer is
+component stack_pointer is
     Port ( clk : in  STD_LOGIC;
            clr : in  STD_LOGIC;
            I_sp : in  STD_LOGIC_VECTOR (3 downto 0);
@@ -180,6 +183,9 @@ cto1 : dec_instr port map( I=>I_aux,
            s1=>s1_aux,
            s0=>s0_aux);
 			  
+cto2 : ext_sig_br port map( I=>I_aux,
+           O=>off_br_aux);
+			  
 cto4 : program_c port map( clk=>clk,
            clr=>clr,
            I_pc=>br_mux_aux,
@@ -212,13 +218,13 @@ cto8 : ALU port map( sel=>sel_alu_aux,
 			  --N : out STD_LOGIC;
            Z=>ent_sreg_aux);
 			  
-cto9 : S_Reg port map( clk=>clk,
+cto9 : s_reg port map( clk=>clk,
            clr=>clr,
            en=>en_sreg_aux,
            ent_sreg=>ent_sreg_aux,
            sal_sreg=>sal_sreg_aux);  
 
-cto10 : Stack_Pointer port map( clk=>clk,
+cto10 : stack_pointer port map( clk=>clk,
            clr=>clr,
            I_sp=>i_sp_aux,
            O_sp=>o_sp_aux);

@@ -1,0 +1,5 @@
+xst -intstyle ise -ifn "/home/ise/VM/ext_sig_br/ext_sig_br.xst" -ofn "/home/ise/VM/ext_sig_br/ext_sig_br.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc7a100t-csg324-3 ext_sig_br.ngc ext_sig_br.ngd  
+map -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o ext_sig_br_map.ncd ext_sig_br.ngd ext_sig_br.pcf 
+par -w -intstyle ise -ol high -mt off ext_sig_br_map.ncd ext_sig_br.ncd ext_sig_br.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml ext_sig_br.twx ext_sig_br.ncd -o ext_sig_br.twr ext_sig_br.pcf 

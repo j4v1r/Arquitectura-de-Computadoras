@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2025-11-10T17:00:44</DateModified>
+  <DateModified>2025-11-11T15:16:25</DateModified>
   <ModuleName>archivo_registros</ModuleName>
   <SummaryTimeStamp>Unknown</SummaryTimeStamp>
   <SavedFilePath>/home/ise/VM/archivo_registros/iseconfig/archivo_registros.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>/home/ise/VM/archivo_registros</ImplementationReportsDirectory>
+  <ImplementationReportsDirectory>/home/ise/VM/archivo_registros/</ImplementationReportsDirectory>
   <DateInitialized>2025-11-10T17:00:44</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>

@@ -1,0 +1,4 @@
+Siguiente clase programa ensamblador avr si funciona y dice que es de práctica.
+20-24 qué es pipeline y se hace examen el 27 de noviembre.
+Diciembre para la práctica (procesador) y el proyecto. Ultimo día 8 de enero.
+Checar demás señales del procesador.

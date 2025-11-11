@@ -1,3 +1,4 @@
 xst -intstyle ise -ifn "/home/ise/VM/mux_32_1/mux_32_1.xst" -ofn "/home/ise/VM/mux_32_1/mux_32_1.syr" 
 ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xa7a100t-csg324-2I mux_32_1.ngc mux_32_1.ngd  
 map -intstyle ise -p xa7a100t-csg324-2I -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o mux_32_1_map.ncd mux_32_1.ngd mux_32_1.pcf 
+map -intstyle ise -p xa7a100t-csg324-2I -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o mux_32_1_map.ncd mux_32_1.ngd mux_32_1.pcf 

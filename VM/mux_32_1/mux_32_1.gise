@@ -51,6 +51,7 @@
   <transforms xmlns="http://www.xilinx.com/XMLSchema">
     <transform xil_pn:end_ts="1762794968" xil_pn:name="TRAN_copyInitialToXSTAbstractSynthesis" xil_pn:start_ts="1762794968">
       <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
     </transform>
     <transform xil_pn:end_ts="1762794968" xil_pn:name="TRAN_schematicsToHdl" xil_pn:prop_ck="6342870128749713063" xil_pn:start_ts="1762794968">
       <status xil_pn:value="SuccessfullyRun"/>
@@ -105,7 +106,7 @@
       <outfile xil_pn:name="mux_32_1.ngd"/>
       <outfile xil_pn:name="mux_32_1_ngdbuild.xrpt"/>
     </transform>
-    <transform xil_pn:end_ts="1762795036" xil_pn:in_ck="5693989580110869973" xil_pn:name="TRANEXT_map_virtex7" xil_pn:prop_ck="3373610943407121171" xil_pn:start_ts="1762795016">
+    <transform xil_pn:end_ts="1762874149" xil_pn:in_ck="5693989580110869973" xil_pn:name="TRANEXT_map_virtex7" xil_pn:prop_ck="3373610943407121171" xil_pn:start_ts="1762874124">
       <status xil_pn:value="FailedRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
