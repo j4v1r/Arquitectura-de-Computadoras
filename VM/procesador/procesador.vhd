@@ -60,7 +60,11 @@ component ext_sig_br is
     Port ( I : in  STD_LOGIC_VECTOR (15 downto 0);
            O : out  STD_LOGIC_VECTOR (15 downto 0));
 end component;
---ext_sig_rjmp
+
+component ext_sig_rjmp is
+    Port ( I : in  STD_LOGIC_VECTOR (15 downto 0);
+           O : out  STD_LOGIC_VECTOR (15 downto 0));
+end component;
 
 component program_c is
     Port ( clk : in  STD_LOGIC;
@@ -185,6 +189,9 @@ cto1 : dec_instr port map( I=>I_aux,
 			  
 cto2 : ext_sig_br port map( I=>I_aux,
            O=>off_br_aux);
+			  
+cto3 : ext_sig_rjmp port map( I=>I_aux,
+           O=>off_rjmp_aux); 			  
 			  
 cto4 : program_c port map( clk=>clk,
            clr=>clr,

@@ -1,0 +1,5 @@
+xst -intstyle ise -ifn "/home/ise/VM/ext_sig_rjmp/ext_sig_rjmp.xst" -ofn "/home/ise/VM/ext_sig_rjmp/ext_sig_rjmp.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc7a100t-csg324-3 ext_sig_rjmp.ngc ext_sig_rjmp.ngd  
+map -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o ext_sig_rjmp_map.ncd ext_sig_rjmp.ngd ext_sig_rjmp.pcf 
+par -w -intstyle ise -ol high -mt off ext_sig_rjmp_map.ncd ext_sig_rjmp.ncd ext_sig_rjmp.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml ext_sig_rjmp.twx ext_sig_rjmp.ncd -o ext_sig_rjmp.twr ext_sig_rjmp.pcf 
