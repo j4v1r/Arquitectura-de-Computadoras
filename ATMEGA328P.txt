@@ -1,0 +1,54 @@
+ATMEGA328P
+
+	.def temp=16
+	.def cte=r17
+	.def cte2=r18
+	.def cont1=r19
+	.def cont2=r20
+	.def cont3=r21
+	.cseg
+	.org 0
+
+	nop
+	nop
+	ldi cte,$01
+
+izquierda:ldi temp,$01
+	ldi cte,$80
+	out portb,temp ;encendemos led B0
+	rcall delay_125m
+izquierda_2:lsl temp
+	out portb,temp
+	rcall delay_125m
+	sub temp,cte
+	breq derecha
+	add temp, cte
+	rjmp izquierda_2
+
+derecha:ldi temp,$80
+	ldi cte,$01
+derecha_2:lsr temp
+	out portb,temp
+	rcall delay_125m
+	sub temp,cte
+	breq izquierda
+	add temp,cte
+	rjmp derecha_2
+	
+delay_125m:ldi cont1,31
+lazo3:	ldi cont2,200
+lazo2:	ldi cont3,200 
+lazo1:	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	sub cont3,cte2
+	brne lazo1
+	sub cont2,cte2
+	brne lazo2
+	sub cont1,cte2,
+
