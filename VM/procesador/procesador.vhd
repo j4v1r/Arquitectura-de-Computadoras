@@ -90,7 +90,7 @@ component archivo_registros is
            O_d : out  STD_LOGIC_VECTOR (7 downto 0));
 end component;
 
-component Registro_ALU is --port B
+component registro is --port B
     Port ( clk : in  STD_LOGIC;
            clr : in  STD_LOGIC;
            en  : in  STD_LOGIC;
@@ -211,7 +211,7 @@ cto6 : archivo_registros port map( clk=>clk,
            O_r=>O_r_aux,
            O_d=>O_d_aux);
 
-cto7 : Registro_ALU port map( clk=>clk,   --port B
+cto7 : registro port map( clk=>clk,   --port B
            clr=>clr,
            en=>en_port_aux, 
            I=>O_r_aux,

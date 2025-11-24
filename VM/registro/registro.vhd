@@ -34,13 +34,20 @@ entity registro is
            clr : in  STD_LOGIC;
            en : in  STD_LOGIC;
            I : in  STD_LOGIC_VECTOR (7 downto 0);
-           O : out  STD_LOGIC_VECTOR (7 downto 0));
+           Q : out  STD_LOGIC_VECTOR (7 downto 0));
 end registro;
 
 architecture Behavioral of registro is
-
+signal q_aux : STD_LOGIC_VECTOR(7 downto 0);
 begin
-
-
+    process(clk,clr,en)
+    begin
+        if clr='1' then
+            q_aux<=(others => '0');  -- Reset asíncrono
+        elsif(clk'event and clk='1' and en='1') then
+				q_aux<=I;
+        end if;
+    end process;
+    
+    Q<=q_aux;
 end Behavioral;
-
