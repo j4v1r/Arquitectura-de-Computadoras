@@ -1,6 +1,6 @@
 ATMEGA328P
 
-	.def temp=16
+	.def temp=r16
 	.def cte=r17
 	.def cte2=r18
 	.def cont1=r19
