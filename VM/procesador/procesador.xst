@@ -4,7 +4,7 @@ run
 -ifn procesador.prj
 -ofn procesador
 -ofmt NGC
--p xc6slx16-3-csg324
+-p xc7a100t-3-csg324
 -top procesador
 -opt_mode Speed
 -opt_level 1

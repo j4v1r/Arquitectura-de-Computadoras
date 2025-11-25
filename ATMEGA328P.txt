@@ -50,5 +50,6 @@ lazo1:	nop
 	brne lazo1
 	sub cont2,cte2
 	brne lazo2
-	sub cont1,cte2,
-
+	sub cont1,cte2
+	brne lazo3
+	ret

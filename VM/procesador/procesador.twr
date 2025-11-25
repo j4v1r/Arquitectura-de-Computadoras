@@ -4,11 +4,11 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/trce -intstyle ise -v 3 -s 3 -n
 3 -fastpaths -xml procesador.twx procesador.ncd -o procesador.twr
-procesador.pcf
+procesador.pcf -ucf procesador.ucf
 
 Design file:              procesador.ncd
 Physical constraint file: procesador.pcf
-Device,package,speed:     xc6slx16,csg324,C,-3 (PRODUCTION 1.23 2013-10-13)
+Device,package,speed:     xc7a100t,csg324,C,-3 (PRODUCTION 1.10 2013-10-13)
 Report level:             verbose report
 
 Environment Variable      Effect 
@@ -30,18 +30,48 @@ INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on
 
 Data Sheet report:
 -----------------
-No constraints were found to generate data for the Data Sheet Report section.
-Use the Advanced Analysis (-a) option or generate global constraints for each
-clock, its pad to setup and clock to pad paths, and a pad to pad constraint.
+All values displayed in nanoseconds (ns)
 
-Analysis completed Mon Nov 24 19:06:28 2025 
+Setup/Hold to clock clk
+------------+------------+------------+------------+------------+------------------+--------+
+            |Max Setup to|  Process   |Max Hold to |  Process   |                  | Clock  |
+Source      | clk (edge) |   Corner   | clk (edge) |   Corner   |Internal Clock(s) | Phase  |
+------------+------------+------------+------------+------------+------------------+--------+
+clr         |    2.571(R)|      SLOW  |    0.934(R)|      SLOW  |clk_BUFGP         |   0.000|
+------------+------------+------------+------------+------------+------------------+--------+
+
+Clock clk to Pad
+------------+-----------------+------------+-----------------+------------+------------------+--------+
+            |Max (slowest) clk|  Process   |Min (fastest) clk|  Process   |                  | Clock  |
+Destination |  (edge) to PAD  |   Corner   |  (edge) to PAD  |   Corner   |Internal Clock(s) | Phase  |
+------------+-----------------+------------+-----------------+------------+------------------+--------+
+portb<0>    |        10.487(R)|      SLOW  |         4.153(R)|      FAST  |clk_BUFGP         |   0.000|
+portb<1>    |        10.399(R)|      SLOW  |         4.124(R)|      FAST  |clk_BUFGP         |   0.000|
+portb<2>    |        10.198(R)|      SLOW  |         3.965(R)|      FAST  |clk_BUFGP         |   0.000|
+portb<3>    |        10.742(R)|      SLOW  |         4.260(R)|      FAST  |clk_BUFGP         |   0.000|
+portb<4>    |        10.619(R)|      SLOW  |         4.185(R)|      FAST  |clk_BUFGP         |   0.000|
+portb<5>    |        10.109(R)|      SLOW  |         3.944(R)|      FAST  |clk_BUFGP         |   0.000|
+portb<6>    |        10.684(R)|      SLOW  |         4.223(R)|      FAST  |clk_BUFGP         |   0.000|
+portb<7>    |        10.423(R)|      SLOW  |         4.097(R)|      FAST  |clk_BUFGP         |   0.000|
+------------+-----------------+------------+-----------------+------------+------------------+--------+
+
+Clock to Setup on destination clock clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |    8.479|         |         |         |
+---------------+---------+---------+---------+---------+
+
+
+Analysis completed Tue Nov 25 15:50:40 2025 
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 387 MB
+Peak Memory Usage: 768 MB
 
 
 

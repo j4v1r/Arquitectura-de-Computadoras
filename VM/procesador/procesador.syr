@@ -4,15 +4,15 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.05 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.04 secs
  
 --> 
 Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.05 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.04 secs
  
 --> 
 Reading design: procesador.prj
@@ -49,7 +49,7 @@ Ignore Synthesis Constraint File   : NO
 ---- Target Parameters
 Output File Name                   : "procesador"
 Output Format                      : NGC
-Target Device                      : xc6slx16-3-csg324
+Target Device                      : xc7a100t-3-csg324
 
 ---- Source Options
 Top Module Name                    : procesador
@@ -245,7 +245,9 @@ Unit <program_c> synthesized.
 
 Synthesizing Unit <ROM>.
     Related source file is "/home/ise/VM/ROM/ROM.vhd".
+    Found 64x16-bit Read Only RAM for signal <_n0124>
     Summary:
+	inferred   1 RAM(s).
 	inferred   1 Multiplexer(s).
 Unit <ROM> synthesized.
 
@@ -339,9 +341,10 @@ Unit <RAM> synthesized.
 HDL Synthesis Report
 
 Macro Statistics
-# RAMs                                                 : 3
+# RAMs                                                 : 4
  16x2-bit single-port Read Only RAM                    : 1
  32x32-bit single-port Read Only RAM                   : 1
+ 64x16-bit single-port Read Only RAM                   : 1
  8x1-bit single-port Read Only RAM                     : 1
 # Adders/Subtractors                                   : 6
  16-bit adder                                          : 3
@@ -376,6 +379,20 @@ INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmet
 *                       Advanced HDL Synthesis                          *
 =========================================================================
 
+
+Synthesizing (advanced) Unit <ROM>.
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram__n0124> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 64-word x 16-bit                    |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <A<5:0>>        |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+Unit <ROM> synthesized (advanced).
 
 Synthesizing (advanced) Unit <dec_5_32>.
 INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_sel_w_d[4]_PWR_14_o_wide_mux_0_OUT> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
@@ -420,9 +437,10 @@ Unit <dec_instr> synthesized (advanced).
 Advanced HDL Synthesis Report
 
 Macro Statistics
-# RAMs                                                 : 3
+# RAMs                                                 : 4
  16x2-bit single-port distributed Read Only RAM        : 1
  32x32-bit single-port distributed Read Only RAM       : 1
+ 64x16-bit single-port distributed Read Only RAM       : 1
  8x1-bit single-port distributed Read Only RAM         : 1
 # Adders/Subtractors                                   : 6
  16-bit adder                                          : 3
@@ -595,431 +613,93 @@ WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_4_12> ha
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_4_13> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_4_14> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_4_15> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <cto11/dato_7_2> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_7_1> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_7_0> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_9_15> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_9_14> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_9_13> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_9_12> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_9_11> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_9_10> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_9_9> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <cto11/dato_9_7> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_9_8> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_9_7> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_9_6> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_9_5> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_9_4> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_9_3> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_9_2> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_5_3> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_5_2> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_5_1> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_5_0> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_7_15> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_7_14> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_7_13> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_7_12> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_7_11> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_7_10> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_7_9> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_7_8> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_9_9> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_9_10> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_9_11> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_9_12> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_9_13> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_9_14> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_9_15> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_7_7> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_7_6> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_7_5> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_7_4> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_7_3> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_11_0> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_13_15> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_13_14> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_13_13> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_13_12> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_13_11> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_13_10> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_13_9> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_13_8> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_7_8> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_7_9> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_7_10> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_7_11> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_7_12> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_7_13> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_7_14> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_7_15> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_13_7> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_13_6> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_13_5> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_13_4> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_13_3> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_13_2> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_13_1> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_13_0> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_9_1> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_9_0> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_11_15> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_11_14> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_11_13> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_11_12> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_11_11> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_11_10> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_11_9> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_11_8> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_13_8> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_13_9> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_13_10> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_13_11> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_13_12> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_13_13> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_13_14> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_13_15> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_11_7> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_11_6> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_11_5> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_11_4> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_11_3> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_11_2> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_11_1> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_15_6> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_15_5> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_15_4> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_15_3> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_15_2> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_15_1> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_15_0> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_1_15> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_1_14> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_1_13> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_1_12> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_1_11> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_1_10> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_1_9> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_1_8> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_11_8> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_11_9> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_11_10> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_11_11> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_11_12> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_11_13> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_11_14> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_11_15> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_1_7> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_1_6> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <cto7/q_aux_7> (without init value) has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <cto7/q_aux_6> (without init value) has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <cto7/q_aux_5> (without init value) has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <cto7/q_aux_4> (without init value) has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <cto7/q_aux_3> (without init value) has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <cto7/q_aux_2> (without init value) has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <cto7/q_aux_1> (without init value) has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <cto7/q_aux_0> (without init value) has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_15_15> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_15_14> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_15_13> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_15_12> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_15_11> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_15_10> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_15_9> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_15_8> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_1_8> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_1_9> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_1_10> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_1_11> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_1_12> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_1_13> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_1_14> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_1_15> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_15_7> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_3_4> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_3_3> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_3_2> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_3_1> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_3_0> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_5_15> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_5_14> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_5_13> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_5_12> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_5_11> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_5_10> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_5_9> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_5_8> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_15_8> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_15_9> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_15_10> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_15_11> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_15_12> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_15_13> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_15_14> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_15_15> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_5_7> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_5_6> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_5_5> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_5_4> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_1_5> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_1_4> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_1_3> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_1_2> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_1_1> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_1_0> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_3_15> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_3_14> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_3_13> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_3_12> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_3_11> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_3_10> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_3_9> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_3_8> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_5_8> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_5_9> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_5_10> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_5_11> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_5_12> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_5_13> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_5_14> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_5_15> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_3_7> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_3_6> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_3_5> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:2677 - Node <cto9/q_aux> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto10/q_aux_3> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto10/q_aux_2> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto10/q_aux_1> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto10/primer_ciclo> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto4/q_aux_15> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto4/q_aux_14> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto4/q_aux_13> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto4/q_aux_12> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto4/q_aux_11> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto4/q_aux_10> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto4/q_aux_9> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto4/q_aux_8> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto4/q_aux_7> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto4/q_aux_6> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto4/q_aux_5> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto4/q_aux_4> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto4/q_aux_3> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto4/q_aux_2> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto4/q_aux_1> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto4/q_aux_0> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto4/primer_ciclo> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg0/q_aux_0> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg0/q_aux_1> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg0/q_aux_2> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg0/q_aux_3> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg0/q_aux_4> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg0/q_aux_5> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg0/q_aux_6> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg0/q_aux_7> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg1/q_aux_0> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg1/q_aux_1> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg1/q_aux_2> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg1/q_aux_3> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg1/q_aux_4> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg1/q_aux_5> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg1/q_aux_6> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg1/q_aux_7> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg2/q_aux_0> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg2/q_aux_1> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg2/q_aux_2> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg2/q_aux_3> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg2/q_aux_4> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg2/q_aux_5> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg2/q_aux_6> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg2/q_aux_7> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg3/q_aux_0> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg3/q_aux_1> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg3/q_aux_2> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg3/q_aux_3> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg3/q_aux_4> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg3/q_aux_5> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg3/q_aux_6> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg3/q_aux_7> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg4/q_aux_0> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg4/q_aux_1> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg4/q_aux_2> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg4/q_aux_3> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg4/q_aux_4> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg4/q_aux_5> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg4/q_aux_6> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg4/q_aux_7> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg5/q_aux_0> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg5/q_aux_1> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg5/q_aux_2> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg5/q_aux_3> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg5/q_aux_4> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg5/q_aux_5> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg5/q_aux_6> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg5/q_aux_7> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg6/q_aux_0> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg6/q_aux_1> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg6/q_aux_2> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg6/q_aux_3> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg6/q_aux_4> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg6/q_aux_5> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg6/q_aux_6> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg6/q_aux_7> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg7/q_aux_0> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg7/q_aux_1> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg7/q_aux_2> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg7/q_aux_3> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg7/q_aux_4> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg7/q_aux_5> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg7/q_aux_6> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg7/q_aux_7> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg8/q_aux_0> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg8/q_aux_1> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg8/q_aux_2> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg8/q_aux_3> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg8/q_aux_4> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg8/q_aux_5> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg8/q_aux_6> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg8/q_aux_7> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg9/q_aux_0> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg9/q_aux_1> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg9/q_aux_2> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg9/q_aux_3> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg9/q_aux_4> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg9/q_aux_5> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg9/q_aux_6> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg9/q_aux_7> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg10/q_aux_0> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg10/q_aux_1> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg10/q_aux_2> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg10/q_aux_3> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg10/q_aux_4> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg10/q_aux_5> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg10/q_aux_6> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg10/q_aux_7> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg11/q_aux_0> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg11/q_aux_1> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg11/q_aux_2> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg11/q_aux_3> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg11/q_aux_4> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg11/q_aux_5> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg11/q_aux_6> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg11/q_aux_7> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg12/q_aux_0> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg12/q_aux_1> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg12/q_aux_2> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg12/q_aux_3> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg12/q_aux_4> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg12/q_aux_5> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg12/q_aux_6> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg12/q_aux_7> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg13/q_aux_0> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg13/q_aux_1> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg13/q_aux_2> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg13/q_aux_3> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg13/q_aux_4> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg13/q_aux_5> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg13/q_aux_6> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg13/q_aux_7> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg14/q_aux_0> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg14/q_aux_1> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg14/q_aux_2> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg14/q_aux_3> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg14/q_aux_4> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg14/q_aux_5> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg14/q_aux_6> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg14/q_aux_7> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg15/q_aux_0> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg15/q_aux_1> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg15/q_aux_2> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg15/q_aux_3> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg15/q_aux_4> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg15/q_aux_5> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg15/q_aux_6> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg15/q_aux_7> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg16/q_aux_0> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg16/q_aux_1> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg16/q_aux_2> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg16/q_aux_3> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg16/q_aux_4> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg16/q_aux_5> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg16/q_aux_6> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg16/q_aux_7> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg17/q_aux_0> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg17/q_aux_1> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg17/q_aux_2> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg17/q_aux_3> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg17/q_aux_4> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg17/q_aux_5> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg17/q_aux_6> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg17/q_aux_7> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg18/q_aux_0> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg18/q_aux_1> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg18/q_aux_2> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg18/q_aux_3> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg18/q_aux_4> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg18/q_aux_5> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg18/q_aux_6> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg18/q_aux_7> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg19/q_aux_0> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg19/q_aux_1> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg19/q_aux_2> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg19/q_aux_3> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg19/q_aux_4> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg19/q_aux_5> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg19/q_aux_6> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg19/q_aux_7> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg20/q_aux_0> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg20/q_aux_1> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg20/q_aux_2> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg20/q_aux_3> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg20/q_aux_4> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg20/q_aux_5> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg20/q_aux_6> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg20/q_aux_7> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg21/q_aux_0> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg21/q_aux_1> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg21/q_aux_2> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg21/q_aux_3> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg21/q_aux_4> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg21/q_aux_5> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg21/q_aux_6> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg21/q_aux_7> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg22/q_aux_0> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg22/q_aux_1> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg22/q_aux_2> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg22/q_aux_3> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg22/q_aux_4> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg22/q_aux_5> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg22/q_aux_6> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg22/q_aux_7> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg23/q_aux_0> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg23/q_aux_1> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg23/q_aux_2> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg23/q_aux_3> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg23/q_aux_4> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg23/q_aux_5> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg23/q_aux_6> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg23/q_aux_7> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg24/q_aux_0> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg24/q_aux_1> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg24/q_aux_2> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg24/q_aux_3> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg24/q_aux_4> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg24/q_aux_5> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg24/q_aux_6> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg24/q_aux_7> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg25/q_aux_0> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg25/q_aux_1> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg25/q_aux_2> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg25/q_aux_3> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg25/q_aux_4> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg25/q_aux_5> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg25/q_aux_6> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg25/q_aux_7> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg26/q_aux_0> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg26/q_aux_1> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg26/q_aux_2> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg26/q_aux_3> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg26/q_aux_4> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg26/q_aux_5> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg26/q_aux_6> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg26/q_aux_7> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg27/q_aux_0> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg27/q_aux_1> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg27/q_aux_2> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg27/q_aux_3> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg27/q_aux_4> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg27/q_aux_5> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg27/q_aux_6> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg27/q_aux_7> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg28/q_aux_0> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg28/q_aux_1> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg28/q_aux_2> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg28/q_aux_3> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg28/q_aux_4> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg28/q_aux_5> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg28/q_aux_6> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg28/q_aux_7> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg29/q_aux_0> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg29/q_aux_1> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg29/q_aux_2> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg29/q_aux_3> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg29/q_aux_4> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg29/q_aux_5> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg29/q_aux_6> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg29/q_aux_7> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg30/q_aux_0> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg30/q_aux_1> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg30/q_aux_2> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg30/q_aux_3> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg30/q_aux_4> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg30/q_aux_5> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg30/q_aux_6> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg30/q_aux_7> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg31/q_aux_0> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg31/q_aux_1> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg31/q_aux_2> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg31/q_aux_3> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg31/q_aux_4> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg31/q_aux_5> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg31/q_aux_6> of sequential type is unconnected in block <procesador>.
-WARNING:Xst:2677 - Node <cto6/reg31/q_aux_7> of sequential type is unconnected in block <procesador>.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_3_8> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_3_9> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_3_10> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_3_11> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_3_12> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_3_13> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_3_14> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_3_15> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <cto10/primer_ciclo> in Unit <procesador> is equivalent to the following FF/Latch, which will be removed : <cto4/primer_ciclo> 
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block procesador, actual ratio is 0.
+Found area constraint ratio of 100 (+ 5) on block procesador, actual ratio is 1.
 
 Final Macro Processing ...
 
 =========================================================================
 Final Register Report
 
-Found no macro
+Macro Statistics
+# Registers                                            : 341
+ Flip-Flops                                            : 341
+
 =========================================================================
 
 =========================================================================
@@ -1041,31 +721,54 @@ Top Level Output File Name         : procesador.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 1
+# BELS                             : 566
 #      GND                         : 1
-# IO Buffers                       : 8
+#      INV                         : 1
+#      LUT1                        : 6
+#      LUT2                        : 15
+#      LUT3                        : 29
+#      LUT4                        : 47
+#      LUT5                        : 43
+#      LUT6                        : 297
+#      MUXCY                       : 43
+#      MUXF7                       : 29
+#      MUXF8                       : 7
+#      VCC                         : 1
+#      XORCY                       : 47
+# FlipFlops/Latches                : 341
+#      FDC                         : 16
+#      FDCE                        : 321
+#      FDP                         : 4
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 9
+#      IBUF                        : 1
 #      OBUF                        : 8
 
 Device utilization summary:
 ---------------------------
 
-Selected Device : 6slx16csg324-3 
+Selected Device : 7a100tcsg324-3 
 
 
 Slice Logic Utilization: 
+ Number of Slice Registers:             341  out of  126800     0%  
+ Number of Slice LUTs:                  438  out of  63400     0%  
+    Number used as Logic:               438  out of  63400     0%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:      0
-   Number with an unused Flip Flop:       0  out of      0         
-   Number with an unused LUT:             0  out of      0         
-   Number of fully used LUT-FF pairs:     0  out of      0         
-   Number of unique control sets:         0
+ Number of LUT Flip Flop pairs used:    736
+   Number with an unused Flip Flop:     395  out of    736    53%  
+   Number with an unused LUT:           298  out of    736    40%  
+   Number of fully used LUT-FF pairs:    43  out of    736     5%  
+   Number of unique control sets:        43
 
 IO Utilization: 
  Number of IOs:                          10
- Number of bonded IOBs:                   8  out of    232     3%  
+ Number of bonded IOBs:                  10  out of    210     4%  
 
 Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                1  out of     32     3%  
 
 ---------------------------
 Partition Resource Summary:
@@ -1085,7 +788,11 @@ NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
 
 Clock Information:
 ------------------
-No clock signals found in this design
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 341   |
+-----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
 ----------------------------------------
@@ -1095,9 +802,9 @@ Timing Summary:
 ---------------
 Speed Grade: -3
 
-   Minimum period: No path found
-   Minimum input arrival time before clock: No path found
-   Maximum output required time after clock: No path found
+   Minimum period: 6.823ns (Maximum Frequency: 146.557MHz)
+   Minimum input arrival time before clock: 0.783ns
+   Maximum output required time after clock: 0.640ns
    Maximum combinational path delay: No path found
 
 Timing Details:
@@ -1105,22 +812,104 @@ Timing Details:
 All values displayed in nanoseconds (ns)
 
 =========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 6.823ns (frequency: 146.557MHz)
+  Total number of paths / destination ports: 11904050 / 661
+-------------------------------------------------------------------------
+Delay:               6.823ns (Levels of Logic = 15)
+  Source:            cto4/q_aux_3 (FF)
+  Destination:       cto9/q_aux (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: cto4/q_aux_3 to cto9/q_aux
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q             18   0.361   0.772  cto4/q_aux_3 (cto4/q_aux_3)
+     LUT6:I0->O            9   0.097   0.720  cto5/Mram__n0124121 (cto5/_n0124<4>)
+     LUT5:I0->O            2   0.097   0.299  cto1/Mmux_sel_read_r11_SW1_SW0 (N155)
+     LUT5:I4->O            1   0.097   0.379  cto1/Mmux_sel_read_r11_SW3 (N32)
+     LUT6:I4->O           64   0.097   0.491  cto1/Mmux_sel_read_r12 (sel_read_r_aux<0>)
+     LUT6:I4->O            1   0.097   0.556  cto6/mux_r/Mmux_O_81 (cto6/mux_r/Mmux_O_81)
+     LUT6:I2->O            1   0.097   0.000  cto6/mux_r/Mmux_O_3 (cto6/mux_r/Mmux_O_3)
+     MUXF7:I1->O           4   0.279   0.309  cto6/mux_r/Mmux_O_2_f7 (O_r_aux<0>)
+     LUT6:I5->O            1   0.097   0.000  cto8/Mmux_F_aux1_rs_lut<0> (cto8/Mmux_F_aux1_rs_lut<0>)
+     MUXCY:S->O            1   0.353   0.000  cto8/Mmux_F_aux1_rs_cy<0> (cto8/Mmux_F_aux1_rs_cy<0>)
+     MUXCY:CI->O           1   0.023   0.000  cto8/Mmux_F_aux1_rs_cy<1> (cto8/Mmux_F_aux1_rs_cy<1>)
+     MUXCY:CI->O           1   0.023   0.000  cto8/Mmux_F_aux1_rs_cy<2> (cto8/Mmux_F_aux1_rs_cy<2>)
+     MUXCY:CI->O           1   0.023   0.000  cto8/Mmux_F_aux1_rs_cy<3> (cto8/Mmux_F_aux1_rs_cy<3>)
+     XORCY:CI->O           2   0.370   0.299  cto8/Mmux_F_aux1_rs_xor<4> (cto8/Mmux_F_aux1_split<4>)
+     LUT5:I4->O            1   0.097   0.683  cto8/Mmux_F_aux753 (F_aux<4>)
+     LUT6:I1->O            1   0.097   0.000  cto8/Z (ent_sreg_aux)
+     FDCE:D                    0.008          cto9/q_aux
+    ----------------------------------------
+    Total                      6.823ns (2.313ns logic, 4.510ns route)
+                                       (33.9% logic, 66.1% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 341 / 341
+-------------------------------------------------------------------------
+Offset:              0.783ns (Levels of Logic = 1)
+  Source:            clr (PAD)
+  Destination:       cto9/q_aux (FF)
+  Destination Clock: clk rising
+
+  Data Path: clr to cto9/q_aux
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O           341   0.001   0.433  clr_IBUF (clr_IBUF)
+     FDCE:CLR                  0.349          cto9/q_aux
+    ----------------------------------------
+    Total                      0.783ns (0.350ns logic, 0.433ns route)
+                                       (44.7% logic, 55.3% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 8 / 8
+-------------------------------------------------------------------------
+Offset:              0.640ns (Levels of Logic = 1)
+  Source:            cto7/q_aux_7 (FF)
+  Destination:       portb<7> (PAD)
+  Source Clock:      clk rising
+
+  Data Path: cto7/q_aux_7 to portb<7>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCE:C->Q             1   0.361   0.279  cto7/q_aux_7 (cto7/q_aux_7)
+     OBUF:I->O                 0.000          portb_7_OBUF (portb<7>)
+    ----------------------------------------
+    Total                      0.640ns (0.361ns logic, 0.279ns route)
+                                       (56.4% logic, 43.6% route)
+
+=========================================================================
 
 Cross Clock Domains Report:
 --------------------------
 
+Clock to Setup on destination clock clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |    6.823|         |         |         |
+---------------+---------+---------+---------+---------+
+
 =========================================================================
 
 
-Total REAL time to Xst completion: 6.00 secs
-Total CPU time to Xst completion: 4.00 secs
+Total REAL time to Xst completion: 10.00 secs
+Total CPU time to Xst completion: 7.91 secs
  
 --> 
 
 
-Total memory usage is 489596 kilobytes
+Total memory usage is 607932 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :  546 (   0 filtered)
-Number of infos    :    7 (   0 filtered)
+Number of warnings :  204 (   0 filtered)
+Number of infos    :    9 (   0 filtered)
 
