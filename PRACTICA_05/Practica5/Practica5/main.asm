@@ -19,7 +19,10 @@
 	.def num9=r25
 	.def num10=r26
 	.def cont=r27
-	.def temp=r29
+	.def temp=r28
+	.def cont1=r29
+	.def cont2=r30
+	.def cont3=r31
 	.cseg
 	.org 0
 
@@ -75,43 +78,43 @@ contador: cp cont,num0
 		  cp cont,num9
 		  breq nueve
 
-cero: ldi temp,$01
+cero: ldi temp,$01;81
 	  out portb,temp
 	  ret
 
-uno: ldi temp,$4F
+uno: ldi temp,$4F;CF
 	 out portb,temp
 	 ret
 
-dos: ldi temp,$12
+dos: ldi temp,$12;92
 	 out portb,temp
 	 ret
 
-tres: ldi temp,$06
+tres: ldi temp,$06;86
+	 out portb,temp
+	 ret
+	 
+cuatro: ldi temp,$4C;CC
 	 out portb,temp
 	 ret
 
-cuatro: ldi temp,$4C
+cinco: ldi temp,$24;A4
 	 out portb,temp
 	 ret
 
-cinco: ldi temp,$24
+seis: ldi temp,$20;A0
 	 out portb,temp
 	 ret
 
-seis: ldi temp,$20
+siete: ldi temp,$0F;8F
 	 out portb,temp
 	 ret
 
-siete: ldi temp,$0F
+ocho: ldi temp,$00;80
 	 out portb,temp
 	 ret
 
-ocho: ldi temp,$00
-	 out portb,temp
-	 ret
-
-nueve: ldi temp,$04
+nueve: ldi temp,$04;84
 	 out portb,temp
 	 ret
 
@@ -122,4 +125,23 @@ incremento: inc cont
 
 fin_inc: ret
 
-delay_1s: ret
+delay_1s: ldi cont1,200
+lazo3:	ldi cont2,200
+lazo2:	ldi cont3,200 
+lazo1:	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	dec cont3
+	brne lazo1
+	dec cont2
+	brne lazo2
+	dec cont1
+	brne lazo3
+	ret

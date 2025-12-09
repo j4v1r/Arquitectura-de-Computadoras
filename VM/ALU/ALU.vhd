@@ -57,6 +57,7 @@ begin
 		when "0101"=> F_aux<= not ('0'&A);
 		when "0110"=> F_aux(7 downto 1)<=A(6 downto 0);F_aux(0)<='0';F_aux(8)<=A(7);
 		when "1000"=> F_aux<=('0'&A) + 1;
+		when "1001"=> F_aux<=('0'&A) - 1;
 		when others=> F_aux(6 downto 0)<=A(7 downto 1);F_aux(7)<='0';F_aux(8)<=A(0);
 		end case;
 	end process;

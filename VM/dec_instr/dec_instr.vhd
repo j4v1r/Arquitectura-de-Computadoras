@@ -225,7 +225,7 @@ begin
 								s0 <='0';	
 								
 							end if;
-				when "1001" => --com, lsr, inc, ret
+				when "1001" => --com, lsr, inc, dec, ret
 							
 							if(I(3 downto 0)="0000") then --com
 							
@@ -280,7 +280,25 @@ begin
 								ret_sub <='0';
 								s1 <='0';
 								s0 <='0';	
+								
+							elsif(I(3 downto 0)="1010") then --dec
 							
+								sel_read_d <= I(8 downto 4);
+								sel_read_r <= (I(9)&I(3 downto 0));
+								sel_w_d <= I(8 downto 4);
+								sel_alu <= "1001";
+								l_d <='0';
+								ld_mov <='1';
+								sel_rel <='0';
+								br <='0';
+								bn <='0';
+								en_w <='1';
+								en_port <='0';
+								en_sreg <='1';
+								ret_sub <='0';
+								s1 <='0';
+								s0 <='0';
+								
 							else --ret
 							
 								sel_read_d <= I(8 downto 4);

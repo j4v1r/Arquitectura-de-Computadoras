@@ -5,14 +5,14 @@ Parameter TMPDIR set to xst/projnav.tmp
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.12 secs
+Total CPU time to Xst completion: 0.09 secs
  
 --> 
 Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.12 secs
+Total CPU time to Xst completion: 0.10 secs
  
 --> 
 Reading design: procesador.prj
@@ -212,12 +212,12 @@ Unit <procesador> synthesized.
 Synthesizing Unit <dec_instr>.
     Related source file is "/home/ise/VM/dec_instr/dec_instr.vhd".
     Found 8x1-bit Read Only RAM for signal <sel_rel>
-    Found 16x2-bit Read Only RAM for signal <_n0108>
+    Found 16x2-bit Read Only RAM for signal <_n0116>
     Found 5-bit comparator equal for signal <I[9]_I[8]_equal_2_o> created at line 78
     Summary:
 	inferred   2 RAM(s).
 	inferred   1 Comparator(s).
-	inferred  55 Multiplexer(s).
+	inferred  54 Multiplexer(s).
 Unit <dec_instr> synthesized.
 
 Synthesizing Unit <ext_sig_br>.
@@ -246,7 +246,7 @@ Unit <program_c> synthesized.
 
 Synthesizing Unit <ROM>.
     Related source file is "/home/ise/VM/ROM/ROM.vhd".
-    Found 128x16-bit Read Only RAM for signal <_n0223>
+    Found 128x16-bit Read Only RAM for signal <_n0280>
     Summary:
 	inferred   1 RAM(s).
 	inferred   1 Multiplexer(s).
@@ -292,6 +292,7 @@ Synthesizing Unit <ALU>.
     Found 9-bit adder for signal <GND_18_o_GND_18_o_add_0_OUT> created at line 52.
     Found 9-bit adder for signal <GND_18_o_GND_18_o_add_6_OUT> created at line 59.
     Found 9-bit subtractor for signal <GND_18_o_GND_18_o_sub_2_OUT<8:0>> created at line 53.
+    Found 9-bit subtractor for signal <GND_18_o_GND_18_o_sub_8_OUT<8:0>> created at line 60.
     Found 9-bit 12-to-1 multiplexer for signal <F_aux> created at line 51.
     Summary:
 	inferred   1 Adder/Subtractor(s).
@@ -360,16 +361,16 @@ Macro Statistics
  8-bit register                                        : 33
 # Comparators                                          : 1
  5-bit comparator equal                                : 1
-# Multiplexers                                         : 89
- 1-bit 2-to-1 multiplexer                              : 41
+# Multiplexers                                         : 88
+ 1-bit 2-to-1 multiplexer                              : 43
  16-bit 16-to-1 multiplexer                            : 1
  16-bit 2-to-1 multiplexer                             : 5
  32-bit 2-to-1 multiplexer                             : 1
- 4-bit 2-to-1 multiplexer                              : 13
+ 4-bit 2-to-1 multiplexer                              : 12
  5-bit 2-to-1 multiplexer                              : 8
  8-bit 2-to-1 multiplexer                              : 2
  8-bit 32-to-1 multiplexer                             : 2
- 9-bit 2-to-1 multiplexer                              : 16
+ 9-bit 2-to-1 multiplexer                              : 14
 # Xors                                                 : 1
  9-bit xor2                                            : 1
 
@@ -382,7 +383,7 @@ INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmet
 
 
 Synthesizing (advanced) Unit <ROM>.
-INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram__n0223> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram__n0280> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
     -----------------------------------------------------------------------
     | ram_type           | Distributed                         |          |
     -----------------------------------------------------------------------
@@ -421,7 +422,7 @@ INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_sel_rel> will be implemented on LUTs
     |     diA            | connected to signal <GND>           |          |
     |     doA            | connected to signal <sel_rel>       |          |
     -----------------------------------------------------------------------
-INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram__n0108> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram__n0116> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
     -----------------------------------------------------------------------
     | ram_type           | Distributed                         |          |
     -----------------------------------------------------------------------
@@ -452,16 +453,16 @@ Macro Statistics
  Flip-Flops                                            : 543
 # Comparators                                          : 1
  5-bit comparator equal                                : 1
-# Multiplexers                                         : 89
- 1-bit 2-to-1 multiplexer                              : 41
+# Multiplexers                                         : 88
+ 1-bit 2-to-1 multiplexer                              : 43
  16-bit 16-to-1 multiplexer                            : 1
  16-bit 2-to-1 multiplexer                             : 5
  32-bit 2-to-1 multiplexer                             : 1
- 4-bit 2-to-1 multiplexer                              : 13
+ 4-bit 2-to-1 multiplexer                              : 12
  5-bit 2-to-1 multiplexer                              : 8
  8-bit 2-to-1 multiplexer                              : 2
  8-bit 32-to-1 multiplexer                             : 2
- 9-bit 2-to-1 multiplexer                              : 16
+ 9-bit 2-to-1 multiplexer                              : 14
 # Xors                                                 : 1
  9-bit xor2                                            : 1
 
@@ -713,17 +714,17 @@ Top Level Output File Name         : procesador.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 656
+# BELS                             : 644
 #      GND                         : 1
 #      INV                         : 1
 #      LUT1                        : 7
-#      LUT2                        : 15
-#      LUT3                        : 43
-#      LUT4                        : 32
-#      LUT5                        : 36
-#      LUT6                        : 368
+#      LUT2                        : 14
+#      LUT3                        : 46
+#      LUT4                        : 33
+#      LUT5                        : 33
+#      LUT6                        : 355
 #      MUXCY                       : 44
-#      MUXF7                       : 52
+#      MUXF7                       : 53
 #      MUXF8                       : 8
 #      VCC                         : 1
 #      XORCY                       : 48
@@ -745,14 +746,14 @@ Selected Device : 7a100tcsg324-3
 
 Slice Logic Utilization: 
  Number of Slice Registers:             349  out of  126800     0%  
- Number of Slice LUTs:                  502  out of  63400     0%  
-    Number used as Logic:               502  out of  63400     0%  
+ Number of Slice LUTs:                  489  out of  63400     0%  
+    Number used as Logic:               489  out of  63400     0%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    806
-   Number with an unused Flip Flop:     457  out of    806    56%  
-   Number with an unused LUT:           304  out of    806    37%  
-   Number of fully used LUT-FF pairs:    45  out of    806     5%  
+ Number of LUT Flip Flop pairs used:    794
+   Number with an unused Flip Flop:     445  out of    794    56%  
+   Number with an unused LUT:           305  out of    794    38%  
+   Number of fully used LUT-FF pairs:    44  out of    794     5%  
    Number of unique control sets:        43
 
 IO Utilization: 
@@ -794,7 +795,7 @@ Timing Summary:
 ---------------
 Speed Grade: -3
 
-   Minimum period: 7.044ns (Maximum Frequency: 141.957MHz)
+   Minimum period: 6.991ns (Maximum Frequency: 143.045MHz)
    Minimum input arrival time before clock: 0.785ns
    Maximum output required time after clock: 0.640ns
    Maximum combinational path delay: No path found
@@ -805,37 +806,36 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 7.044ns (frequency: 141.957MHz)
-  Total number of paths / destination ports: 67314657 / 677
+  Clock period: 6.991ns (frequency: 143.045MHz)
+  Total number of paths / destination ports: 69649049 / 677
 -------------------------------------------------------------------------
-Delay:               7.044ns (Levels of Logic = 13)
-  Source:            cto4/q_aux_2 (FF)
+Delay:               6.991ns (Levels of Logic = 12)
+  Source:            cto4/q_aux_15 (FF)
   Destination:       cto9/q_aux (FF)
   Source Clock:      clk rising
   Destination Clock: clk rising
 
-  Data Path: cto4/q_aux_2 to cto9/q_aux
+  Data Path: cto4/q_aux_15 to cto9/q_aux
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDC:C->Q             34   0.361   0.800  cto4/q_aux_2 (cto4/q_aux_2)
-     LUT6:I0->O            1   0.097   0.000  cto5/Mram__n02234_G (N811)
-     MUXF7:I1->O          46   0.279   0.792  cto5/Mram__n02234 (cto5/_n0223<12>)
-     LUT6:I1->O            1   0.097   0.000  cto1/I[9]_I[8]_equal_2_o5_SW0_G (N220)
-     MUXF7:I1->O           5   0.279   0.314  cto1/I[9]_I[8]_equal_2_o5_SW0 (N11)
-     LUT6:I5->O            2   0.097   0.299  cto1/I[9]_I[8]_equal_2_o5 (cto1/I[9]_I[8]_equal_2_o)
-     LUT6:I5->O           64   0.097   0.491  cto1/Mmux_sel_read_r11 (sel_read_r_aux<0>)
-     LUT6:I4->O            1   0.097   0.556  cto6/mux_r/Mmux_O_104 (cto6/mux_r/Mmux_O_104)
-     LUT6:I2->O            1   0.097   0.000  cto6/mux_r/Mmux_O_2_f7_3_G (N196)
-     MUXF7:I1->O           4   0.279   0.525  cto6/mux_r/Mmux_O_2_f7_3 (O_r_aux<4>)
-     LUT6:I3->O            1   0.097   0.000  cto8/Mmux_F_aux11_rs_lut<4> (cto8/Mmux_F_aux11_rs_lut<4>)
-     MUXCY:S->O            1   0.353   0.000  cto8/Mmux_F_aux11_rs_cy<4> (cto8/Mmux_F_aux11_rs_cy<4>)
-     XORCY:CI->O           2   0.370   0.561  cto8/Mmux_F_aux11_rs_xor<5> (F_aux<5>)
-     LUT6:I2->O            1   0.097   0.000  cto8/Z (ent_sreg_aux)
+     FDC:C->Q              2   0.361   0.561  cto4/q_aux_15 (cto4/q_aux_15)
+     LUT4:I0->O            1   0.097   0.295  cto5/_n0281<15>_SW0 (N0)
+     LUT6:I5->O           97   0.097   0.800  cto5/_n0281<15> (cto5/_n0281)
+     LUT5:I0->O           34   0.097   0.402  cto1/Mmux_sel_read_r121 (cto1/Mmux_sel_read_r12)
+     LUT5:I4->O           72   0.097   0.492  cto1/sel_w_d<0>1 (sel_read_d_aux<0>)
+     LUT6:I4->O            1   0.097   0.556  cto6/mux_d/Mmux_O_103 (cto6/mux_d/Mmux_O_103)
+     LUT6:I2->O            1   0.097   0.000  cto6/mux_d/Mmux_O_2_f7_2_G (N198)
+     MUXF7:I1->O          13   0.279   0.335  cto6/mux_d/Mmux_O_2_f7_2 (O_d_aux<3>)
+     MUXF7:S->O            1   0.335   0.379  cto8/Mmux_F_aux11_A82_SW3 (N145)
+     LUT6:I4->O            1   0.097   0.000  cto8/Mmux_F_aux11_rs_lut<3> (cto8/Mmux_F_aux11_rs_lut<3>)
+     MUXCY:S->O            1   0.353   0.000  cto8/Mmux_F_aux11_rs_cy<3> (cto8/Mmux_F_aux11_rs_cy<3>)
+     XORCY:CI->O           2   0.370   0.688  cto8/Mmux_F_aux11_rs_xor<4> (F_aux<4>)
+     LUT6:I1->O            1   0.097   0.000  cto8/Z (ent_sreg_aux)
      FDCE:D                    0.008          cto9/q_aux
     ----------------------------------------
-    Total                      7.044ns (2.705ns logic, 4.339ns route)
-                                       (38.4% logic, 61.6% route)
+    Total                      6.991ns (2.482ns logic, 4.509ns route)
+                                       (35.5% logic, 64.5% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
@@ -885,19 +885,19 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |    7.044|         |         |         |
+clk            |    6.991|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 34.00 secs
-Total CPU time to Xst completion: 28.95 secs
+Total REAL time to Xst completion: 35.00 secs
+Total CPU time to Xst completion: 30.21 secs
  
 --> 
 
 
-Total memory usage is 608084 kilobytes
+Total memory usage is 608120 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :  197 (   0 filtered)

@@ -22,21 +22,24 @@
   <FILE>Practica5.lss</FILE>
  </OUTPUT_FILES>
  <LABELS>
-  <inicio><FILE>C:\Users\colun\Documents\Arquitectura-de-Computadoras\PRACTICA_05\Practica5\Practica5\main.asm</FILE><LINE>41</LINE></inicio>
-  <ciclo><FILE>C:\Users\colun\Documents\Arquitectura-de-Computadoras\PRACTICA_05\Practica5\Practica5\main.asm</FILE><LINE>43</LINE></ciclo>
-  <contador><FILE>C:\Users\colun\Documents\Arquitectura-de-Computadoras\PRACTICA_05\Practica5\Practica5\main.asm</FILE><LINE>48</LINE></contador>
-  <incremento><FILE>C:\Users\colun\Documents\Arquitectura-de-Computadoras\PRACTICA_05\Practica5\Practica5\main.asm</FILE><LINE>118</LINE></incremento>
-  <delay_1s><FILE>C:\Users\colun\Documents\Arquitectura-de-Computadoras\PRACTICA_05\Practica5\Practica5\main.asm</FILE><LINE>125</LINE></delay_1s>
-  <cero><FILE>C:\Users\colun\Documents\Arquitectura-de-Computadoras\PRACTICA_05\Practica5\Practica5\main.asm</FILE><LINE>78</LINE></cero>
-  <uno><FILE>C:\Users\colun\Documents\Arquitectura-de-Computadoras\PRACTICA_05\Practica5\Practica5\main.asm</FILE><LINE>82</LINE></uno>
-  <dos><FILE>C:\Users\colun\Documents\Arquitectura-de-Computadoras\PRACTICA_05\Practica5\Practica5\main.asm</FILE><LINE>86</LINE></dos>
-  <tres><FILE>C:\Users\colun\Documents\Arquitectura-de-Computadoras\PRACTICA_05\Practica5\Practica5\main.asm</FILE><LINE>90</LINE></tres>
-  <cuatro><FILE>C:\Users\colun\Documents\Arquitectura-de-Computadoras\PRACTICA_05\Practica5\Practica5\main.asm</FILE><LINE>94</LINE></cuatro>
-  <cinco><FILE>C:\Users\colun\Documents\Arquitectura-de-Computadoras\PRACTICA_05\Practica5\Practica5\main.asm</FILE><LINE>98</LINE></cinco>
-  <seis><FILE>C:\Users\colun\Documents\Arquitectura-de-Computadoras\PRACTICA_05\Practica5\Practica5\main.asm</FILE><LINE>102</LINE></seis>
-  <siete><FILE>C:\Users\colun\Documents\Arquitectura-de-Computadoras\PRACTICA_05\Practica5\Practica5\main.asm</FILE><LINE>106</LINE></siete>
-  <ocho><FILE>C:\Users\colun\Documents\Arquitectura-de-Computadoras\PRACTICA_05\Practica5\Practica5\main.asm</FILE><LINE>110</LINE></ocho>
-  <nueve><FILE>C:\Users\colun\Documents\Arquitectura-de-Computadoras\PRACTICA_05\Practica5\Practica5\main.asm</FILE><LINE>114</LINE></nueve>
-  <fin_inc><FILE>C:\Users\colun\Documents\Arquitectura-de-Computadoras\PRACTICA_05\Practica5\Practica5\main.asm</FILE><LINE>123</LINE></fin_inc>
+  <inicio><FILE>C:\Users\colun\Documents\Arquitectura-de-Computadoras\PRACTICA_05\Practica5\Practica5\main.asm</FILE><LINE>44</LINE></inicio>
+  <ciclo><FILE>C:\Users\colun\Documents\Arquitectura-de-Computadoras\PRACTICA_05\Practica5\Practica5\main.asm</FILE><LINE>46</LINE></ciclo>
+  <contador><FILE>C:\Users\colun\Documents\Arquitectura-de-Computadoras\PRACTICA_05\Practica5\Practica5\main.asm</FILE><LINE>51</LINE></contador>
+  <incremento><FILE>C:\Users\colun\Documents\Arquitectura-de-Computadoras\PRACTICA_05\Practica5\Practica5\main.asm</FILE><LINE>121</LINE></incremento>
+  <delay_1s><FILE>C:\Users\colun\Documents\Arquitectura-de-Computadoras\PRACTICA_05\Practica5\Practica5\main.asm</FILE><LINE>128</LINE></delay_1s>
+  <cero><FILE>C:\Users\colun\Documents\Arquitectura-de-Computadoras\PRACTICA_05\Practica5\Practica5\main.asm</FILE><LINE>81</LINE></cero>
+  <uno><FILE>C:\Users\colun\Documents\Arquitectura-de-Computadoras\PRACTICA_05\Practica5\Practica5\main.asm</FILE><LINE>85</LINE></uno>
+  <dos><FILE>C:\Users\colun\Documents\Arquitectura-de-Computadoras\PRACTICA_05\Practica5\Practica5\main.asm</FILE><LINE>89</LINE></dos>
+  <tres><FILE>C:\Users\colun\Documents\Arquitectura-de-Computadoras\PRACTICA_05\Practica5\Practica5\main.asm</FILE><LINE>93</LINE></tres>
+  <cuatro><FILE>C:\Users\colun\Documents\Arquitectura-de-Computadoras\PRACTICA_05\Practica5\Practica5\main.asm</FILE><LINE>97</LINE></cuatro>
+  <cinco><FILE>C:\Users\colun\Documents\Arquitectura-de-Computadoras\PRACTICA_05\Practica5\Practica5\main.asm</FILE><LINE>101</LINE></cinco>
+  <seis><FILE>C:\Users\colun\Documents\Arquitectura-de-Computadoras\PRACTICA_05\Practica5\Practica5\main.asm</FILE><LINE>105</LINE></seis>
+  <siete><FILE>C:\Users\colun\Documents\Arquitectura-de-Computadoras\PRACTICA_05\Practica5\Practica5\main.asm</FILE><LINE>109</LINE></siete>
+  <ocho><FILE>C:\Users\colun\Documents\Arquitectura-de-Computadoras\PRACTICA_05\Practica5\Practica5\main.asm</FILE><LINE>113</LINE></ocho>
+  <nueve><FILE>C:\Users\colun\Documents\Arquitectura-de-Computadoras\PRACTICA_05\Practica5\Practica5\main.asm</FILE><LINE>117</LINE></nueve>
+  <fin_inc><FILE>C:\Users\colun\Documents\Arquitectura-de-Computadoras\PRACTICA_05\Practica5\Practica5\main.asm</FILE><LINE>126</LINE></fin_inc>
+  <lazo3><FILE>C:\Users\colun\Documents\Arquitectura-de-Computadoras\PRACTICA_05\Practica5\Practica5\main.asm</FILE><LINE>129</LINE></lazo3>
+  <lazo2><FILE>C:\Users\colun\Documents\Arquitectura-de-Computadoras\PRACTICA_05\Practica5\Practica5\main.asm</FILE><LINE>130</LINE></lazo2>
+  <lazo1><FILE>C:\Users\colun\Documents\Arquitectura-de-Computadoras\PRACTICA_05\Practica5\Practica5\main.asm</FILE><LINE>131</LINE></lazo1>
  </LABELS>
 </ASSEMBLER_INFO>

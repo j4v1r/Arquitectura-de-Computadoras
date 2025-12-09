@@ -1,5 +1,5 @@
 
-AVRASM ver. 2.2.8  C:\Users\colun\Documents\Arquitectura-de-Computadoras\PRACTICA_05\Practica5\Practica5\main.asm Mon Dec 08 23:31:47 2025
+AVRASM ver. 2.2.8  C:\Users\colun\Documents\Arquitectura-de-Computadoras\PRACTICA_05\Practica5\Practica5\main.asm Tue Dec 09 00:19:51 2025
 
 
 EQU  SIGNATURE_000 0000001e
@@ -707,7 +707,10 @@ DEF  num8         r24
 DEF  num9         r25
 DEF  num10        r26
 DEF  cont         r27
-DEF  temp         r29
+DEF  temp         r28
+DEF  cont1        r29
+DEF  cont2        r30
+DEF  cont3        r31
 CSEG inicio       0000000d
 CSEG ciclo        0000000e
 CSEG contador     00000012
@@ -724,3 +727,6 @@ CSEG siete        0000003b
 CSEG ocho         0000003e
 CSEG nueve        00000041
 CSEG fin_inc      00000048
+CSEG lazo3        0000004a
+CSEG lazo2        0000004b
+CSEG lazo1        0000004c
