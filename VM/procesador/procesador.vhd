@@ -42,7 +42,7 @@ component dec_instr is
            sel_read_d : out  STD_LOGIC_VECTOR (4 downto 0);
            sel_read_r : out  STD_LOGIC_VECTOR (4 downto 0);
            sel_w_d : out  STD_LOGIC_VECTOR (4 downto 0);
-           sel_alu : out  STD_LOGIC_VECTOR (2 downto 0);
+           sel_alu : out  STD_LOGIC_VECTOR (3 downto 0);
            l_d : out  STD_LOGIC;
 			  ld_mov : out  STD_LOGIC;
            sel_rel : out  STD_LOGIC;
@@ -99,7 +99,7 @@ component registro is --port B
 end component;
 
 component ALU is
-    Port ( sel : in  STD_LOGIC_VECTOR (2 downto 0);
+    Port ( sel : in  STD_LOGIC_VECTOR (3 downto 0);
            A : in  STD_LOGIC_VECTOR (7 downto 0);
            B : in  STD_LOGIC_VECTOR (7 downto 0);
            F : out  STD_LOGIC_VECTOR (7 downto 0);
@@ -137,7 +137,7 @@ signal PC_aux, I_aux, br_mux_aux,offset_aux,I_PC_aux,off_br_aux,off_rjmp_aux,rd_
 signal O_r_aux, O_d_aux, dato_I_aux, F_aux : STD_LOGIC_VECTOR(7 DOWNTO 0);
 signal sel_read_d_aux,sel_read_r_aux,sel_w_d_aux : STD_LOGIC_VECTOR(4 downto 0);
 signal A_aux,i_sp_aux,o_sp_aux,call_aux,ret_aux : STD_LOGIC_VECTOR(3 downto 0);
-signal sel_alu_aux : STD_LOGIC_VECTOR(2 downto 0);
+signal sel_alu_aux : STD_LOGIC_VECTOR(3 downto 0);
 signal ld_aux,sel_rel_aux,br_aux,bn_aux,en_w_aux,en_port_aux,en_sreg_aux,ld_mov_aux,ret_s_aux,s1_aux,s0_aux,branch_aux,ent_sreg_aux,sal_sreg_aux: STD_LOGIC;
 
 begin

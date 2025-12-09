@@ -1,0 +1,42 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.2.8</VERSION>
+ <DEVICE>"ATmega328P"</DEVICE>
+ <WORKING_DIR>C:\Users\colun\Documents\Arquitectura-de-Computadoras\PRACTICA_05\Practica5\Practica5\Debug</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc</DIR>
+  <DIR>C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avrassembler\Include</DIR>
+  <DIR></DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>C:\Users\colun\Documents\Arquitectura-de-Computadoras\PRACTICA_05\Practica5\Practica5\main.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\m328Pdef.inc</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>C:\Users\colun\Documents\Arquitectura-de-Computadoras\PRACTICA_05\Practica5\Practica5\Debug\Practica5.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>Practica5.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>Practica5.map</FILE>
+  <FILE>Practica5.lss</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <inicio><FILE>C:\Users\colun\Documents\Arquitectura-de-Computadoras\PRACTICA_05\Practica5\Practica5\main.asm</FILE><LINE>41</LINE></inicio>
+  <ciclo><FILE>C:\Users\colun\Documents\Arquitectura-de-Computadoras\PRACTICA_05\Practica5\Practica5\main.asm</FILE><LINE>43</LINE></ciclo>
+  <contador><FILE>C:\Users\colun\Documents\Arquitectura-de-Computadoras\PRACTICA_05\Practica5\Practica5\main.asm</FILE><LINE>48</LINE></contador>
+  <incremento><FILE>C:\Users\colun\Documents\Arquitectura-de-Computadoras\PRACTICA_05\Practica5\Practica5\main.asm</FILE><LINE>118</LINE></incremento>
+  <delay_1s><FILE>C:\Users\colun\Documents\Arquitectura-de-Computadoras\PRACTICA_05\Practica5\Practica5\main.asm</FILE><LINE>125</LINE></delay_1s>
+  <cero><FILE>C:\Users\colun\Documents\Arquitectura-de-Computadoras\PRACTICA_05\Practica5\Practica5\main.asm</FILE><LINE>78</LINE></cero>
+  <uno><FILE>C:\Users\colun\Documents\Arquitectura-de-Computadoras\PRACTICA_05\Practica5\Practica5\main.asm</FILE><LINE>82</LINE></uno>
+  <dos><FILE>C:\Users\colun\Documents\Arquitectura-de-Computadoras\PRACTICA_05\Practica5\Practica5\main.asm</FILE><LINE>86</LINE></dos>
+  <tres><FILE>C:\Users\colun\Documents\Arquitectura-de-Computadoras\PRACTICA_05\Practica5\Practica5\main.asm</FILE><LINE>90</LINE></tres>
+  <cuatro><FILE>C:\Users\colun\Documents\Arquitectura-de-Computadoras\PRACTICA_05\Practica5\Practica5\main.asm</FILE><LINE>94</LINE></cuatro>
+  <cinco><FILE>C:\Users\colun\Documents\Arquitectura-de-Computadoras\PRACTICA_05\Practica5\Practica5\main.asm</FILE><LINE>98</LINE></cinco>
+  <seis><FILE>C:\Users\colun\Documents\Arquitectura-de-Computadoras\PRACTICA_05\Practica5\Practica5\main.asm</FILE><LINE>102</LINE></seis>
+  <siete><FILE>C:\Users\colun\Documents\Arquitectura-de-Computadoras\PRACTICA_05\Practica5\Practica5\main.asm</FILE><LINE>106</LINE></siete>
+  <ocho><FILE>C:\Users\colun\Documents\Arquitectura-de-Computadoras\PRACTICA_05\Practica5\Practica5\main.asm</FILE><LINE>110</LINE></ocho>
+  <nueve><FILE>C:\Users\colun\Documents\Arquitectura-de-Computadoras\PRACTICA_05\Practica5\Practica5\main.asm</FILE><LINE>114</LINE></nueve>
+  <fin_inc><FILE>C:\Users\colun\Documents\Arquitectura-de-Computadoras\PRACTICA_05\Practica5\Practica5\main.asm</FILE><LINE>123</LINE></fin_inc>
+ </LABELS>
+</ASSEMBLER_INFO>

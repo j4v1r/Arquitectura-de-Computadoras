@@ -37,7 +37,7 @@ Setup/Hold to clock clk
             |Max Setup to|  Process   |Max Hold to |  Process   |                  | Clock  |
 Source      | clk (edge) |   Corner   | clk (edge) |   Corner   |Internal Clock(s) | Phase  |
 ------------+------------+------------+------------+------------+------------------+--------+
-clr         |    2.571(R)|      SLOW  |    0.934(R)|      SLOW  |clk_BUFGP         |   0.000|
+clr         |    6.327(R)|      SLOW  |    1.860(R)|      SLOW  |clk_BUFGP         |   0.000|
 ------------+------------+------------+------------+------------+------------------+--------+
 
 Clock clk to Pad
@@ -45,14 +45,14 @@ Clock clk to Pad
             |Max (slowest) clk|  Process   |Min (fastest) clk|  Process   |                  | Clock  |
 Destination |  (edge) to PAD  |   Corner   |  (edge) to PAD  |   Corner   |Internal Clock(s) | Phase  |
 ------------+-----------------+------------+-----------------+------------+------------------+--------+
-portb<0>    |        10.487(R)|      SLOW  |         4.153(R)|      FAST  |clk_BUFGP         |   0.000|
-portb<1>    |        10.399(R)|      SLOW  |         4.124(R)|      FAST  |clk_BUFGP         |   0.000|
-portb<2>    |        10.198(R)|      SLOW  |         3.965(R)|      FAST  |clk_BUFGP         |   0.000|
-portb<3>    |        10.742(R)|      SLOW  |         4.260(R)|      FAST  |clk_BUFGP         |   0.000|
-portb<4>    |        10.619(R)|      SLOW  |         4.185(R)|      FAST  |clk_BUFGP         |   0.000|
-portb<5>    |        10.109(R)|      SLOW  |         3.944(R)|      FAST  |clk_BUFGP         |   0.000|
-portb<6>    |        10.684(R)|      SLOW  |         4.223(R)|      FAST  |clk_BUFGP         |   0.000|
-portb<7>    |        10.423(R)|      SLOW  |         4.097(R)|      FAST  |clk_BUFGP         |   0.000|
+portb<0>    |         9.398(R)|      SLOW  |         3.515(R)|      FAST  |clk_BUFGP         |   0.000|
+portb<1>    |         9.725(R)|      SLOW  |         3.675(R)|      FAST  |clk_BUFGP         |   0.000|
+portb<2>    |         9.799(R)|      SLOW  |         3.723(R)|      FAST  |clk_BUFGP         |   0.000|
+portb<3>    |        10.682(R)|      SLOW  |         4.226(R)|      FAST  |clk_BUFGP         |   0.000|
+portb<4>    |         9.932(R)|      SLOW  |         3.742(R)|      FAST  |clk_BUFGP         |   0.000|
+portb<5>    |        10.708(R)|      SLOW  |         4.227(R)|      FAST  |clk_BUFGP         |   0.000|
+portb<6>    |        10.935(R)|      SLOW  |         4.373(R)|      FAST  |clk_BUFGP         |   0.000|
+portb<7>    |        10.894(R)|      SLOW  |         4.266(R)|      FAST  |clk_BUFGP         |   0.000|
 ------------+-----------------+------------+-----------------+------------+------------------+--------+
 
 Clock to Setup on destination clock clk
@@ -60,18 +60,18 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |    8.479|         |         |         |
+clk            |   17.794|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 
-Analysis completed Tue Nov 25 15:50:40 2025 
+Analysis completed Tue Dec  9 05:39:50 2025 
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 768 MB
+Peak Memory Usage: 769 MB
 
 
 

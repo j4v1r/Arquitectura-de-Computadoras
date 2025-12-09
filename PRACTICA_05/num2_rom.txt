@@ -1,0 +1,7 @@
+	O<=x"0000" when A=x"0000" else -- 0f ef
+       x"0000" when A=x"0001" else -- 04 b9
+       x"E021" when A=x"0002" else -- 00 e0
+       x"E102" when A=x"0003" else -- 05 b9
+       x"E118" when A=x"0004" else -- 11 e0
+       x"B905" when A=x"0005" else -- 01 e0
+       x"0000";

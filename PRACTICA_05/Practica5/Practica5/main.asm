@@ -1,0 +1,125 @@
+;
+; Practica5.asm
+;
+; Created: 02/12/2025 09:04:11 a. m.
+; Author : Rogelio Colunga R
+;
+
+
+; Replace with your application code
+	.def num0=r16
+	.def num1=r17
+	.def num2=r18
+	.def num3=r19
+	.def num4=r20
+	.def num5=r21
+	.def num6=r22
+	.def num7=r23
+	.def num8=r24
+	.def num9=r25
+	.def num10=r26
+	.def cont=r27
+	.def temp=r29
+	.cseg
+	.org 0
+
+	nop
+	nop
+	ldi num0,$00
+	ldi num1,$01
+	ldi num2,$02
+	ldi num3,$03
+	ldi num4,$04
+	ldi num5,$05
+	ldi num6,$06
+	ldi num7,$07
+	ldi num8,$08
+	ldi num9,$09
+	ldi num10,$0A
+
+
+inicio: ldi cont,$00
+		
+ciclo: rcall contador
+	   rcall incremento
+	   rcall delay_1s
+	   rjmp ciclo
+
+contador: cp cont,num0
+		  breq cero
+
+		  cp cont,num1
+		  breq uno
+
+		  cp cont,num2
+		  breq dos
+
+		  cp cont,num3
+		  breq tres
+
+		  cp cont,num4
+		  breq cuatro
+
+		  cp cont,num5
+		  breq cinco
+
+		  cp cont,num6
+		  breq seis
+
+		  cp cont,num7
+		  breq siete
+
+		  cp cont,num8
+		  breq ocho
+
+		  cp cont,num9
+		  breq nueve
+
+cero: ldi temp,$01
+	  out portb,temp
+	  ret
+
+uno: ldi temp,$4F
+	 out portb,temp
+	 ret
+
+dos: ldi temp,$12
+	 out portb,temp
+	 ret
+
+tres: ldi temp,$06
+	 out portb,temp
+	 ret
+
+cuatro: ldi temp,$4C
+	 out portb,temp
+	 ret
+
+cinco: ldi temp,$24
+	 out portb,temp
+	 ret
+
+seis: ldi temp,$20
+	 out portb,temp
+	 ret
+
+siete: ldi temp,$0F
+	 out portb,temp
+	 ret
+
+ocho: ldi temp,$00
+	 out portb,temp
+	 ret
+
+nueve: ldi temp,$04
+	 out portb,temp
+	 ret
+
+incremento: inc cont
+	  cp cont,num10
+	  brne fin_inc
+	  ldi cont,$00
+
+fin_inc: ret
+
+delay_1s: ret

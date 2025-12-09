@@ -12,6 +12,10 @@ ATMEGA328P
 	nop
 	nop
 	ldi cte,$01
+	;ldi temp,$ff
+	;out ddrd,temp
+	;ldi cte2,$01
+	;cambiar portb->portd
 
 izquierda:ldi temp,$01
 	ldi cte,$80
@@ -36,6 +40,16 @@ derecha_2:lsr temp
 	rjmp derecha_2
 	
 delay_125m:ldi cont1,31
+;cont1,5
+
+;avrdude.exe
+;Toolos microchip, external tools, pegar en linea donde dice comando digoanles invertidas
+
+;avrdude.conf 3entre comilas
+;Uflash:w:$(TargetDir)$(TargetName).hex:i
+;pegar en donde cice arguments
+
+;use outout window
 lazo3:	ldi cont2,200
 lazo2:	ldi cont3,200 
 lazo1:	nop

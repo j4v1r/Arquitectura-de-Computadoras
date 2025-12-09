@@ -34,7 +34,7 @@ entity dec_instr is
            sel_read_d : out  STD_LOGIC_VECTOR (4 downto 0);
            sel_read_r : out  STD_LOGIC_VECTOR (4 downto 0);
            sel_w_d : out  STD_LOGIC_VECTOR (4 downto 0);
-           sel_alu : out  STD_LOGIC_VECTOR (2 downto 0);
+           sel_alu : out  STD_LOGIC_VECTOR (3 downto 0);
            l_d : out  STD_LOGIC;
 			  ld_mov : out  STD_LOGIC;
            sel_rel : out  STD_LOGIC;
@@ -62,7 +62,7 @@ begin
 								sel_read_d <="00000";
 								sel_read_r <="00000";
 								sel_w_d <="00000";
-								sel_alu <="000";
+								sel_alu <="0000";
 								l_d <='0';
 								ld_mov <='0';
 								sel_rel <='0';
@@ -80,7 +80,7 @@ begin
 								sel_read_d <= I(8 downto 4);
 								sel_read_r <="00000";
 								sel_w_d <= I(8 downto 4);
-								sel_alu <= "110";
+								sel_alu <= "0110";
 								l_d <='0';
 								ld_mov <='1';
 								sel_rel <='0';
@@ -98,7 +98,7 @@ begin
 								sel_read_d <= I(8 downto 4);
 								sel_read_r <= (I(9)&I(3 downto 0));
 								sel_w_d <= I(8 downto 4);
-								sel_alu <= "000";
+								sel_alu <= "0000";
 								l_d <='0';
 								ld_mov <='1';
 								sel_rel <='0';
@@ -113,12 +113,13 @@ begin
 								
 							end if;
 							
-				when "0001" => --resta
-				
+				when "0001" => --resta, cp*(comparar)
+								
+							if(I(11 downto 0)="10") then --sub(resta)
 								sel_read_d <= I(8 downto 4);
 								sel_read_r <= (I(9)&I(3 downto 0));
 								sel_w_d <= I(8 downto 4);
-								sel_alu <= "001";
+								sel_alu <= "0001";
 								l_d <='0';
 								ld_mov <='1';
 								sel_rel <='0';
@@ -129,7 +130,24 @@ begin
 								en_sreg <='1';
 								ret_sub <='0';
 								s1 <='0';
-								s0 <='0';	
+								s0 <='0';
+							else 
+								sel_read_d <= I(8 downto 4);
+								sel_read_r <= (I(9)&I(3 downto 0));
+								sel_w_d <= I(8 downto 4);
+								sel_alu <= "0001";
+								l_d <='0';
+								ld_mov <='1';
+								sel_rel <='0';
+								br <='0';
+								bn <='0';
+								en_w <='0';
+								en_port <='0';
+								en_sreg <='1';
+								ret_sub <='0';
+								s1 <='0';
+								s0 <='0';
+							end if;
 					
 				when "0010" => --and, or, eor, mov
 				
@@ -138,7 +156,7 @@ begin
 								sel_read_d <= I(8 downto 4);
 								sel_read_r <= (I(9)&I(3 downto 0));
 								sel_w_d <= I(8 downto 4);
-								sel_alu <= "001";
+								sel_alu <= "0001";
 								l_d <='0';
 								ld_mov <='1';
 								sel_rel <='0';
@@ -156,7 +174,7 @@ begin
 								sel_read_d <= I(8 downto 4);
 								sel_read_r <= (I(9)&I(3 downto 0));
 								sel_w_d <= I(8 downto 4);
-								sel_alu <= "011";
+								sel_alu <= "0011";
 								l_d <='0';
 								ld_mov <='1';
 								sel_rel <='0';
@@ -175,7 +193,7 @@ begin
 								sel_read_d <= I(8 downto 4);
 								sel_read_r <= (I(9)&I(3 downto 0));
 								sel_w_d <= I(8 downto 4);
-								sel_alu <= "100";
+								sel_alu <= "0100";
 								l_d <='0';
 								ld_mov <='1';
 								sel_rel <='0';
@@ -193,7 +211,7 @@ begin
 								sel_read_d <= I(8 downto 4);
 								sel_read_r <= (I(9)&I(3 downto 0));
 								sel_w_d <= I(8 downto 4);
-								sel_alu <= "001";
+								sel_alu <= "0001";
 								l_d <='1';
 								ld_mov <='0';
 								sel_rel <='0';
@@ -207,14 +225,14 @@ begin
 								s0 <='0';	
 								
 							end if;
-				when "1001" => --com, lsr, ret
+				when "1001" => --com, lsr, inc, ret
 							
 							if(I(3 downto 0)="0000") then --com
 							
 								sel_read_d <= I(8 downto 4);
 								sel_read_r <= (I(9)&I(3 downto 0));
 								sel_w_d <= I(8 downto 4);
-								sel_alu <= "101";
+								sel_alu <= "0101";
 								l_d <='0';
 								ld_mov <='1';
 								sel_rel <='0';
@@ -232,7 +250,7 @@ begin
 								sel_read_d <= I(8 downto 4);
 								sel_read_r <= (I(9)&I(3 downto 0));
 								sel_w_d <= I(8 downto 4);
-								sel_alu <= "111";
+								sel_alu <= "0111";
 								l_d <='0';
 								ld_mov <='1';
 								sel_rel <='0';
@@ -243,14 +261,32 @@ begin
 								en_sreg <='1';
 								ret_sub <='0';
 								s1 <='0';
-								s0 <='0';								
+								s0 <='0';
+
+							elsif(I(3 downto 0)="0011") then --inc
+							
+								sel_read_d <= I(8 downto 4);
+								sel_read_r <= (I(9)&I(3 downto 0));
+								sel_w_d <= I(8 downto 4);
+								sel_alu <= "1000";
+								l_d <='0';
+								ld_mov <='1';
+								sel_rel <='0';
+								br <='0';
+								bn <='0';
+								en_w <='1';
+								en_port <='0';
+								en_sreg <='1';
+								ret_sub <='0';
+								s1 <='0';
+								s0 <='0';	
 							
 							else --ret
 							
 								sel_read_d <= I(8 downto 4);
 								sel_read_r <= (I(9)&I(3 downto 0));
 								sel_w_d <= I(8 downto 4);
-								sel_alu <= "001";
+								sel_alu <= "0001";
 								l_d <='0';
 								ld_mov <='1';
 								sel_rel <='0';
@@ -271,7 +307,7 @@ begin
 								sel_read_d <= I(8 downto 4);
 								sel_read_r <= (I(9)&I(3 downto 0));
 								sel_w_d <= ('1'&I(7 downto 4));
-								sel_alu <= "111";
+								sel_alu <= "0111";
 								l_d <='0';
 								ld_mov <='0';
 								sel_rel <='0';
@@ -290,7 +326,7 @@ begin
 								sel_read_d <= I(8 downto 4);
 								sel_read_r <= (I(9)&I(3 downto 0));
 								sel_w_d <= I(8 downto 4);
-								sel_alu <= "111";
+								sel_alu <= "0111";
 								l_d <='0';
 								ld_mov <='1';
 								sel_rel <='0';
@@ -308,7 +344,7 @@ begin
 								sel_read_d <= I(8 downto 4);
 								sel_read_r <= (I(9)&I(3 downto 0));
 								sel_w_d <= I(8 downto 4);
-								sel_alu <= "111";
+								sel_alu <= "0111";
 								l_d <='0';
 								ld_mov <='1';
 								sel_rel <='0';
@@ -329,7 +365,7 @@ begin
 								sel_read_d <= I(8 downto 4);
 								sel_read_r <= (I(9)&I(3 downto 0));
 								sel_w_d <= I(8 downto 4);
-								sel_alu <= "111";
+								sel_alu <= "0111";
 								l_d <='0';
 								ld_mov <='1';
 								sel_rel <='1';
@@ -347,7 +383,7 @@ begin
 								sel_read_d <= I(8 downto 4);
 								sel_read_r <= (I(9)&I(3 downto 0));
 								sel_w_d <= I(8 downto 4);
-								sel_alu <= "111";
+								sel_alu <= "0111";
 								l_d <='0';
 								ld_mov <='1';
 								sel_rel <='1';
@@ -365,7 +401,7 @@ begin
 								sel_read_d <= I(8 downto 4);
 								sel_read_r <= I(8 downto 4);
 								sel_w_d <= I(8 downto 4);
-								sel_alu <= "111";
+								sel_alu <= "0111";
 								l_d <='0';
 								ld_mov <='1';
 								sel_rel <='0';

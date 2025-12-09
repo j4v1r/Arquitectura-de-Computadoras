@@ -31,7 +31,7 @@ use IEEE.STD_LOGIC_UNSIGNED.ALL;
 --use UNISIM.VComponents.all;
 
 entity ALU is
-    Port ( sel : in  STD_LOGIC_VECTOR (2 downto 0);
+    Port ( sel : in  STD_LOGIC_VECTOR (3 downto 0);
            A : in  STD_LOGIC_VECTOR (7 downto 0);
            B : in  STD_LOGIC_VECTOR (7 downto 0);
            F : out  STD_LOGIC_VECTOR (7 downto 0);
@@ -49,13 +49,14 @@ begin
 	process(sel,A,B)
 		begin
 		case sel is
-		when "000"=> F_aux<=('0'&A) + ('0'&B);
-		when "001"=> F_aux<=('0'&A) - ('0'&B);
-		when "010"=> F_aux<=('0'&A) and ('0'&B);
-		when "011"=> F_aux<=('0'&A) or ('0'&B);
-		when "100"=> F_aux<=('0'&A) xor ('0'&B);
-		when "101"=> F_aux<= not ('0'&A);
-		when "110"=> F_aux(7 downto 1)<=A(6 downto 0);F_aux(0)<='0';F_aux(8)<=A(7);
+		when "0000"=> F_aux<=('0'&A) + ('0'&B);
+		when "0001"=> F_aux<=('0'&A) - ('0'&B);
+		when "0010"=> F_aux<=('0'&A) and ('0'&B);
+		when "0011"=> F_aux<=('0'&A) or ('0'&B);
+		when "0100"=> F_aux<=('0'&A) xor ('0'&B);
+		when "0101"=> F_aux<= not ('0'&A);
+		when "0110"=> F_aux(7 downto 1)<=A(6 downto 0);F_aux(0)<='0';F_aux(8)<=A(7);
+		when "1000"=> F_aux<=('0'&A) + 1;
 		when others=> F_aux(6 downto 0)<=A(7 downto 1);F_aux(7)<='0';F_aux(8)<=A(0);
 		end case;
 	end process;

@@ -1,0 +1,50 @@
+Running: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/fuse -intstyle ise -incremental -lib secureip -o /home/ise/VM/procesador/procesador_isim_beh.exe -prj /home/ise/VM/procesador/procesador_beh.prj work.procesador 
+ISim P.20131013 (signature 0xfbc00daa)
+Number of CPUs detected in this system: 1
+Turning on mult-threading, number of parallel sub-compilation jobs: 0 
+Determining compilation order of HDL files
+Parsing VHDL file "/home/ise/VM/procesador/../registro_32/registro_32.vhd" into library work
+Parsing VHDL file "/home/ise/VM/procesador/../mux_32_1/mux_32_1.vhd" into library work
+Parsing VHDL file "/home/ise/VM/procesador/../dec_5_32/dec_5_32.vhd" into library work
+Parsing VHDL file "/home/ise/VM/procesador/../s_reg/s_reg.vhd" into library work
+Parsing VHDL file "/home/ise/VM/procesador/../stack_pointer/stack_pointer.vhd" into library work
+Parsing VHDL file "/home/ise/VM/procesador/../ROM/ROM.vhd" into library work
+Parsing VHDL file "/home/ise/VM/procesador/../registro/registro.vhd" into library work
+Parsing VHDL file "/home/ise/VM/procesador/../RAM/RAM.vhd" into library work
+Parsing VHDL file "/home/ise/VM/procesador/../program_c/program_c.vhd" into library work
+Parsing VHDL file "/home/ise/VM/procesador/../ext_sig_rjmp/ext_sig_rjmp.vhd" into library work
+Parsing VHDL file "/home/ise/VM/procesador/../ext_sig_br/ext_sig_br.vhd" into library work
+Parsing VHDL file "/home/ise/VM/procesador/../dec_instr/dec_instr.vhd" into library work
+Parsing VHDL file "/home/ise/VM/procesador/../archivo_registros/archivo_registros.vhd" into library work
+Parsing VHDL file "/home/ise/VM/procesador/../ALU/ALU.vhd" into library work
+Parsing VHDL file "/home/ise/VM/procesador/procesador.vhd" into library work
+Starting static elaboration
+Completed static elaboration
+Fuse Memory Usage: 98948 KB
+Fuse CPU Usage: 3490 ms
+Compiling package standard
+Compiling package std_logic_1164
+Compiling package std_logic_arith
+Compiling package std_logic_unsigned
+Compiling package numeric_std
+Compiling architecture behavioral of entity dec_instr [dec_instr_default]
+Compiling architecture behavioral of entity ext_sig_br [ext_sig_br_default]
+Compiling architecture behavioral of entity ext_sig_rjmp [ext_sig_rjmp_default]
+Compiling architecture behavioral of entity program_c [program_c_default]
+Compiling architecture behavioral of entity ROM [rom_default]
+Compiling architecture behavioral of entity dec_5_32 [dec_5_32_default]
+Compiling architecture behavioral of entity registro_32 [registro_32_default]
+Compiling architecture behavioral of entity mux_32_1 [mux_32_1_default]
+Compiling architecture behavioral of entity archivo_registros [archivo_registros_default]
+Compiling architecture behavioral of entity registro [registro_default]
+Compiling architecture behavioral of entity ALU [alu_default]
+Compiling architecture behavioral of entity s_reg [s_reg_default]
+Compiling architecture behavioral of entity stack_pointer [stack_pointer_default]
+Compiling architecture behavioral of entity RAM [ram_default]
+Compiling architecture behavioral of entity procesador
+Time Resolution for simulation is 1ps.
+Compiled 34 VHDL Units
+Built simulation executable /home/ise/VM/procesador/procesador_isim_beh.exe
+Fuse Memory Usage: 118288 KB
+Fuse CPU Usage: 4060 ms
+GCC CPU Usage: 2180 ms
