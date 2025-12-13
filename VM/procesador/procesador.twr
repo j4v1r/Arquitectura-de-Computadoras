@@ -37,7 +37,7 @@ Setup/Hold to clock clk
             |Max Setup to|  Process   |Max Hold to |  Process   |                  | Clock  |
 Source      | clk (edge) |   Corner   | clk (edge) |   Corner   |Internal Clock(s) | Phase  |
 ------------+------------+------------+------------+------------+------------------+--------+
-clr         |    0.664(R)|      FAST  |    2.106(R)|      SLOW  |clk_BUFGP         |   0.000|
+clr         |    2.595(R)|      SLOW  |    1.010(R)|      SLOW  |clk_BUFGP         |   0.000|
 ------------+------------+------------+------------+------------+------------------+--------+
 
 Clock clk to Pad
@@ -45,14 +45,22 @@ Clock clk to Pad
             |Max (slowest) clk|  Process   |Min (fastest) clk|  Process   |                  | Clock  |
 Destination |  (edge) to PAD  |   Corner   |  (edge) to PAD  |   Corner   |Internal Clock(s) | Phase  |
 ------------+-----------------+------------+-----------------+------------+------------------+--------+
-portb<0>    |         9.588(R)|      SLOW  |         3.621(R)|      FAST  |clk_BUFGP         |   0.000|
-portb<1>    |         9.570(R)|      SLOW  |         3.630(R)|      FAST  |clk_BUFGP         |   0.000|
-portb<2>    |         9.378(R)|      SLOW  |         3.502(R)|      FAST  |clk_BUFGP         |   0.000|
-portb<3>    |        10.126(R)|      SLOW  |         3.909(R)|      FAST  |clk_BUFGP         |   0.000|
-portb<4>    |         9.590(R)|      SLOW  |         3.555(R)|      FAST  |clk_BUFGP         |   0.000|
-portb<5>    |         9.628(R)|      SLOW  |         3.585(R)|      FAST  |clk_BUFGP         |   0.000|
-portb<6>    |         9.800(R)|      SLOW  |         3.700(R)|      FAST  |clk_BUFGP         |   0.000|
-portb<7>    |         9.642(R)|      SLOW  |         3.601(R)|      FAST  |clk_BUFGP         |   0.000|
+portb<0>    |        10.362(R)|      SLOW  |         4.058(R)|      FAST  |clk_BUFGP         |   0.000|
+portb<1>    |         9.905(R)|      SLOW  |         3.838(R)|      FAST  |clk_BUFGP         |   0.000|
+portb<2>    |        10.395(R)|      SLOW  |         4.065(R)|      FAST  |clk_BUFGP         |   0.000|
+portb<3>    |        10.553(R)|      SLOW  |         4.113(R)|      FAST  |clk_BUFGP         |   0.000|
+portb<4>    |        10.528(R)|      SLOW  |         4.058(R)|      FAST  |clk_BUFGP         |   0.000|
+portb<5>    |         9.923(R)|      SLOW  |         3.806(R)|      FAST  |clk_BUFGP         |   0.000|
+portb<6>    |         9.848(R)|      SLOW  |         3.730(R)|      FAST  |clk_BUFGP         |   0.000|
+portb<7>    |        11.363(R)|      SLOW  |         4.539(R)|      FAST  |clk_BUFGP         |   0.000|
+portd<0>    |        10.605(R)|      SLOW  |         4.143(R)|      FAST  |clk_BUFGP         |   0.000|
+portd<1>    |        11.152(R)|      SLOW  |         4.474(R)|      FAST  |clk_BUFGP         |   0.000|
+portd<2>    |         9.793(R)|      SLOW  |         3.782(R)|      FAST  |clk_BUFGP         |   0.000|
+portd<3>    |        11.084(R)|      SLOW  |         4.424(R)|      FAST  |clk_BUFGP         |   0.000|
+portd<4>    |        10.838(R)|      SLOW  |         4.312(R)|      FAST  |clk_BUFGP         |   0.000|
+portd<5>    |        10.425(R)|      SLOW  |         4.066(R)|      FAST  |clk_BUFGP         |   0.000|
+portd<6>    |        11.165(R)|      SLOW  |         4.501(R)|      FAST  |clk_BUFGP         |   0.000|
+portd<7>    |         9.896(R)|      SLOW  |         3.783(R)|      FAST  |clk_BUFGP         |   0.000|
 ------------+-----------------+------------+-----------------+------------+------------------+--------+
 
 Clock to Setup on destination clock clk
@@ -60,11 +68,11 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |    9.231|         |         |         |
+clk            |    9.239|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 
-Analysis completed Tue Dec  9 06:28:00 2025 
+Analysis completed Tue Dec  9 17:18:32 2025 
 --------------------------------------------------------------------------------
 
 Trace Settings:

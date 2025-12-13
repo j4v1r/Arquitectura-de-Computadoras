@@ -17,7 +17,8 @@
 	.def num7=r23
 	.def num8=r24
 	.def num9=r25
-	.def num10=r26
+	;.def num10=r26
+	.def temp2=r26
 	.def cont=r27
 	.def temp=r28
 	.def cont1=r29
@@ -38,10 +39,12 @@
 	ldi num7,$07
 	ldi num8,$08
 	ldi num9,$09
-	ldi num10,$0A
+	;ldi num10,$0A
 
 
 inicio: ldi cont,$00
+		ldi temp2,$FE
+		out portd,temp2
 		
 ciclo: rcall contador
 	   rcall incremento
@@ -75,73 +78,73 @@ contador: cp cont,num0
 		  cp cont,num8
 		  breq ocho
 
-		  cp cont,num9
-		  breq nueve
+		  ;cp cont,num9
+		  ;breq nueve
 
-cero: ldi temp,$01;81
+cero: ldi temp,$01
 	  out portb,temp
 	  ret
 
-uno: ldi temp,$4F;CF
+uno: ldi temp,$4F
 	 out portb,temp
 	 ret
 
-dos: ldi temp,$12;92
+dos: ldi temp,$12
 	 out portb,temp
 	 ret
 
-tres: ldi temp,$06;86
+tres: ldi temp,$06
 	 out portb,temp
 	 ret
 	 
-cuatro: ldi temp,$4C;CC
+cuatro: ldi temp,$4C
 	 out portb,temp
 	 ret
 
-cinco: ldi temp,$24;A4
+cinco: ldi temp,$24
 	 out portb,temp
 	 ret
 
-seis: ldi temp,$20;A0
+seis: ldi temp,$20
 	 out portb,temp
 	 ret
 
-siete: ldi temp,$0F;8F
+siete: ldi temp,$0F
 	 out portb,temp
 	 ret
 
-ocho: ldi temp,$00;80
+ocho: ldi temp,$00
 	 out portb,temp
 	 ret
 
-nueve: ldi temp,$04;84
-	 out portb,temp
-	 ret
+;nueve: ldi temp,$04
+;	 out portb,temp
+;	 ret
 
 incremento: inc cont
-	  cp cont,num10
+	  cp cont,num9
 	  brne fin_inc
 	  ldi cont,$00
 
 fin_inc: ret
 
-delay_1s: ldi cont1,200
-lazo3:	ldi cont2,200
-lazo2:	ldi cont3,200 
-lazo1:	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	dec cont3
-	brne lazo1
-	dec cont2
-	brne lazo2
-	dec cont1
-	brne lazo3
+delay_1s: ;ldi cont1,200
+;lazo3:	ldi cont2,200
+;lazo2:	ldi cont3,200 
+;lazo1:	nop
+	;nop
+	;nop
+	;nop
+	;nop
+	;nop
+	;nop
+	;nop
+	;nop
+	;nop
+	;dec cont3
+	;brne lazo1
+	;dec cont2
+	;brne lazo2
+	;dec cont1
+	;brne lazo3
 	ret

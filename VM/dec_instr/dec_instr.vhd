@@ -41,7 +41,8 @@ entity dec_instr is
            br : out  STD_LOGIC;
            bn : out  STD_LOGIC;
            en_w : out  STD_LOGIC;
-           en_port : out  STD_LOGIC;
+           en_port_b : out  STD_LOGIC;--antes en_port
+			  en_port_d : out  STD_LOGIC;--nueva senal
            en_sreg : out  STD_LOGIC;
            ret_sub : out  STD_LOGIC;
            s1 : out  STD_LOGIC;
@@ -69,7 +70,8 @@ begin
 								br <='0';
 								bn <='0';
 								en_w <='0';
-								en_port <='0';
+								en_port_b <='0';
+								en_port_d <='0';
 								en_sreg <='0';
 								ret_sub <='0';
 								s1 <='0';
@@ -87,7 +89,8 @@ begin
 								br <='0';
 								bn <='0';
 								en_w <='1';
-								en_port <='0';
+								en_port_b <='0';
+								en_port_d <='0';
 								en_sreg <='1';
 								ret_sub <='0';
 								s1 <='0';
@@ -105,7 +108,8 @@ begin
 								br <='0';
 								bn <='0';
 								en_w <='1';
-								en_port <='0';
+								en_port_b <='0';
+								en_port_d <='0';
 								en_sreg <='1';
 								ret_sub <='0';
 								s1 <='0';
@@ -126,7 +130,8 @@ begin
 								br <='0';
 								bn <='0';
 								en_w <='1';
-								en_port <='0';
+								en_port_b <='0';
+								en_port_d <='0';
 								en_sreg <='1';
 								ret_sub <='0';
 								s1 <='0';
@@ -142,7 +147,8 @@ begin
 								br <='0';
 								bn <='0';
 								en_w <='0';
-								en_port <='0';
+								en_port_b <='0';
+								en_port_d <='0';
 								en_sreg <='1';
 								ret_sub <='0';
 								s1 <='0';
@@ -163,7 +169,8 @@ begin
 								br <='0';
 								bn <='0';
 								en_w <='1';
-								en_port <='0';
+								en_port_b <='0';
+								en_port_d <='0';
 								en_sreg <='1';
 								ret_sub <='0';
 								s1 <='0';
@@ -181,7 +188,8 @@ begin
 								br <='0';
 								bn <='0';
 								en_w <='1';
-								en_port <='0';
+								en_port_b <='0';
+								en_port_d <='0';
 								en_sreg <='1';
 								ret_sub <='0';
 								s1 <='0';
@@ -200,7 +208,8 @@ begin
 								br <='0';
 								bn <='0';
 								en_w <='1';
-								en_port <='0';
+								en_port_b <='0';
+								en_port_d <='0';
 								en_sreg <='1';
 								ret_sub <='0';
 								s1 <='0';
@@ -218,7 +227,8 @@ begin
 								br <='0';
 								bn <='0';
 								en_w <='1';
-								en_port <='0';
+								en_port_b <='0';
+								en_port_d <='0';
 								en_sreg <='0';
 								ret_sub <='0';
 								s1 <='0';
@@ -239,7 +249,8 @@ begin
 								br <='0';
 								bn <='0';
 								en_w <='1';
-								en_port <='0';
+								en_port_b <='0';
+								en_port_d <='0';
 								en_sreg <='1';
 								ret_sub <='0';
 								s1 <='0';
@@ -257,7 +268,8 @@ begin
 								br <='0';
 								bn <='0';
 								en_w <='1';
-								en_port <='0';
+								en_port_b <='0';
+								en_port_d <='0';
 								en_sreg <='1';
 								ret_sub <='0';
 								s1 <='0';
@@ -275,7 +287,8 @@ begin
 								br <='0';
 								bn <='0';
 								en_w <='1';
-								en_port <='0';
+								en_port_b <='0';
+								en_port_d <='0';
 								en_sreg <='1';
 								ret_sub <='0';
 								s1 <='0';
@@ -293,7 +306,8 @@ begin
 								br <='0';
 								bn <='0';
 								en_w <='1';
-								en_port <='0';
+								en_port_b <='0';
+								en_port_d <='0';
 								en_sreg <='1';
 								ret_sub <='0';
 								s1 <='0';
@@ -311,7 +325,8 @@ begin
 								br <='0';
 								bn <='0';
 								en_w <='0';
-								en_port <='0';
+								en_port_b <='0';
+								en_port_d <='0';
 								en_sreg <='0';
 								ret_sub <='1';
 								s1 <='1';
@@ -332,7 +347,8 @@ begin
 								br <='0';
 								bn <='0';
 								en_w <='1';
-								en_port <='0';
+								en_port_b <='0';
+								en_port_d <='0';
 								en_sreg <='0';
 								ret_sub <='0';
 								s1 <='0';
@@ -351,7 +367,8 @@ begin
 								br <='1';
 								bn <='0';
 								en_w <='0';
-								en_port <='0';
+								en_port_b <='0';
+								en_port_d <='0';
 								en_sreg <='0';
 								ret_sub <='0';
 								s1 <='0';
@@ -369,7 +386,8 @@ begin
 								br <='0';
 								bn <='1';
 								en_w <='0';
-								en_port <='0';
+								en_port_b <='0';
+								en_port_d <='0';
 								en_sreg <='0';
 								ret_sub <='0';
 								s1 <='0';
@@ -390,7 +408,8 @@ begin
 								br <='0';
 								bn <='0';
 								en_w <='0';
-								en_port <='0';
+								en_port_b <='0';
+								en_port_d <='0';
 								en_sreg <='0';
 								ret_sub <='0';
 								s1 <='0';
@@ -408,29 +427,52 @@ begin
 								br <='0';
 								bn <='0';
 								en_w <='0';
-								en_port <='0';
+								en_port_b <='0';
+								en_port_d <='0';
 								en_sreg <='0';
 								ret_sub <='0';
 								s1 <='0';
 								s0 <='1';					
 
 				when others => --out
-				
-								sel_read_d <= I(8 downto 4);
-								sel_read_r <= I(8 downto 4);
-								sel_w_d <= I(8 downto 4);
-								sel_alu <= "0111";
-								l_d <='0';
-								ld_mov <='1';
-								sel_rel <='0';
-								br <='0';
-								bn <='0';
-								en_w <='0';
-								en_port <='1';
-								en_sreg <='0';
-								ret_sub <='0';
-								s1 <='0';
-								s0 <='0';
+							case I(10 downto 9)&I(3 downto 0) is
+								when "000101" => --port B
+									sel_read_d <= I(8 downto 4);
+									sel_read_r <= I(8 downto 4);
+									sel_w_d <= I(8 downto 4);
+									sel_alu <= "0111";
+									l_d <='0';
+									ld_mov <='1';
+									sel_rel <='0';
+									br <='0';
+									bn <='0';
+									en_w <='0';
+									en_port_b <='1';
+									en_port_d <='0';
+									en_sreg <='0';
+									ret_sub <='0';
+									s1 <='0';
+									s0 <='0';
+									
+								when others => --port D
+								
+									sel_read_d <= I(8 downto 4);
+									sel_read_r <= I(8 downto 4);
+									sel_w_d <= I(8 downto 4);
+									sel_alu <= "0111";
+									l_d <='0';
+									ld_mov <='1';
+									sel_rel <='0';
+									br <='0';
+									bn <='0';
+									en_w <='0';
+									en_port_b <='0';
+									en_port_d <='1';
+									en_sreg <='0';
+									ret_sub <='0';
+									s1 <='0';
+									s0 <='0';
+							end case;
 		end case;
 	end process;
 end Behavioral;

@@ -1,13 +1,13 @@
 
-AVRASM ver. 2.2.8  C:\Users\colun\Documents\Arquitectura-de-Computadoras\PRACTICA_05\Practica5\Practica5\main.asm Tue Dec 09 00:19:51 2025
+AVRASM ver. 2.2.8  C:\Users\colun\Documents\Arquitectura-de-Computadoras\PRACTICA_05\Practica5\Practica5\main.asm Tue Dec 09 11:32:48 2025
 
 [builtin](2): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\m328Pdef.inc'
-C:\Users\colun\Documents\Arquitectura-de-Computadoras\PRACTICA_05\Practica5\Practica5\main.asm(20): warning: Register r26 already defined by the .DEF directive
-C:\Users\colun\Documents\Arquitectura-de-Computadoras\PRACTICA_05\Practica5\Practica5\main.asm(21): warning: Register r27 already defined by the .DEF directive
-C:\Users\colun\Documents\Arquitectura-de-Computadoras\PRACTICA_05\Practica5\Practica5\main.asm(22): warning: Register r28 already defined by the .DEF directive
-C:\Users\colun\Documents\Arquitectura-de-Computadoras\PRACTICA_05\Practica5\Practica5\main.asm(23): warning: Register r29 already defined by the .DEF directive
-C:\Users\colun\Documents\Arquitectura-de-Computadoras\PRACTICA_05\Practica5\Practica5\main.asm(24): warning: Register r30 already defined by the .DEF directive
-C:\Users\colun\Documents\Arquitectura-de-Computadoras\PRACTICA_05\Practica5\Practica5\main.asm(25): warning: Register r31 already defined by the .DEF directive
+C:\Users\colun\Documents\Arquitectura-de-Computadoras\PRACTICA_05\Practica5\Practica5\main.asm(21): warning: Register r26 already defined by the .DEF directive
+C:\Users\colun\Documents\Arquitectura-de-Computadoras\PRACTICA_05\Practica5\Practica5\main.asm(22): warning: Register r27 already defined by the .DEF directive
+C:\Users\colun\Documents\Arquitectura-de-Computadoras\PRACTICA_05\Practica5\Practica5\main.asm(23): warning: Register r28 already defined by the .DEF directive
+C:\Users\colun\Documents\Arquitectura-de-Computadoras\PRACTICA_05\Practica5\Practica5\main.asm(24): warning: Register r29 already defined by the .DEF directive
+C:\Users\colun\Documents\Arquitectura-de-Computadoras\PRACTICA_05\Practica5\Practica5\main.asm(25): warning: Register r30 already defined by the .DEF directive
+C:\Users\colun\Documents\Arquitectura-de-Computadoras\PRACTICA_05\Practica5\Practica5\main.asm(26): warning: Register r31 already defined by the .DEF directive
 [builtin](2): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\m328Pdef.inc'
                                  
                                  ;
@@ -1009,7 +1009,8 @@ C:\Users\colun\Documents\Arquitectura-de-Computadoras\PRACTICA_05\Practica5\Prac
                                  	.def num7=r23
                                  	.def num8=r24
                                  	.def num9=r25
-                                 	.def num10=r26
+                                 	;.def num10=r26
+                                 	.def temp2=r26
                                  	.def cont=r27
                                  	.def temp=r28
                                  	.def cont1=r29
@@ -1030,112 +1031,114 @@ C:\Users\colun\Documents\Arquitectura-de-Computadoras\PRACTICA_05\Practica5\Prac
 000009 e077                      	ldi num7,$07
 00000a e088                      	ldi num8,$08
 00000b e099                      	ldi num9,$09
-00000c e0aa                      	ldi num10,$0A
+                                 	;ldi num10,$0A
                                  
                                  
-00000d e0b0                      inicio: ldi cont,$00
+00000c e0b0                      inicio: ldi cont,$00
+00000d efae                      		ldi temp2,$FE
+00000e b9ab                      		out portd,temp2
                                  		
-00000e d003                      ciclo: rcall contador
-00000f d034                      	   rcall incremento
-000010 d038                      	   rcall delay_1s
-000011 cffc                      	   rjmp ciclo
+00000f d003                      ciclo: rcall contador
+000010 d02f                      	   rcall incremento
+000011 d033                      	   rcall delay_1s
+000012 cffc                      	   rjmp ciclo
                                  
-000012 17b0                      contador: cp cont,num0
-000013 f091                      		  breq cero
+000013 17b0                      contador: cp cont,num0
+000014 f081                      		  breq cero
                                  
-000014 17b1                      		  cp cont,num1
-000015 f099                      		  breq uno
+000015 17b1                      		  cp cont,num1
+000016 f089                      		  breq uno
                                  
-000016 17b2                      		  cp cont,num2
-000017 f0a1                      		  breq dos
+000017 17b2                      		  cp cont,num2
+000018 f091                      		  breq dos
                                  
-000018 17b3                      		  cp cont,num3
-000019 f0a9                      		  breq tres
+000019 17b3                      		  cp cont,num3
+00001a f099                      		  breq tres
                                  
-00001a 17b4                      		  cp cont,num4
-00001b f0b1                      		  breq cuatro
+00001b 17b4                      		  cp cont,num4
+00001c f0a1                      		  breq cuatro
                                  
-00001c 17b5                      		  cp cont,num5
-00001d f0b9                      		  breq cinco
+00001d 17b5                      		  cp cont,num5
+00001e f0a9                      		  breq cinco
                                  
-00001e 17b6                      		  cp cont,num6
-00001f f0c1                      		  breq seis
+00001f 17b6                      		  cp cont,num6
+000020 f0b1                      		  breq seis
                                  
-000020 17b7                      		  cp cont,num7
-000021 f0c9                      		  breq siete
+000021 17b7                      		  cp cont,num7
+000022 f0b9                      		  breq siete
                                  
-000022 17b8                      		  cp cont,num8
-000023 f0d1                      		  breq ocho
+000023 17b8                      		  cp cont,num8
+000024 f0c1                      		  breq ocho
                                  
-000024 17b9                      		  cp cont,num9
-000025 f0d9                      		  breq nueve
+                                 		  ;cp cont,num9
+                                 		  ;breq nueve
                                  
-000026 e0c1                      cero: ldi temp,$01
-000027 b9c5                      	  out portb,temp
-000028 9508                      	  ret
+000025 e0c1                      cero: ldi temp,$01
+000026 b9c5                      	  out portb,temp
+000027 9508                      	  ret
                                  
-000029 e4cf                      uno: ldi temp,$4F
-00002a b9c5                      	 out portb,temp
-00002b 9508                      	 ret
+000028 e4cf                      uno: ldi temp,$4F
+000029 b9c5                      	 out portb,temp
+00002a 9508                      	 ret
                                  
-00002c e1c2                      dos: ldi temp,$12
-00002d b9c5                      	 out portb,temp
-00002e 9508                      	 ret
+00002b e1c2                      dos: ldi temp,$12
+00002c b9c5                      	 out portb,temp
+00002d 9508                      	 ret
                                  
-00002f e0c6                      tres: ldi temp,$06
-000030 b9c5                      	 out portb,temp
-000031 9508                      	 ret
+00002e e0c6                      tres: ldi temp,$06
+00002f b9c5                      	 out portb,temp
+000030 9508                      	 ret
+                                 	 
+000031 e4cc                      cuatro: ldi temp,$4C
+000032 b9c5                      	 out portb,temp
+000033 9508                      	 ret
                                  
-000032 e4cc                      cuatro: ldi temp,$4C
-000033 b9c5                      	 out portb,temp
-000034 9508                      	 ret
+000034 e2c4                      cinco: ldi temp,$24
+000035 b9c5                      	 out portb,temp
+000036 9508                      	 ret
                                  
-000035 e2c4                      cinco: ldi temp,$24
-000036 b9c5                      	 out portb,temp
-000037 9508                      	 ret
+000037 e2c0                      seis: ldi temp,$20
+000038 b9c5                      	 out portb,temp
+000039 9508                      	 ret
                                  
-000038 e2c0                      seis: ldi temp,$20
-000039 b9c5                      	 out portb,temp
-00003a 9508                      	 ret
+00003a e0cf                      siete: ldi temp,$0F
+00003b b9c5                      	 out portb,temp
+00003c 9508                      	 ret
                                  
-00003b e0cf                      siete: ldi temp,$0F
-00003c b9c5                      	 out portb,temp
-00003d 9508                      	 ret
+00003d e0c0                      ocho: ldi temp,$00
+00003e b9c5                      	 out portb,temp
+00003f 9508                      	 ret
                                  
-00003e e0c0                      ocho: ldi temp,$00
-00003f b9c5                      	 out portb,temp
-000040 9508                      	 ret
+                                 ;nueve: ldi temp,$04
+                                 ;	 out portb,temp
+                                 ;	 ret
                                  
-000041 e0c4                      nueve: ldi temp,$04
-000042 b9c5                      	 out portb,temp
-000043 9508                      	 ret
+000040 95b3                      incremento: inc cont
+000041 17b9                      	  cp cont,num9
+000042 f409                      	  brne fin_inc
+000043 e0b0                      	  ldi cont,$00
                                  
-000044 95b3                      incremento: inc cont
-000045 17ba                      	  cp cont,num10
-000046 f409                      	  brne fin_inc
-000047 e0b0                      	  ldi cont,$00
+000044 9508                      fin_inc: ret
                                  
-000048 9508                      fin_inc: ret
-                                 
-000049 ecd8                      delay_1s: ldi cont1,200
-00004a ece8                      lazo3:	ldi cont2,200
-00004b ecf8                      lazo2:	ldi cont3,200 
-00004c 0000                      lazo1:	nop
-00004d 0000                      	nop
-00004e 0000                      	nop
-00004f 0000                      	nop
-000050 0000                      	nop
-000051 0000                      	nop
-000052 0000                      	nop
-000053 0000                      	nop
-000054 0000                      	nop
-000055 0000                      	nop
-000056 95fa                      	dec cont3
-000057 f7a1                      	brne lazo1
-000058 95ea                      	dec cont2
-000059 f789                      	brne lazo2
-00005a 95da                      	dec cont1
-00005b f771                      	brne lazo3
+                                 delay_1s: ;ldi cont1,200
+                                 ;lazo3:	ldi cont2,200
+                                 ;lazo2:	ldi cont3,200 
+                                 ;lazo1:	nop
+                                 	;nop
+                                 	;nop
+                                 	;nop
+                                 	;nop
+                                 	;nop
+                                 	;nop
+                                 	;nop
+                                 	;nop
+                                 	;nop
+                                 	;dec cont3
+                                 	;brne lazo1
+                                 	;dec cont2
+                                 	;brne lazo2
+                                 	;dec cont1
+                                 	;brne lazo3
 
 
 RESOURCE USE INFORMATION
@@ -1156,36 +1159,36 @@ counted separately from r26..r31 here.
 x  :   0 y  :   0 z  :   0 r0 :   0 r1 :   0 r2 :   0 r3 :   0 r4 :   0 
 r5 :   0 r6 :   0 r7 :   0 r8 :   0 r9 :   0 r10:   0 r11:   0 r12:   0 
 r13:   0 r14:   0 r15:   0 r16:   2 r17:   2 r18:   2 r19:   2 r20:   2 
-r21:   2 r22:   2 r23:   2 r24:   2 r25:   2 r26:   2 r27:  14 r28:  20 
-r29:   2 r30:   2 r31:   2 
-Registers used: 16 out of 35 (45.7%)
+r21:   2 r22:   2 r23:   2 r24:   2 r25:   2 r26:   2 r27:  13 r28:  18 
+r29:   0 r30:   0 r31:   0 
+Registers used: 13 out of 35 (37.1%)
 
 "ATmega328P" instruction use summary:
 .lds  :   0 .sts  :   0 adc   :   0 add   :   0 adiw  :   0 and   :   0 
 andi  :   0 asr   :   0 bclr  :   0 bld   :   0 brbc  :   0 brbs  :   0 
-brcc  :   0 brcs  :   0 break :   0 breq  :  10 brge  :   0 brhc  :   0 
+brcc  :   0 brcs  :   0 break :   0 breq  :   9 brge  :   0 brhc  :   0 
 brhs  :   0 brid  :   0 brie  :   0 brlo  :   0 brlt  :   0 brmi  :   0 
-brne  :   4 brpl  :   0 brsh  :   0 brtc  :   0 brts  :   0 brvc  :   0 
+brne  :   1 brpl  :   0 brsh  :   0 brtc  :   0 brts  :   0 brvc  :   0 
 brvs  :   0 bset  :   0 bst   :   0 call  :   0 cbi   :   0 cbr   :   0 
 clc   :   0 clh   :   0 cli   :   0 cln   :   0 clr   :   0 cls   :   0 
-clt   :   0 clv   :   0 clz   :   0 com   :   0 cp    :  11 cpc   :   0 
-cpi   :   0 cpse  :   0 dec   :   3 eor   :   0 fmul  :   0 fmuls :   0 
+clt   :   0 clv   :   0 clz   :   0 com   :   0 cp    :  10 cpc   :   0 
+cpi   :   0 cpse  :   0 dec   :   0 eor   :   0 fmul  :   0 fmuls :   0 
 fmulsu:   0 icall :   0 ijmp  :   0 in    :   0 inc   :   1 jmp   :   0 
-ld    :   0 ldd   :   0 ldi   :  26 lds   :   0 lpm   :   0 lsl   :   0 
+ld    :   0 ldd   :   0 ldi   :  22 lds   :   0 lpm   :   0 lsl   :   0 
 lsr   :   0 mov   :   0 movw  :   0 mul   :   0 muls  :   0 mulsu :   0 
-neg   :   0 nop   :  12 or    :   0 ori   :   0 out   :  10 pop   :   0 
-push  :   0 rcall :   3 ret   :  12 reti  :   0 rjmp  :   1 rol   :   0 
+neg   :   0 nop   :   2 or    :   0 ori   :   0 out   :  10 pop   :   0 
+push  :   0 rcall :   3 ret   :  11 reti  :   0 rjmp  :   1 rol   :   0 
 ror   :   0 sbc   :   0 sbci  :   0 sbi   :   0 sbic  :   0 sbis  :   0 
 sbiw  :   0 sbr   :   0 sbrc  :   0 sbrs  :   0 sec   :   0 seh   :   0 
 sei   :   0 sen   :   0 ser   :   0 ses   :   0 set   :   0 sev   :   0 
 sez   :   0 sleep :   0 spm   :   0 st    :   0 std   :   0 sts   :   0 
 sub   :   0 subi  :   0 swap  :   0 tst   :   0 wdr   :   0 
-Instructions used: 11 out of 113 (9.7%)
+Instructions used: 10 out of 113 (8.8%)
 
 "ATmega328P" memory use summary [bytes]:
 Segment   Begin    End      Code   Data   Used    Size   Use%
 ---------------------------------------------------------------
-[.cseg] 0x000000 0x0000ba    186      0    186   32768   0.6%
+[.cseg] 0x000000 0x00008c    140      0    140   32768   0.4%
 [.dseg] 0x000100 0x000100      0      0      0    2048   0.0%
 [.eseg] 0x000000 0x000000      0      0      0    1024   0.0%
 

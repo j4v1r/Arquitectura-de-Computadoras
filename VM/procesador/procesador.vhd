@@ -32,7 +32,8 @@ use IEEE.STD_LOGIC_UNSIGNED.ALL;
 entity procesador is
     Port ( clk : in  STD_LOGIC;
            clr : in  STD_LOGIC;
-           portb : out  STD_LOGIC_VECTOR (7 downto 0));
+           portb : out  STD_LOGIC_VECTOR (7 downto 0);
+			  portd : out  STD_LOGIC_VECTOR (7 downto 0));
 end procesador;
 
 architecture Behavioral of procesador is
@@ -49,7 +50,8 @@ component dec_instr is
            br : out  STD_LOGIC;
            bn : out  STD_LOGIC;
            en_w : out  STD_LOGIC;
-           en_port : out  STD_LOGIC;
+           en_port_b : out  STD_LOGIC;
+			  en_port_d : out  STD_LOGIC;
            en_sreg : out  STD_LOGIC;
            ret_sub : out  STD_LOGIC;
            s1 : out  STD_LOGIC;
@@ -90,7 +92,7 @@ component archivo_registros is
            O_d : out  STD_LOGIC_VECTOR (7 downto 0));
 end component;
 
-component registro is --port B
+component registro is --port B, port D
     Port ( clk : in  STD_LOGIC;
            clr : in  STD_LOGIC;
            en  : in  STD_LOGIC;
@@ -138,7 +140,7 @@ signal O_r_aux, O_d_aux, dato_I_aux, F_aux : STD_LOGIC_VECTOR(7 DOWNTO 0);
 signal sel_read_d_aux,sel_read_r_aux,sel_w_d_aux : STD_LOGIC_VECTOR(4 downto 0);
 signal A_aux,i_sp_aux,o_sp_aux,call_aux,ret_aux : STD_LOGIC_VECTOR(3 downto 0);
 signal sel_alu_aux : STD_LOGIC_VECTOR(3 downto 0);
-signal ld_aux,sel_rel_aux,br_aux,bn_aux,en_w_aux,en_port_aux,en_sreg_aux,ld_mov_aux,ret_s_aux,s1_aux,s0_aux,branch_aux,ent_sreg_aux,sal_sreg_aux: STD_LOGIC;
+signal ld_aux,sel_rel_aux,br_aux,bn_aux,en_w_aux,en_port_b_aux,en_port_d_aux,en_sreg_aux,ld_mov_aux,ret_s_aux,s1_aux,s0_aux,branch_aux,ent_sreg_aux,sal_sreg_aux: STD_LOGIC;
 
 begin
 
@@ -181,7 +183,8 @@ cto1 : dec_instr port map( I=>I_aux,
            br=>br_aux,
            bn=>bn_aux,
            en_w=>en_w_aux,
-           en_port=>en_port_aux,
+           en_port_b=>en_port_b_aux,
+			  en_port_d=>en_port_d_aux,
            en_sreg=>en_sreg_aux,
            ret_sub=>ret_s_aux,
            s1=>s1_aux,
@@ -213,9 +216,15 @@ cto6 : archivo_registros port map( clk=>clk,
 
 cto7 : registro port map( clk=>clk,   --port B
            clr=>clr,
-           en=>en_port_aux, 
+           en=>en_port_b_aux, 
            I=>O_r_aux,
            Q=>portb);
+			  
+cto12 : registro port map( clk=>clk,   --port C
+           clr=>clr,
+           en=>en_port_d_aux, 
+           I=>O_r_aux,
+           Q=>portd);
 			  
 cto8 : ALU port map( sel=>sel_alu_aux,
            A=>O_d_aux,

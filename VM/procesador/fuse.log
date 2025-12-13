@@ -20,7 +20,7 @@ Parsing VHDL file "/home/ise/VM/procesador/../ALU/ALU.vhd" into library work
 Parsing VHDL file "/home/ise/VM/procesador/procesador.vhd" into library work
 Starting static elaboration
 Completed static elaboration
-Fuse Memory Usage: 98948 KB
+Fuse Memory Usage: 99076 KB
 Fuse CPU Usage: 3490 ms
 Compiling package standard
 Compiling package std_logic_1164
@@ -45,6 +45,6 @@ Compiling architecture behavioral of entity procesador
 Time Resolution for simulation is 1ps.
 Compiled 34 VHDL Units
 Built simulation executable /home/ise/VM/procesador/procesador_isim_beh.exe
-Fuse Memory Usage: 118288 KB
-Fuse CPU Usage: 4060 ms
-GCC CPU Usage: 2180 ms
+Fuse Memory Usage: 118320 KB
+Fuse CPU Usage: 3990 ms
+GCC CPU Usage: 2040 ms
