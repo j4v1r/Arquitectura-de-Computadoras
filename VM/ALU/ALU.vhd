@@ -43,7 +43,8 @@ end ALU;
 architecture Behavioral of ALU is
 
 signal F_aux :std_logic_vector(8 downto 0);
-	
+signal F_cpi :std_logic_vector(7 downto 0);
+
 begin
 	
 	process(sel,A,B)
@@ -58,11 +59,13 @@ begin
 		when "0110"=> F_aux(7 downto 1)<=A(6 downto 0);F_aux(0)<='0';F_aux(8)<=A(7);
 		when "1000"=> F_aux<=('0'&A) + 1;
 		when "1001"=> F_aux<=('0'&A) - 1;
+		when "1010"=> F_aux<=('0'&A) - ('0'&B);
+						  F_cpi<= A;
 		when others=> F_aux(6 downto 0)<=A(7 downto 1);F_aux(7)<='0';F_aux(8)<=A(0);
 		end case;
 	end process;
 	
-	F<=F_aux(7 downto 0);
+	F<=F_cpi(7 downto 0) when sel="1010" else F_aux(7 downto 0);
 	C<=F_aux(8);
 	Z<=not(F_aux(7) or F_aux(6) or F_aux(5) or F_aux(4) or F_aux(3) or F_aux(2) or F_aux(1) or F_aux(0));
 	N<=F_aux(7);

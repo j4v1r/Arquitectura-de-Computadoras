@@ -5,14 +5,14 @@ Parameter TMPDIR set to xst/projnav.tmp
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.12 secs
+Total CPU time to Xst completion: 0.13 secs
  
 --> 
 Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.12 secs
+Total CPU time to Xst completion: 0.14 secs
  
 --> 
 Reading design: procesador.prj
@@ -196,17 +196,17 @@ Elaborating entity <RAM> (architecture <Behavioral>) from library <work>.
 
 Synthesizing Unit <procesador>.
     Related source file is "/home/ise/VM/procesador/procesador.vhd".
-INFO:Xst:3210 - "/home/ise/VM/procesador/procesador.vhd" line 229: Output port <C> of the instance <cto8> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/ise/VM/procesador/procesador.vhd" line 229: Output port <N> of the instance <cto8> is unconnected or connected to loadless signal.
-    Found 16-bit adder for signal <off_rjmp_aux[15]_GND_5_o_add_0_OUT> created at line 150.
-    Found 16-bit adder for signal <off_br_aux[15]_GND_5_o_add_1_OUT> created at line 149.
-    Found 16-bit adder for signal <I_PC_aux> created at line 170.
-    Found 16-bit adder for signal <wd_aux> created at line 171.
-    Found 4-bit adder for signal <ret_aux> created at line 173.
-    Found 4-bit subtractor for signal <call_aux> created at line 141.
+INFO:Xst:3210 - "/home/ise/VM/procesador/procesador.vhd" line 238: Output port <C> of the instance <cto8> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/ise/VM/procesador/procesador.vhd" line 238: Output port <N> of the instance <cto8> is unconnected or connected to loadless signal.
+    Found 16-bit adder for signal <off_rjmp_aux[15]_GND_5_o_add_3_OUT> created at line 158.
+    Found 16-bit adder for signal <off_br_aux[15]_GND_5_o_add_4_OUT> created at line 157.
+    Found 16-bit adder for signal <I_PC_aux> created at line 179.
+    Found 16-bit adder for signal <wd_aux> created at line 180.
+    Found 4-bit adder for signal <ret_aux> created at line 182.
+    Found 4-bit subtractor for signal <call_aux> created at line 142.
     Summary:
 	inferred   5 Adder/Subtractor(s).
-	inferred   8 Multiplexer(s).
+	inferred  10 Multiplexer(s).
 Unit <procesador> synthesized.
 
 Synthesizing Unit <dec_instr>.
@@ -217,7 +217,7 @@ Synthesizing Unit <dec_instr>.
     Summary:
 	inferred   2 RAM(s).
 	inferred   1 Comparator(s).
-	inferred  68 Multiplexer(s).
+	inferred  63 Multiplexer(s).
 Unit <dec_instr> synthesized.
 
 Synthesizing Unit <ext_sig_br>.
@@ -246,7 +246,7 @@ Unit <program_c> synthesized.
 
 Synthesizing Unit <ROM>.
     Related source file is "/home/ise/VM/ROM/ROM.vhd".
-    Found 128x16-bit Read Only RAM for signal <_n0211>
+    Found 128x16-bit Read Only RAM for signal <_n0385>
     Summary:
 	inferred   1 RAM(s).
 	inferred   1 Multiplexer(s).
@@ -289,14 +289,23 @@ Unit <registro> synthesized.
 
 Synthesizing Unit <ALU>.
     Related source file is "/home/ise/VM/ALU/ALU.vhd".
-    Found 9-bit adder for signal <GND_18_o_GND_18_o_add_0_OUT> created at line 52.
-    Found 9-bit adder for signal <GND_18_o_GND_18_o_add_6_OUT> created at line 59.
-    Found 9-bit subtractor for signal <GND_18_o_GND_18_o_sub_2_OUT<8:0>> created at line 53.
-    Found 9-bit subtractor for signal <GND_18_o_GND_18_o_sub_8_OUT<8:0>> created at line 60.
-    Found 9-bit 12-to-1 multiplexer for signal <F_aux> created at line 51.
+    Found 9-bit adder for signal <GND_18_o_GND_18_o_add_0_OUT> created at line 53.
+    Found 9-bit adder for signal <GND_18_o_GND_18_o_add_6_OUT> created at line 60.
+    Found 9-bit subtractor for signal <GND_18_o_GND_18_o_sub_8_OUT<8:0>> created at line 61.
+    Found 9-bit subtractor for signal <GND_18_o_GND_18_o_sub_9_OUT<8:0>> created at line 62.
+    Found 9-bit 13-to-1 multiplexer for signal <F_aux> created at line 52.
+WARNING:Xst:737 - Found 1-bit latch for signal <F_cpi<6>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <F_cpi<5>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <F_cpi<4>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <F_cpi<3>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <F_cpi<2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <F_cpi<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <F_cpi<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <F_cpi<7>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
     Summary:
-	inferred   1 Adder/Subtractor(s).
-	inferred  19 Multiplexer(s).
+	inferred   4 Adder/Subtractor(s).
+	inferred   8 Latch(s).
+	inferred   2 Multiplexer(s).
 Unit <ALU> synthesized.
 
 Synthesizing Unit <s_reg>.
@@ -349,28 +358,31 @@ Macro Statistics
  16x1-bit single-port Read Only RAM                    : 1
  32x32-bit single-port Read Only RAM                   : 1
  8x1-bit single-port Read Only RAM                     : 1
-# Adders/Subtractors                                   : 6
+# Adders/Subtractors                                   : 9
  16-bit adder                                          : 3
  4-bit adder                                           : 1
  4-bit addsub                                          : 1
- 9-bit addsub                                          : 1
+ 9-bit adder                                           : 2
+ 9-bit subtractor                                      : 2
 # Registers                                            : 55
  1-bit register                                        : 3
  16-bit register                                       : 17
  4-bit register                                        : 1
  8-bit register                                        : 34
+# Latches                                              : 8
+ 1-bit latch                                           : 8
 # Comparators                                          : 1
  5-bit comparator equal                                : 1
-# Multiplexers                                         : 102
- 1-bit 2-to-1 multiplexer                              : 57
+# Multiplexers                                         : 82
+ 1-bit 2-to-1 multiplexer                              : 40
  16-bit 16-to-1 multiplexer                            : 1
  16-bit 2-to-1 multiplexer                             : 5
  32-bit 2-to-1 multiplexer                             : 1
  4-bit 2-to-1 multiplexer                              : 12
- 5-bit 2-to-1 multiplexer                              : 8
- 8-bit 2-to-1 multiplexer                              : 2
+ 5-bit 2-to-1 multiplexer                              : 15
+ 8-bit 2-to-1 multiplexer                              : 5
  8-bit 32-to-1 multiplexer                             : 2
- 9-bit 2-to-1 multiplexer                              : 14
+ 9-bit 13-to-1 multiplexer                             : 1
 # Xors                                                 : 1
  9-bit xor2                                            : 1
 
@@ -383,7 +395,7 @@ INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmet
 
 
 Synthesizing (advanced) Unit <ROM>.
-INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram__n0211> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram__n0385> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
     -----------------------------------------------------------------------
     | ram_type           | Distributed                         |          |
     -----------------------------------------------------------------------
@@ -444,25 +456,26 @@ Macro Statistics
  16x1-bit single-port distributed Read Only RAM        : 1
  32x32-bit single-port distributed Read Only RAM       : 1
  8x1-bit single-port distributed Read Only RAM         : 1
-# Adders/Subtractors                                   : 6
+# Adders/Subtractors                                   : 9
  16-bit adder                                          : 3
  4-bit adder                                           : 1
  4-bit addsub                                          : 1
- 9-bit addsub                                          : 1
+ 9-bit adder                                           : 2
+ 9-bit subtractor                                      : 2
 # Registers                                            : 551
  Flip-Flops                                            : 551
 # Comparators                                          : 1
  5-bit comparator equal                                : 1
-# Multiplexers                                         : 102
- 1-bit 2-to-1 multiplexer                              : 57
+# Multiplexers                                         : 82
+ 1-bit 2-to-1 multiplexer                              : 40
  16-bit 16-to-1 multiplexer                            : 1
  16-bit 2-to-1 multiplexer                             : 5
  32-bit 2-to-1 multiplexer                             : 1
  4-bit 2-to-1 multiplexer                              : 12
- 5-bit 2-to-1 multiplexer                              : 8
- 8-bit 2-to-1 multiplexer                              : 2
+ 5-bit 2-to-1 multiplexer                              : 15
+ 8-bit 2-to-1 multiplexer                              : 5
  8-bit 32-to-1 multiplexer                             : 2
- 9-bit 2-to-1 multiplexer                              : 14
+ 9-bit 13-to-1 multiplexer                             : 1
 # Xors                                                 : 1
  9-bit xor2                                            : 1
 
@@ -712,24 +725,25 @@ Top Level Output File Name         : procesador.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 642
+# BELS                             : 722
 #      GND                         : 1
 #      INV                         : 1
 #      LUT1                        : 7
-#      LUT2                        : 17
-#      LUT3                        : 46
-#      LUT4                        : 34
-#      LUT5                        : 36
-#      LUT6                        : 348
-#      MUXCY                       : 44
-#      MUXF7                       : 51
+#      LUT2                        : 22
+#      LUT3                        : 51
+#      LUT4                        : 16
+#      LUT5                        : 56
+#      LUT6                        : 395
+#      MUXCY                       : 51
+#      MUXF7                       : 57
 #      MUXF8                       : 8
 #      VCC                         : 1
-#      XORCY                       : 48
-# FlipFlops/Latches                : 357
+#      XORCY                       : 56
+# FlipFlops/Latches                : 365
 #      FDC                         : 16
 #      FDCE                        : 337
 #      FDP                         : 4
+#      LD                          : 8
 # Clock Buffers                    : 1
 #      BUFGP                       : 1
 # IO Buffers                       : 17
@@ -743,16 +757,16 @@ Selected Device : 7a100tcsg324-3
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:             357  out of  126800     0%  
- Number of Slice LUTs:                  489  out of  63400     0%  
-    Number used as Logic:               489  out of  63400     0%  
+ Number of Slice Registers:             365  out of  126800     0%  
+ Number of Slice LUTs:                  548  out of  63400     0%  
+    Number used as Logic:               548  out of  63400     0%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    799
-   Number with an unused Flip Flop:     442  out of    799    55%  
-   Number with an unused LUT:           310  out of    799    38%  
-   Number of fully used LUT-FF pairs:    47  out of    799     5%  
-   Number of unique control sets:        44
+ Number of LUT Flip Flop pairs used:    860
+   Number with an unused Flip Flop:     495  out of    860    57%  
+   Number with an unused LUT:           312  out of    860    36%  
+   Number of fully used LUT-FF pairs:    53  out of    860     6%  
+   Number of unique control sets:        45
 
 IO Utilization: 
  Number of IOs:                          18
@@ -779,11 +793,16 @@ NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
 
 Clock Information:
 ------------------
------------------------------------+------------------------+-------+
-Clock Signal                       | Clock buffer(FF name)  | Load  |
------------------------------------+------------------------+-------+
-clk                                | BUFGP                  | 357   |
------------------------------------+------------------------+-------+
+------------------------------------------------------------------+------------------------+-------+
+Clock Signal                                                      | Clock buffer(FF name)  | Load  |
+------------------------------------------------------------------+------------------------+-------+
+clk                                                               | BUFGP                  | 357   |
+cto8/sel[3]_GND_20_o_Mux_14_o(cto8/sel[3]_GND_20_o_Mux_14_o<3>1:O)| NONE(*)(cto8/F_cpi_1)  | 8     |
+------------------------------------------------------------------+------------------------+-------+
+(*) This 1 clock signal(s) are generated by combinatorial logic,
+and XST is not able to identify which are the primary clock signals.
+Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
 
 Asynchronous Control Signals Information:
 ----------------------------------------
@@ -793,7 +812,7 @@ Timing Summary:
 ---------------
 Speed Grade: -3
 
-   Minimum period: 7.159ns (Maximum Frequency: 139.679MHz)
+   Minimum period: 8.113ns (Maximum Frequency: 123.263MHz)
    Minimum input arrival time before clock: 0.786ns
    Maximum output required time after clock: 0.640ns
    Maximum combinational path delay: No path found
@@ -804,38 +823,39 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 7.159ns (frequency: 139.679MHz)
-  Total number of paths / destination ports: 62017700 / 693
+  Clock period: 8.113ns (frequency: 123.263MHz)
+  Total number of paths / destination ports: 83561150 / 693
 -------------------------------------------------------------------------
-Delay:               7.159ns (Levels of Logic = 14)
-  Source:            cto4/q_aux_3 (FF)
+Delay:               8.113ns (Levels of Logic = 15)
+  Source:            cto4/q_aux_15 (FF)
   Destination:       cto9/q_aux (FF)
   Source Clock:      clk rising
   Destination Clock: clk rising
 
-  Data Path: cto4/q_aux_3 to cto9/q_aux
+  Data Path: cto4/q_aux_15 to cto9/q_aux
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDC:C->Q             33   0.361   0.800  cto4/q_aux_3 (cto4/q_aux_3)
-     LUT6:I0->O            1   0.097   0.295  cto5/Mram__n021141 (cto5/Mram__n02114)
-     LUT6:I5->O           30   0.097   0.790  cto5/Mram__n021142 (cto5/_n0211<12>)
-     LUT6:I1->O            1   0.097   0.000  cto1/I[9]_I[8]_equal_2_o5_SW0_G (N200)
-     MUXF7:I1->O           5   0.279   0.314  cto1/I[9]_I[8]_equal_2_o5_SW0 (N13)
-     LUT6:I5->O            2   0.097   0.299  cto1/I[9]_I[8]_equal_2_o5 (cto1/I[9]_I[8]_equal_2_o)
-     LUT6:I5->O           64   0.097   0.491  cto1/Mmux_sel_read_r11 (sel_read_r_aux<0>)
-     LUT6:I4->O            1   0.097   0.556  cto6/mux_r/Mmux_O_10 (cto6/mux_r/Mmux_O_10)
-     LUT6:I2->O            1   0.097   0.000  cto6/mux_r/Mmux_O_2_f7_G (N168)
-     MUXF7:I1->O           5   0.279   0.314  cto6/mux_r/Mmux_O_2_f7 (O_r_aux<0>)
-     LUT6:I5->O            1   0.097   0.000  cto8/Mmux_F_aux11_rs_lut<0> (cto8/Mmux_F_aux11_rs_lut<0>)
-     MUXCY:S->O            1   0.353   0.000  cto8/Mmux_F_aux11_rs_cy<0> (cto8/Mmux_F_aux11_rs_cy<0>)
-     XORCY:CI->O           2   0.370   0.383  cto8/Mmux_F_aux11_rs_xor<1> (F_aux<1>)
-     LUT3:I1->O            1   0.097   0.295  cto8/Z_SW0 (N7)
-     LUT6:I5->O            1   0.097   0.000  cto8/Z (ent_sreg_aux)
+     FDC:C->Q              2   0.361   0.561  cto4/q_aux_15 (cto4/q_aux_15)
+     LUT4:I0->O            1   0.097   0.295  cto5/_n0386<15>_SW0 (N0)
+     LUT6:I5->O           97   0.097   0.496  cto5/_n0386<15> (cto5/_n0386)
+     LUT2:I0->O            4   0.097   0.707  Mmux_off_rjmp_aux[15]_off_br_aux[15]_mux_5_OUT_A141 (I_aux<7>)
+     LUT6:I0->O            1   0.097   0.295  cto1/I[9]_I[8]_equal_2_o5_SW0 (N8)
+     LUT6:I5->O            6   0.097   0.302  cto1/I[9]_I[8]_equal_2_o5 (cto1/I[9]_I[8]_equal_2_o)
+     MUXF7:S->O           64   0.335   0.491  cto1/Mmux_sel_read_r21 (sel_read_r_aux<0>)
+     LUT6:I4->O            2   0.097   0.561  cto6/mux_r/Mmux_O_81 (cto6/mux_r/Mmux_O_81)
+     LUT6:I2->O            2   0.097   0.383  cto6/mux_r/Mmux_O_2_f7_SW2 (N68)
+     LUT6:I4->O            1   0.097   0.000  cto8/Msub_GND_18_o_GND_18_o_sub_9_OUT<8:0>_lut<0> (cto8/Msub_GND_18_o_GND_18_o_sub_9_OUT<8:0>_lut<0>)
+     MUXCY:S->O            1   0.353   0.000  cto8/Msub_GND_18_o_GND_18_o_sub_9_OUT<8:0>_cy<0> (cto8/Msub_GND_18_o_GND_18_o_sub_9_OUT<8:0>_cy<0>)
+     MUXCY:CI->O           1   0.023   0.000  cto8/Msub_GND_18_o_GND_18_o_sub_9_OUT<8:0>_cy<1> (cto8/Msub_GND_18_o_GND_18_o_sub_9_OUT<8:0>_cy<1>)
+     XORCY:CI->O           4   0.370   0.309  cto8/Msub_GND_18_o_GND_18_o_sub_9_OUT<8:0>_xor<2> (cto8/GND_18_o_GND_18_o_sub_9_OUT<2>)
+     LUT6:I5->O            1   0.097   0.683  cto8/Z4_SW0 (N55)
+     LUT6:I1->O            1   0.097   0.511  cto8/Z7_SW0 (N32)
+     LUT6:I3->O            1   0.097   0.000  cto8/Z8 (ent_sreg_aux)
      FDCE:D                    0.008          cto9/q_aux
     ----------------------------------------
-    Total                      7.159ns (2.620ns logic, 4.539ns route)
-                                       (36.6% logic, 63.4% route)
+    Total                      8.113ns (2.517ns logic, 5.596ns route)
+                                       (31.0% logic, 69.0% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
@@ -881,25 +901,34 @@ Cross Clock Domains Report:
 --------------------------
 
 Clock to Setup on destination clock clk
+-----------------------------+---------+---------+---------+---------+
+                             | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                 |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+-----------------------------+---------+---------+---------+---------+
+clk                          |    8.113|         |         |         |
+cto8/sel[3]_GND_20_o_Mux_14_o|         |    1.957|         |         |
+-----------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock cto8/sel[3]_GND_20_o_Mux_14_o
 ---------------+---------+---------+---------+---------+
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |    7.159|         |         |         |
+clk            |         |         |    4.793|         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 32.00 secs
-Total CPU time to Xst completion: 27.48 secs
+Total REAL time to Xst completion: 40.00 secs
+Total CPU time to Xst completion: 35.36 secs
  
 --> 
 
 
-Total memory usage is 608188 kilobytes
+Total memory usage is 608292 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :  197 (   0 filtered)
-Number of infos    :    9 (   0 filtered)
+Number of warnings :  205 (   0 filtered)
+Number of infos    :   10 (   0 filtered)
 

@@ -148,3 +148,33 @@ map -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -re
 par -w -intstyle ise -ol high -mt off procesador_map.ncd procesador.ncd procesador.pcf 
 trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml procesador.twx procesador.ncd -o procesador.twr procesador.pcf -ucf procesador.ucf 
 bitgen -intstyle ise -f procesador.ut procesador.ncd 
+xst -intstyle ise -ifn "/home/ise/VM/procesador/procesador.xst" -ofn "/home/ise/VM/procesador/procesador.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc procesador.ucf -p xc7a100t-csg324-3 procesador.ngc procesador.ngd  
+map -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o procesador_map.ncd procesador.ngd procesador.pcf 
+par -w -intstyle ise -ol high -mt off procesador_map.ncd procesador.ncd procesador.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml procesador.twx procesador.ncd -o procesador.twr procesador.pcf -ucf procesador.ucf 
+xst -intstyle ise -ifn "/home/ise/VM/procesador/procesador.xst" -ofn "/home/ise/VM/procesador/procesador.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc procesador.ucf -p xc7a100t-csg324-3 procesador.ngc procesador.ngd  
+map -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o procesador_map.ncd procesador.ngd procesador.pcf 
+par -w -intstyle ise -ol high -mt off procesador_map.ncd procesador.ncd procesador.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml procesador.twx procesador.ncd -o procesador.twr procesador.pcf -ucf procesador.ucf 
+xst -intstyle ise -ifn "/home/ise/VM/procesador/procesador.xst" -ofn "/home/ise/VM/procesador/procesador.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc procesador.ucf -p xc7a100t-csg324-3 procesador.ngc procesador.ngd  
+map -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o procesador_map.ncd procesador.ngd procesador.pcf 
+par -w -intstyle ise -ol high -mt off procesador_map.ncd procesador.ncd procesador.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml procesador.twx procesador.ncd -o procesador.twr procesador.pcf -ucf procesador.ucf 
+xst -intstyle ise -ifn "/home/ise/VM/procesador/procesador.xst" -ofn "/home/ise/VM/procesador/procesador.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc procesador.ucf -p xc7a100t-csg324-3 procesador.ngc procesador.ngd  
+map -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o procesador_map.ncd procesador.ngd procesador.pcf 
+par -w -intstyle ise -ol high -mt off procesador_map.ncd procesador.ncd procesador.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml procesador.twx procesador.ncd -o procesador.twr procesador.pcf -ucf procesador.ucf 
+xst -intstyle ise -ifn "/home/ise/VM/procesador/procesador.xst" -ofn "/home/ise/VM/procesador/procesador.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc procesador.ucf -p xc7a100t-csg324-3 procesador.ngc procesador.ngd  
+map -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o procesador_map.ncd procesador.ngd procesador.pcf 
+par -w -intstyle ise -ol high -mt off procesador_map.ncd procesador.ncd procesador.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml procesador.twx procesador.ncd -o procesador.twr procesador.pcf -ucf procesador.ucf 
+xst -intstyle ise -ifn "/home/ise/VM/procesador/procesador.xst" -ofn "/home/ise/VM/procesador/procesador.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc procesador.ucf -p xc7a100t-csg324-3 procesador.ngc procesador.ngd  
+map -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o procesador_map.ncd procesador.ngd procesador.pcf 
+par -w -intstyle ise -ol high -mt off procesador_map.ncd procesador.ncd procesador.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml procesador.twx procesador.ncd -o procesador.twr procesador.pcf -ucf procesador.ucf 

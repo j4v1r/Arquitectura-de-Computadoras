@@ -195,8 +195,7 @@ begin
 								s1 <='0';
 								s0 <='0';	
 								
-								
-							elsif(I(11 downto 10)="10") then --xor
+							elsif(I(11 downto 10)="01") then --xor
 
 								sel_read_d <= I(8 downto 4);
 								sel_read_r <= (I(9)&I(3 downto 0));
@@ -235,6 +234,26 @@ begin
 								s0 <='0';	
 								
 							end if;
+							
+				when "0011" => --cpi
+				
+								sel_read_d <= ('1'&I(7 downto 4));
+								sel_read_r <= "00000";
+								sel_w_d <= I(8 downto 4);
+								sel_alu <= "1010";
+								l_d <='0';
+								ld_mov <='0';
+								sel_rel <='0';
+								br <='0';
+								bn <='0';
+								en_w <='0';
+								en_port_b <='0';
+								en_port_d <='0';
+								en_sreg <='1';
+								ret_sub <='0';
+								s1 <='0';
+								s0 <='0';
+							
 				when "1001" => --com, lsr, inc, dec, ret
 							
 							if(I(3 downto 0)="0000") then --com
@@ -353,6 +372,7 @@ begin
 								ret_sub <='0';
 								s1 <='0';
 								s0 <='0';
+								
 				when "1111" => --breq, bme
 				
 							if(I(11 downto 10)="00") then --breq
@@ -435,6 +455,7 @@ begin
 								s0 <='1';					
 
 				when others => --out
+				
 							case I(10 downto 9)&I(3 downto 0) is
 								when "000101" => --port B
 									sel_read_d <= I(8 downto 4);

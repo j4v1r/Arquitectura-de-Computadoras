@@ -1,1 +1,1 @@
--intstyle "ise" -incremental -lib "secureip" -o "/home/ise/VM/procesador/procesador_isim_beh.exe" -prj "/home/ise/VM/procesador/procesador_beh.prj" "work.procesador" 
+-intstyle "ise" -incremental -lib "secureip" -o "/home/ise/VM/procesador/procesador_isim_beh.exe" -prj "/home/ise/VM/procesador/procesador_beh.prj" "procesador" 

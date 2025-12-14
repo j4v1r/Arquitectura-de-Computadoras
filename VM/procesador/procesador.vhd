@@ -137,14 +137,22 @@ end component;
 
 signal PC_aux, I_aux, br_mux_aux,offset_aux,I_PC_aux,off_br_aux,off_rjmp_aux,rd_aux,wd_aux : STD_LOGIC_VECTOR(15 downto 0);
 signal O_r_aux, O_d_aux, dato_I_aux, F_aux : STD_LOGIC_VECTOR(7 DOWNTO 0);
+signal const_aux, B_alu_aux : STD_LOGIC_VECTOR(7 downto 0);--mux para cpi
 signal sel_read_d_aux,sel_read_r_aux,sel_w_d_aux : STD_LOGIC_VECTOR(4 downto 0);
 signal A_aux,i_sp_aux,o_sp_aux,call_aux,ret_aux : STD_LOGIC_VECTOR(3 downto 0);
 signal sel_alu_aux : STD_LOGIC_VECTOR(3 downto 0);
 signal ld_aux,sel_rel_aux,br_aux,bn_aux,en_w_aux,en_port_b_aux,en_port_d_aux,en_sreg_aux,ld_mov_aux,ret_s_aux,s1_aux,s0_aux,branch_aux,ent_sreg_aux,sal_sreg_aux: STD_LOGIC;
+signal cpi_aux : STD_LOGIC;--indicador de instruccion cpi
 
 begin
 
 	--Multiplexores
+	cpi_aux<='1' when I_aux(15 downto 12)="0011" else '0';
+	
+	const_aux<=(I_aux(11 downto 8) & I_aux(3 downto 0));
+	
+	B_alu_aux<=const_aux when cpi_aux='1' else O_r_aux;
+	
 	offset_aux<=x"0001" when sel_rel_aux='0' and branch_aux='0' else
 					off_br_aux + 1 when sel_rel_aux='0' AND branch_aux='1' else
 					off_rjmp_aux + 1; 
@@ -157,6 +165,7 @@ begin
 
 	dato_I_aux<=(I_aux(11 downto 8) & I_aux(3 downto 0)) when ld_mov_aux='0' AND ld_aux='0' else
 					O_r_aux when ld_mov_aux='0' AND ld_aux='1' else
+					O_d_aux when cpi_aux='1' else
 					F_aux;
 
 	i_sp_aux<=o_sp_aux when s1_aux='0' and s0_aux='0' else
@@ -228,7 +237,7 @@ cto12 : registro port map( clk=>clk,   --port C
 			  
 cto8 : ALU port map( sel=>sel_alu_aux,
            A=>O_d_aux,
-           B=>O_r_aux,
+           B=>B_alu_aux,
            F=>F_Aux,
            --C : out  STD_LOGIC;
 			  --N : out STD_LOGIC;

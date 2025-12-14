@@ -1,4 +1,4 @@
-Running: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/fuse -intstyle ise -incremental -lib secureip -o /home/ise/VM/procesador/procesador_isim_beh.exe -prj /home/ise/VM/procesador/procesador_beh.prj work.procesador 
+Running: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/fuse -intstyle ise -incremental -lib secureip -o /home/ise/VM/procesador/procesador_isim_beh.exe -prj /home/ise/VM/procesador/procesador_beh.prj procesador 
 ISim P.20131013 (signature 0xfbc00daa)
 Number of CPUs detected in this system: 1
 Turning on mult-threading, number of parallel sub-compilation jobs: 0 
@@ -20,8 +20,8 @@ Parsing VHDL file "/home/ise/VM/procesador/../ALU/ALU.vhd" into library work
 Parsing VHDL file "/home/ise/VM/procesador/procesador.vhd" into library work
 Starting static elaboration
 Completed static elaboration
-Fuse Memory Usage: 99076 KB
-Fuse CPU Usage: 3490 ms
+Fuse Memory Usage: 99108 KB
+Fuse CPU Usage: 3630 ms
 Compiling package standard
 Compiling package std_logic_1164
 Compiling package std_logic_arith
@@ -45,6 +45,6 @@ Compiling architecture behavioral of entity procesador
 Time Resolution for simulation is 1ps.
 Compiled 34 VHDL Units
 Built simulation executable /home/ise/VM/procesador/procesador_isim_beh.exe
-Fuse Memory Usage: 118320 KB
-Fuse CPU Usage: 3990 ms
-GCC CPU Usage: 2040 ms
+Fuse Memory Usage: 118584 KB
+Fuse CPU Usage: 4230 ms
+GCC CPU Usage: 2530 ms

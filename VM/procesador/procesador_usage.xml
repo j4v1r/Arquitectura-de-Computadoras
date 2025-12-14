@@ -4,8 +4,8 @@
      changes made to this file may result in unpredictable
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
-<DeviceUsageSummary rev="37">
-<DesignStatistics TimeStamp="Tue Dec  9 17:19:42 2025"><group name="NetStatistics">
+<DeviceUsageSummary rev="43">
+<DesignStatistics TimeStamp="Sun Dec 14 15:31:15 2025"><group name="NetStatistics">
 <item name="NumNets_Active" rev="37">
 <attrib name="value" value="804"/></item>
 <item name="NumNets_Gnd" rev="37">
@@ -84,95 +84,68 @@
 <attrib name="value" value="62"/></item>
 </group>
 <group name="MiscellaneousStatistics">
-<item name="AGG_BONDED_IO" rev="36">
+<item name="AGG_BONDED_IO" rev="43">
 <attrib name="value" value="18"/></item>
-<item name="AGG_IO" rev="36">
+<item name="AGG_IO" rev="43">
 <attrib name="value" value="18"/></item>
-<item name="AGG_LOCED_IO" rev="36">
+<item name="AGG_LOCED_IO" rev="43">
 <attrib name="value" value="18"/></item>
-<item name="AGG_SLICE" rev="36">
-<attrib name="value" value="276"/></item>
-<item name="NUM_BONDED_IOB33" rev="36">
+<item name="AGG_SLICE" rev="43">
+<attrib name="value" value="403"/></item>
+<item name="NUM_BONDED_IOB33" rev="43">
 <attrib name="value" value="18"/></item>
-<item name="NUM_BSFULL" rev="36">
-<attrib name="value" value="125"/></item>
-<item name="NUM_BSLUTONLY" rev="36">
-<attrib name="value" value="346"/></item>
-<item name="NUM_BSREGONLY" rev="36">
-<attrib name="value" value="225"/></item>
-<item name="NUM_BSUSED" rev="36">
-<attrib name="value" value="696"/></item>
-<item name="NUM_BUFG" rev="36">
+<item name="NUM_BSFULL" rev="43">
+<attrib name="value" value="101"/></item>
+<item name="NUM_BSLUTONLY" rev="43">
+<attrib name="value" value="468"/></item>
+<item name="NUM_BSREGONLY" rev="43">
+<attrib name="value" value="212"/></item>
+<item name="NUM_BSUSED" rev="43">
+<attrib name="value" value="781"/></item>
+<item name="NUM_BUFG" rev="43">
 <attrib name="value" value="1"/></item>
-<item name="NUM_LOCED_IOB33" rev="36">
+<item name="NUM_LOCED_IOB33" rev="43">
 <attrib name="value" value="18"/></item>
-<item name="NUM_LOGIC_O5ANDO6" rev="36">
-<attrib name="value" value="27"/></item>
-<item name="NUM_LOGIC_O5ONLY" rev="36">
+<item name="NUM_LOGIC_O5ANDO6" rev="43">
+<attrib name="value" value="14"/></item>
+<item name="NUM_LOGIC_O5ONLY" rev="43">
 <attrib name="value" value="6"/></item>
-<item name="NUM_LOGIC_O6ONLY" rev="36">
-<attrib name="value" value="429"/></item>
-<item name="NUM_LUT_RT_DRIVES_CARRY4" rev="36">
-<attrib name="value" value="2"/></item>
-<item name="NUM_LUT_RT_DRIVES_OTHERS" rev="36">
-<attrib name="value" value="7"/></item>
-<item name="NUM_LUT_RT_EXO6" rev="36">
-<attrib name="value" value="8"/></item>
-<item name="NUM_LUT_RT_O5ANDO6" rev="36">
+<item name="NUM_LOGIC_O6ONLY" rev="43">
+<attrib name="value" value="497"/></item>
+<item name="NUM_LUT_RT_DRIVES_CARRY4" rev="43">
 <attrib name="value" value="1"/></item>
-<item name="NUM_LUT_RT_O6" rev="36">
-<attrib name="value" value="6"/></item>
-<item name="NUM_SLICEL" rev="36">
-<attrib name="value" value="276"/></item>
-<item name="NUM_SLICE_CARRY4" rev="36">
-<attrib name="value" value="12"/></item>
-<item name="NUM_SLICE_CONTROLSET" rev="36">
+<item name="NUM_LUT_RT_DRIVES_FLOP" rev="43">
 <attrib name="value" value="44"/></item>
-<item name="NUM_SLICE_CYINIT" rev="36">
-<attrib name="value" value="508"/></item>
-<item name="NUM_SLICE_F7MUX" rev="36">
-<attrib name="value" value="51"/></item>
-<item name="NUM_SLICE_F8MUX" rev="36">
+<item name="NUM_LUT_RT_DRIVES_OTHERS" rev="43">
+<attrib name="value" value="7"/></item>
+<item name="NUM_LUT_RT_EXO5" rev="43">
+<attrib name="value" value="44"/></item>
+<item name="NUM_LUT_RT_EXO6" rev="43">
 <attrib name="value" value="8"/></item>
-<item name="NUM_SLICE_FF" rev="36">
+<item name="NUM_LUT_RT_O6" rev="43">
+<attrib name="value" value="6"/></item>
+<item name="NUM_SLICEL" rev="43">
+<attrib name="value" value="403"/></item>
+<item name="NUM_SLICE_CARRY4" rev="43">
+<attrib name="value" value="14"/></item>
+<item name="NUM_SLICE_CONTROLSET" rev="43">
+<attrib name="value" value="45"/></item>
+<item name="NUM_SLICE_CYINIT" rev="43">
+<attrib name="value" value="594"/></item>
+<item name="NUM_SLICE_F7MUX" rev="43">
+<attrib name="value" value="57"/></item>
+<item name="NUM_SLICE_F8MUX" rev="43">
+<attrib name="value" value="8"/></item>
+<item name="NUM_SLICE_FF" rev="43">
 <attrib name="value" value="357"/></item>
-<item name="NUM_SLICE_UNUSEDCTRL" rev="36">
-<attrib name="value" value="123"/></item>
-<item name="NUM_UNUSABLE_FF_BELS" rev="36">
+<item name="NUM_SLICE_LATCH" rev="43">
+<attrib name="value" value="8"/></item>
+<item name="NUM_SLICE_UNUSEDCTRL" rev="43">
+<attrib name="value" value="257"/></item>
+<item name="NUM_UNUSABLE_FF_BELS" rev="43">
 <attrib name="value" value="11"/></item>
 </group>
 </DesignStatistics>
-<DeviceUsage TimeStamp="Tue Dec  9 17:19:42 2025"><group name="SiteSummary">
-<item name="BUFG" rev="37">
-<attrib name="total" value="1000000"/><attrib name="used" value="1"/></item>
-<item name="BUFG_BUFG" rev="37">
-<attrib name="total" value="1000000"/><attrib name="used" value="1"/></item>
-<item name="CARRY4" rev="37">
-<attrib name="total" value="1000000"/><attrib name="used" value="12"/></item>
-<item name="FF_INIT" rev="37">
-<attrib name="total" value="1000000"/><attrib name="used" value="16"/></item>
-<item name="HARD0" rev="37">
-<attrib name="total" value="1000000"/><attrib name="used" value="3"/></item>
-<item name="IOB33" rev="37">
-<attrib name="total" value="1000000"/><attrib name="used" value="18"/></item>
-<item name="IOB33_INBUF_EN" rev="37">
-<attrib name="total" value="1000000"/><attrib name="used" value="2"/></item>
-<item name="IOB33_OUTBUF" rev="37">
-<attrib name="total" value="1000000"/><attrib name="used" value="16"/></item>
-<item name="LUT5" rev="37">
-<attrib name="total" value="1000000"/><attrib name="used" value="34"/></item>
-<item name="LUT6" rev="37">
-<attrib name="total" value="1000000"/><attrib name="used" value="471"/></item>
-<item name="PAD" rev="37">
-<attrib name="total" value="1000000"/><attrib name="used" value="18"/></item>
-<item name="REG_INIT" rev="37">
-<attrib name="total" value="1000000"/><attrib name="used" value="341"/></item>
-<item name="SELMUX2_1" rev="37">
-<attrib name="total" value="1000000"/><attrib name="used" value="59"/></item>
-<item name="SLICEL" rev="37">
-<attrib name="total" value="1000000"/><attrib name="used" value="276"/></item>
-</group>
-</DeviceUsage>
 <ReportConfigData TimeStamp="Tue Dec  9 17:19:42 2025"><group name="REG_INIT">
 <item name="CK" rev="37">
 <attrib name="CK" value="341"/><attrib name="CK_INV" value="0"/></item>
