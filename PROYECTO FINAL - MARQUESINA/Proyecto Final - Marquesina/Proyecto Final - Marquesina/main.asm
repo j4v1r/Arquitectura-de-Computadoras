@@ -9,9 +9,11 @@
 ; Replace with your application code
 	.def digs=r16
 	.def cont=r17
-	;.def cont1=r18
-	;.def cont2=r19
-	;.def cont3=r20
+
+	.def cont1=r18
+	.def cont2=r19
+	.def cont3=r20
+
 	.def ltr7=r21
 	.def ltr6=r22
 	.def ltr5=r23
@@ -31,6 +33,9 @@
 	ldi ltr1,$21
 	ldi ltr0,$28
 
+
+reset_delay: ldi cont1,60
+
 multdigitos: rcall an7
 		rcall an6
 		rcall an5
@@ -39,48 +44,60 @@ multdigitos: rcall an7
 		rcall an2
 		rcall an1
 		rcall an0
+		
+		dec cont1
+		brne multdigitos
+
 		rcall desplazamiento
 		rcall digito_final
-		rjmp multdigitos
+		rjmp reset_delay
 
 an7:ldi digs,$7F
 	out portd,digs
 	out portb,ltr7
+	rcall lazo3
 	ret
 
 an6:ldi digs,$BF
 	out portd,digs
 	out portb,ltr6
+	rcall lazo3
 	ret
 
 an5:ldi digs,$DF
 	out portd,digs
 	out portb,ltr5
+	rcall lazo3
 	ret
 
 an4:ldi digs,$EF
 	out portd,digs
 	out portb,ltr4
+	rcall lazo3
 	ret
 
 an3:ldi digs,$F7
 	out portd,digs
 	out portb,ltr3
+	rcall lazo3
 	ret
 
 an2:ldi digs,$FB
 	out portd,digs
 	out portb,ltr2
+	rcall lazo3
 	ret
 
 an1:ldi digs,$FD
 	out portd,digs
 	out portb,ltr1
+	rcall lazo3
 	ret
 
 an0:ldi digs,$FE
 	out portd,digs
 	out portb,ltr0
+	rcall lazo3
 	ret
 
 desplazamiento:mov ltr7,ltr6
@@ -94,7 +111,7 @@ desplazamiento:mov ltr7,ltr6
 			   ret
 				
 digito_final:cpi cont,20
-			 breq reset
+			 breq reset_ciclo
 
 			 cpi cont,1
 			 breq ltrO
@@ -153,7 +170,7 @@ digito_final:cpi cont,20
 			 cpi cont,19
 			 breq ltrR
 
-reset:ldi cont,$00
+reset_ciclo:ldi cont,$00
 	  ldi ltr0,$08
 	  ret
 
@@ -192,3 +209,21 @@ ltrU:ldi ltr0,$41
 
 ltrG:ldi ltr0,$22
 	 ret
+
+lazo3:	ldi cont2,80
+lazo2:	ldi cont3,100
+lazo1:	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	dec cont3
+	brne lazo1
+	dec cont2
+	brne lazo2
+	ret
