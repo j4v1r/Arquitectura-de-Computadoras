@@ -5,14 +5,14 @@ Parameter TMPDIR set to xst/projnav.tmp
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.04 secs
+Total CPU time to Xst completion: 0.17 secs
  
 --> 
 Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.04 secs
+Total CPU time to Xst completion: 0.17 secs
  
 --> 
 Reading design: procesador.prj
@@ -717,18 +717,18 @@ Top Level Output File Name         : procesador.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 769
+# BELS                             : 773
 #      GND                         : 1
 #      INV                         : 1
 #      LUT1                        : 8
-#      LUT2                        : 24
-#      LUT3                        : 55
+#      LUT2                        : 27
+#      LUT3                        : 53
 #      LUT4                        : 16
 #      LUT5                        : 75
-#      LUT6                        : 390
+#      LUT6                        : 387
 #      MUXCY                       : 52
-#      MUXF7                       : 66
-#      MUXF8                       : 23
+#      MUXF7                       : 71
+#      MUXF8                       : 24
 #      VCC                         : 1
 #      XORCY                       : 57
 # FlipFlops/Latches                : 373
@@ -750,14 +750,14 @@ Selected Device : 7a100tcsg324-3
 
 Slice Logic Utilization: 
  Number of Slice Registers:             373  out of  126800     0%  
- Number of Slice LUTs:                  569  out of  63400     0%  
-    Number used as Logic:               569  out of  63400     0%  
+ Number of Slice LUTs:                  567  out of  63400     0%  
+    Number used as Logic:               567  out of  63400     0%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    868
-   Number with an unused Flip Flop:     495  out of    868    57%  
-   Number with an unused LUT:           299  out of    868    34%  
-   Number of fully used LUT-FF pairs:    74  out of    868     8%  
+ Number of LUT Flip Flop pairs used:    864
+   Number with an unused Flip Flop:     491  out of    864    56%  
+   Number with an unused LUT:           297  out of    864    34%  
+   Number of fully used LUT-FF pairs:    76  out of    864     8%  
    Number of unique control sets:        45
 
 IO Utilization: 
@@ -804,7 +804,7 @@ Timing Summary:
 ---------------
 Speed Grade: -3
 
-   Minimum period: 7.876ns (Maximum Frequency: 126.961MHz)
+   Minimum period: 7.868ns (Maximum Frequency: 127.105MHz)
    Minimum input arrival time before clock: 0.787ns
    Maximum output required time after clock: 0.640ns
    Maximum combinational path delay: No path found
@@ -815,10 +815,10 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 7.876ns (frequency: 126.961MHz)
-  Total number of paths / destination ports: 69800908 / 709
+  Clock period: 7.868ns (frequency: 127.105MHz)
+  Total number of paths / destination ports: 74496629 / 709
 -------------------------------------------------------------------------
-Delay:               7.876ns (Levels of Logic = 16)
+Delay:               7.868ns (Levels of Logic = 16)
   Source:            cto4/q_aux_0 (FF)
   Destination:       cto9/q_aux (FF)
   Source Clock:      clk rising
@@ -828,15 +828,15 @@ Delay:               7.876ns (Levels of Logic = 16)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDC:C->Q             49   0.361   0.803  cto4/q_aux_0 (cto4/q_aux_0)
+     FDC:C->Q             50   0.361   0.803  cto4/q_aux_0 (cto4/q_aux_0)
      LUT6:I0->O            1   0.097   0.000  cto5/Mram__n046922 (cto5/Mram__n046922)
      MUXF7:I1->O           1   0.279   0.000  cto5/Mram__n04692_f7_0 (cto5/Mram__n04692_f71)
-     MUXF8:I0->O          11   0.218   0.729  cto5/Mram__n04692_f8 (cto5/_n0469<15>)
+     MUXF8:I0->O           9   0.218   0.720  cto5/Mram__n04692_f8 (cto5/_n0469<15>)
      LUT6:I1->O            1   0.097   0.295  cto1/I[9]_I[8]_equal_2_o5_SW0 (N140)
      LUT6:I5->O            6   0.097   0.318  cto1/I[9]_I[8]_equal_2_o5 (cto1/I[9]_I[8]_equal_2_o)
      LUT6:I5->O           64   0.097   0.491  cto1/Mmux_sel_read_r21 (sel_read_r_aux<0>)
      LUT6:I4->O            1   0.097   0.556  cto6/mux_r/Mmux_O_81 (cto6/mux_r/Mmux_O_81)
-     LUT6:I2->O            1   0.097   0.000  cto6/mux_r/Mmux_O_2_f7_G (N209)
+     LUT6:I2->O            1   0.097   0.000  cto6/mux_r/Mmux_O_2_f7_G (N189)
      MUXF7:I1->O           6   0.279   0.318  cto6/mux_r/Mmux_O_2_f7 (O_r_aux<0>)
      LUT5:I4->O            1   0.097   0.000  cto8/Msub_GND_18_o_GND_18_o_sub_9_OUT<8:0>_lut<0> (cto8/Msub_GND_18_o_GND_18_o_sub_9_OUT<8:0>_lut<0>)
      MUXCY:S->O            1   0.353   0.000  cto8/Msub_GND_18_o_GND_18_o_sub_9_OUT<8:0>_cy<0> (cto8/Msub_GND_18_o_GND_18_o_sub_9_OUT<8:0>_cy<0>)
@@ -847,8 +847,8 @@ Delay:               7.876ns (Levels of Logic = 16)
      LUT6:I3->O            1   0.097   0.000  cto8/Z8 (ent_sreg_aux)
      FDCE:D                    0.008          cto9/q_aux
     ----------------------------------------
-    Total                      7.876ns (2.861ns logic, 5.015ns route)
-                                       (36.3% logic, 63.7% route)
+    Total                      7.868ns (2.861ns logic, 5.007ns route)
+                                       (36.4% logic, 63.6% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
@@ -898,7 +898,7 @@ Clock to Setup on destination clock clk
                              | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock                 |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 -----------------------------+---------+---------+---------+---------+
-clk                          |    7.876|         |         |         |
+clk                          |    7.868|         |         |         |
 cto8/sel[3]_GND_20_o_Mux_14_o|         |    1.957|         |         |
 -----------------------------+---------+---------+---------+---------+
 
@@ -907,19 +907,19 @@ Clock to Setup on destination clock cto8/sel[3]_GND_20_o_Mux_14_o
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |         |         |    4.723|         |
+clk            |         |         |    4.483|         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 19.00 secs
-Total CPU time to Xst completion: 16.38 secs
+Total REAL time to Xst completion: 27.00 secs
+Total CPU time to Xst completion: 22.38 secs
  
 --> 
 
 
-Total memory usage is 608300 kilobytes
+Total memory usage is 608296 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :  197 (   0 filtered)

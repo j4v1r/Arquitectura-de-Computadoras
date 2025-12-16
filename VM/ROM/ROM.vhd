@@ -38,16 +38,16 @@ architecture Behavioral of ROM is
 
 begin
 
-     O<=x"E010" when A=x"0000" else -- 10 e0
-       x"E058" when A=x"0001" else -- 58 e0
-       x"E467" when A=x"0002" else -- 67 e4
-       x"E076" when A=x"0003" else -- 76 e0
-       x"E781" when A=x"0004" else -- 81 e7
-       x"E098" when A=x"0005" else -- 98 e0
-       x"E2AB" when A=x"0006" else -- ab e2
-       x"E2B1" when A=x"0007" else -- b1 e2
-       x"E2C8" when A=x"0008" else -- c8 e2
-       x"E32C" when A=x"0009" else -- 2c e3
+    O<=x"E010" when A=x"0000" else -- 10 e0
+       x"E858" when A=x"0001" else -- 58 e8
+       x"EF61" when A=x"0002" else -- 61 ef
+       x"EB70" when A=x"0003" else -- 70 eb
+       x"EC87" when A=x"0004" else -- 87 ec
+       x"E898" when A=x"0005" else -- 98 e8
+       x"EEAA" when A=x"0006" else -- aa ee
+       x"EFBA" when A=x"0007" else -- ba ef
+       x"E8C1" when A=x"0008" else -- c1 e8
+       x"E42B" when A=x"0009" else -- 2b e4
        x"D00C" when A=x"000A" else -- 0c d0
        x"D010" when A=x"000B" else -- 10 d0
        x"D014" when A=x"000C" else -- 14 d0
@@ -150,32 +150,32 @@ begin
        x"F079" when A=x"006D" else -- 79 f0
        x"3113" when A=x"006E" else -- 13 31
        x"F079" when A=x"006F" else -- 79 f0
-       x"E010" when A=x"0070" else -- 10 e0
-       x"E0C8" when A=x"0071" else -- c8 e0
+       x"E011" when A=x"0070" else -- 11 e0
+       x"E8C1" when A=x"0071" else -- c1 e8
        x"9508" when A=x"0072" else -- 08 95
-       x"E0C8" when A=x"0073" else -- c8 e0
+       x"E8C8" when A=x"0073" else -- c8 e8
        x"9508" when A=x"0074" else -- 08 95
-       x"E4C7" when A=x"0075" else -- c7 e4
+       x"EFC1" when A=x"0075" else -- c1 ef
        x"9508" when A=x"0076" else -- 08 95
-       x"E0C6" when A=x"0077" else -- c6 e0
+       x"EBC0" when A=x"0077" else -- c0 eb
        x"9508" when A=x"0078" else -- 08 95
-       x"E7C1" when A=x"0079" else -- c1 e7
+       x"ECC7" when A=x"0079" else -- c7 ec
        x"9508" when A=x"007A" else -- 08 95
-       x"E2CB" when A=x"007B" else -- cb e2
+       x"EECA" when A=x"007B" else -- ca ee
        x"9508" when A=x"007C" else -- 08 95
-       x"E2C1" when A=x"007D" else -- c1 e2
+       x"ECC2" when A=x"007D" else -- c2 ec
        x"9508" when A=x"007E" else -- 08 95
-       x"E2C8" when A=x"007F" else -- c8 e2
+       x"EFCA" when A=x"007F" else -- ca ef
        x"9508" when A=x"0080" else -- 08 95
-       x"E0C1" when A=x"0081" else -- c1 e0
+       x"E8C1" when A=x"0081" else -- c1 e8
        x"9508" when A=x"0082" else -- 08 95
        x"EFCF" when A=x"0083" else -- cf ef
        x"9508" when A=x"0084" else -- 08 95
-       x"E4C6" when A=x"0085" else -- c6 e4
+       x"EBC1" when A=x"0085" else -- c1 eb
        x"9508" when A=x"0086" else -- 08 95
-       x"E4C1" when A=x"0087" else -- c1 e4
+       x"ECC1" when A=x"0087" else -- c1 ec
        x"9508" when A=x"0088" else -- 08 95
-       x"E2C2" when A=x"0089" else -- c2 e2
+       x"EAC1" when A=x"0089" else -- c1 ea
        x"9508" when A=x"008A" else -- 08 95
        x"E530" when A=x"008B" else -- 30 e5
        x"E644" when A=x"008C" else -- 44 e6
@@ -194,7 +194,6 @@ begin
        x"953A" when A=x"0099" else -- 3a 95
        x"F789" when A=x"009A" else -- 89 f7
        x"9508" when A=x"009B" else -- 08 95
-       x"FFFF";  
-		 
+       x"FFFF";
 end Behavioral;
 

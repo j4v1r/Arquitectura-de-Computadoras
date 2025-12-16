@@ -1,5 +1,5 @@
 
-AVRASM ver. 2.2.8  C:\Users\colun\Documents\Arquitectura-de-Computadoras\PROYECTO FINAL - MARQUESINA\Proyecto Final - Marquesina\Proyecto Final - Marquesina\main.asm Mon Dec 15 13:09:01 2025
+AVRASM ver. 2.2.8  C:\Users\colun\Documents\Arquitectura-de-Computadoras\PROYECTO FINAL - MARQUESINA\Proyecto Final - Marquesina\Proyecto Final - Marquesina\main.asm Tue Dec 16 09:24:53 2025
 
 [builtin](2): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\m328Pdef.inc'
 C:\Users\colun\Documents\Arquitectura-de-Computadoras\PROYECTO FINAL - MARQUESINA\Proyecto Final - Marquesina\Proyecto Final - Marquesina\main.asm(22): warning: Register r26 already defined by the .DEF directive
@@ -1013,17 +1013,17 @@ C:\Users\colun\Documents\Arquitectura-de-Computadoras\PROYECTO FINAL - MARQUESIN
                                  	.def ltr0=r28
                                  
 000000 e010                      	ldi cont,$00
-000001 e058                      	ldi ltr7,$08
-000002 e467                      	ldi ltr6,$47
-000003 e076                      	ldi ltr5,$06
-000004 e781                      	ldi ltr4,$71
-000005 e098                      	ldi ltr3,$08
-000006 e2ab                      	ldi ltr2,$2B
-000007 e2b1                      	ldi ltr1,$21
-000008 e2c8                      	ldi ltr0,$28
+000001 e858                      	ldi ltr7,$88;A
+000002 ef61                      	ldi ltr6,$F1;L
+000003 eb70                      	ldi ltr5,$B0;E
+000004 ec87                      	ldi ltr4,$C7;J
+000005 e898                      	ldi ltr3,$88;A
+000006 eeaa                      	ldi ltr2,$EA;d
+000007 efba                      	ldi ltr1,$FA;r
+000008 e8c1                      	ldi ltr0,$81;O
                                  
                                  
-000009 e32c                      reset_delay: ldi cont1,60
+000009 e42b                      reset_delay: ldi cont1,75
                                  
 00000a d00c                      multdigitos: rcall an7
 00000b d010                      		rcall an6
@@ -1159,44 +1159,44 @@ C:\Users\colun\Documents\Arquitectura-de-Computadoras\PROYECTO FINAL - MARQUESIN
 00006e 3113                      			 cpi cont,19
 00006f f079                      			 breq ltrR
                                  
-000070 e010                      reset_ciclo:ldi cont,$00
-000071 e0c8                      	  ldi ltr0,$08
+000070 e011                      reset_ciclo:ldi cont,$01
+000071 e8c1                      	  ldi ltr0,$81
 000072 9508                      	  ret
                                  
-000073 e0c8                      ltrA:ldi ltr0,$08
+000073 e8c8                      ltrA:ldi ltr0,$88
 000074 9508                      	 ret
                                  
-000075 e4c7                      ltrL:ldi ltr0,$47
+000075 efc1                      ltrL:ldi ltr0,$F1
 000076 9508                      	 ret
                                  
-000077 e0c6                      ltrE:ldi ltr0,$06
+000077 ebc0                      ltrE:ldi ltr0,$B0
 000078 9508                      	 ret
                                  
-000079 e7c1                      ltrJ:ldi ltr0,$71
+000079 ecc7                      ltrJ:ldi ltr0,$C7
 00007a 9508                      	 ret
                                  
-00007b e2cb                      ltrN:ldi ltr0,$2B
+00007b eeca                      ltrN:ldi ltr0,$EA
 00007c 9508                      	 ret
                                  
-00007d e2c1                      ltrD:ldi ltr0,$21
+00007d ecc2                      ltrD:ldi ltr0,$C2
 00007e 9508                      	 ret
                                  
-00007f e2c8                      ltrR:ldi ltr0,$28
+00007f efca                      ltrR:ldi ltr0,$FA
 000080 9508                      	 ret
                                  
-000081 e0c1                      ltrO:ldi ltr0,$01
+000081 e8c1                      ltrO:ldi ltr0,$81
 000082 9508                      	 ret
                                  
 000083 efcf                      espacio:ldi ltr0,$FF
 000084 9508                      		ret
                                  
-000085 e4c6                      ltrC:ldi ltr0,$46
+000085 ebc1                      ltrC:ldi ltr0,$B1
 000086 9508                      	 ret
                                  
-000087 e4c1                      ltrU:ldi ltr0,$41
+000087 ecc1                      ltrU:ldi ltr0,$C1
 000088 9508                      	 ret
                                  
-000089 e2c2                      ltrG:ldi ltr0,$22
+000089 eac1                      ltrG:ldi ltr0,$A1
 00008a 9508                      	 ret
                                  
 00008b e530                      lazo3:	ldi cont2,80

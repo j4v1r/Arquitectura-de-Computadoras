@@ -24,17 +24,17 @@
 	.def ltr0=r28
 
 	ldi cont,$00
-	ldi ltr7,$08
-	ldi ltr6,$47
-	ldi ltr5,$06
-	ldi ltr4,$71
-	ldi ltr3,$08
-	ldi ltr2,$2B
-	ldi ltr1,$21
-	ldi ltr0,$28
+	ldi ltr7,$88;A
+	ldi ltr6,$F1;L
+	ldi ltr5,$B0;E
+	ldi ltr4,$C7;J
+	ldi ltr3,$88;A
+	ldi ltr2,$EA;d
+	ldi ltr1,$FA;r
+	ldi ltr0,$81;O
 
 
-reset_delay: ldi cont1,60
+reset_delay: ldi cont1,75
 
 multdigitos: rcall an7
 		rcall an6
@@ -170,44 +170,44 @@ digito_final:cpi cont,20
 			 cpi cont,19
 			 breq ltrR
 
-reset_ciclo:ldi cont,$00
-	  ldi ltr0,$08
+reset_ciclo:ldi cont,$01
+	  ldi ltr0,$81
 	  ret
 
-ltrA:ldi ltr0,$08
+ltrA:ldi ltr0,$88
 	 ret
 
-ltrL:ldi ltr0,$47
+ltrL:ldi ltr0,$F1
 	 ret
 
-ltrE:ldi ltr0,$06
+ltrE:ldi ltr0,$B0
 	 ret
 
-ltrJ:ldi ltr0,$71
+ltrJ:ldi ltr0,$C7
 	 ret
 
-ltrN:ldi ltr0,$2B
+ltrN:ldi ltr0,$EA
 	 ret
 
-ltrD:ldi ltr0,$21
+ltrD:ldi ltr0,$C2
 	 ret
 
-ltrR:ldi ltr0,$28
+ltrR:ldi ltr0,$FA
 	 ret
 
-ltrO:ldi ltr0,$01
+ltrO:ldi ltr0,$81
 	 ret
 
 espacio:ldi ltr0,$FF
 		ret
 
-ltrC:ldi ltr0,$46
+ltrC:ldi ltr0,$B1
 	 ret
 
-ltrU:ldi ltr0,$41
+ltrU:ldi ltr0,$C1
 	 ret
 
-ltrG:ldi ltr0,$22
+ltrG:ldi ltr0,$A1
 	 ret
 
 lazo3:	ldi cont2,80
