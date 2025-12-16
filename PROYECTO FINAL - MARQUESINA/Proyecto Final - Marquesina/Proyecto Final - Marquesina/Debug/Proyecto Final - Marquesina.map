@@ -1,5 +1,5 @@
 
-AVRASM ver. 2.2.8  C:\Users\colun\Documents\Arquitectura-de-Computadoras\PROYECTO FINAL - MARQUESINA\Proyecto Final - Marquesina\Proyecto Final - Marquesina\main.asm Sun Dec 14 08:01:10 2025
+AVRASM ver. 2.2.8  C:\Users\colun\Documents\Arquitectura-de-Computadoras\PROYECTO FINAL - MARQUESINA\Proyecto Final - Marquesina\Proyecto Final - Marquesina\main.asm Mon Dec 15 13:09:01 2025
 
 
 EQU  SIGNATURE_000 0000001e
@@ -697,6 +697,9 @@ EQU  SPMRaddr     00000032
 EQU  INT_VECTORS_SIZE 00000034
 DEF  digs         r16
 DEF  cont         r17
+DEF  cont1        r18
+DEF  cont2        r19
+DEF  cont3        r20
 DEF  ltr7         r21
 DEF  ltr6         r22
 DEF  ltr5         r23
@@ -705,27 +708,31 @@ DEF  ltr3         r25
 DEF  ltr2         r26
 DEF  ltr1         r27
 DEF  ltr0         r28
-CSEG multdigitos  00000009
-CSEG an7          00000014
-CSEG an6          00000018
-CSEG an5          0000001c
-CSEG an4          00000020
-CSEG an3          00000024
-CSEG an2          00000028
-CSEG an1          0000002c
-CSEG an0          00000030
-CSEG desplazamiento 00000034
-CSEG digito_final 0000003d
-CSEG reset        00000065
-CSEG ltrO         00000076
-CSEG espacio      00000078
-CSEG ltrC         0000007a
-CSEG ltrL         0000006a
-CSEG ltrU         0000007c
-CSEG ltrN         00000070
-CSEG ltrG         0000007e
-CSEG ltrA         00000068
-CSEG ltrE         0000006c
-CSEG ltrJ         0000006e
-CSEG ltrD         00000072
-CSEG ltrR         00000074
+CSEG reset_delay  00000009
+CSEG multdigitos  0000000a
+CSEG an7          00000017
+CSEG an6          0000001c
+CSEG an5          00000021
+CSEG an4          00000026
+CSEG an3          0000002b
+CSEG an2          00000030
+CSEG an1          00000035
+CSEG an0          0000003a
+CSEG desplazamiento 0000003f
+CSEG digito_final 00000048
+CSEG lazo3        0000008b
+CSEG reset_ciclo  00000070
+CSEG ltrO         00000081
+CSEG espacio      00000083
+CSEG ltrC         00000085
+CSEG ltrL         00000075
+CSEG ltrU         00000087
+CSEG ltrN         0000007b
+CSEG ltrG         00000089
+CSEG ltrA         00000073
+CSEG ltrE         00000077
+CSEG ltrJ         00000079
+CSEG ltrD         0000007d
+CSEG ltrR         0000007f
+CSEG lazo2        0000008c
+CSEG lazo1        0000008d

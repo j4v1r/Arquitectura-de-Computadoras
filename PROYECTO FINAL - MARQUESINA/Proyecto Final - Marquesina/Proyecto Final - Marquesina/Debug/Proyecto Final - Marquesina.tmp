@@ -22,29 +22,33 @@
   <FILE>Proyecto Final - Marquesina.lss</FILE>
  </OUTPUT_FILES>
  <LABELS>
-  <multdigitos><FILE>C:\Users\colun\Documents\Arquitectura-de-Computadoras\PROYECTO FINAL - MARQUESINA\Proyecto Final - Marquesina\Proyecto Final - Marquesina\main.asm</FILE><LINE>34</LINE></multdigitos>
-  <an7><FILE>C:\Users\colun\Documents\Arquitectura-de-Computadoras\PROYECTO FINAL - MARQUESINA\Proyecto Final - Marquesina\Proyecto Final - Marquesina\main.asm</FILE><LINE>46</LINE></an7>
-  <an6><FILE>C:\Users\colun\Documents\Arquitectura-de-Computadoras\PROYECTO FINAL - MARQUESINA\Proyecto Final - Marquesina\Proyecto Final - Marquesina\main.asm</FILE><LINE>51</LINE></an6>
-  <an5><FILE>C:\Users\colun\Documents\Arquitectura-de-Computadoras\PROYECTO FINAL - MARQUESINA\Proyecto Final - Marquesina\Proyecto Final - Marquesina\main.asm</FILE><LINE>56</LINE></an5>
-  <an4><FILE>C:\Users\colun\Documents\Arquitectura-de-Computadoras\PROYECTO FINAL - MARQUESINA\Proyecto Final - Marquesina\Proyecto Final - Marquesina\main.asm</FILE><LINE>61</LINE></an4>
-  <an3><FILE>C:\Users\colun\Documents\Arquitectura-de-Computadoras\PROYECTO FINAL - MARQUESINA\Proyecto Final - Marquesina\Proyecto Final - Marquesina\main.asm</FILE><LINE>66</LINE></an3>
-  <an2><FILE>C:\Users\colun\Documents\Arquitectura-de-Computadoras\PROYECTO FINAL - MARQUESINA\Proyecto Final - Marquesina\Proyecto Final - Marquesina\main.asm</FILE><LINE>71</LINE></an2>
-  <an1><FILE>C:\Users\colun\Documents\Arquitectura-de-Computadoras\PROYECTO FINAL - MARQUESINA\Proyecto Final - Marquesina\Proyecto Final - Marquesina\main.asm</FILE><LINE>76</LINE></an1>
-  <an0><FILE>C:\Users\colun\Documents\Arquitectura-de-Computadoras\PROYECTO FINAL - MARQUESINA\Proyecto Final - Marquesina\Proyecto Final - Marquesina\main.asm</FILE><LINE>81</LINE></an0>
-  <desplazamiento><FILE>C:\Users\colun\Documents\Arquitectura-de-Computadoras\PROYECTO FINAL - MARQUESINA\Proyecto Final - Marquesina\Proyecto Final - Marquesina\main.asm</FILE><LINE>86</LINE></desplazamiento>
-  <digito_final><FILE>C:\Users\colun\Documents\Arquitectura-de-Computadoras\PROYECTO FINAL - MARQUESINA\Proyecto Final - Marquesina\Proyecto Final - Marquesina\main.asm</FILE><LINE>96</LINE></digito_final>
-  <reset><FILE>C:\Users\colun\Documents\Arquitectura-de-Computadoras\PROYECTO FINAL - MARQUESINA\Proyecto Final - Marquesina\Proyecto Final - Marquesina\main.asm</FILE><LINE>156</LINE></reset>
-  <ltrO><FILE>C:\Users\colun\Documents\Arquitectura-de-Computadoras\PROYECTO FINAL - MARQUESINA\Proyecto Final - Marquesina\Proyecto Final - Marquesina\main.asm</FILE><LINE>181</LINE></ltrO>
-  <espacio><FILE>C:\Users\colun\Documents\Arquitectura-de-Computadoras\PROYECTO FINAL - MARQUESINA\Proyecto Final - Marquesina\Proyecto Final - Marquesina\main.asm</FILE><LINE>184</LINE></espacio>
-  <ltrC><FILE>C:\Users\colun\Documents\Arquitectura-de-Computadoras\PROYECTO FINAL - MARQUESINA\Proyecto Final - Marquesina\Proyecto Final - Marquesina\main.asm</FILE><LINE>187</LINE></ltrC>
-  <ltrL><FILE>C:\Users\colun\Documents\Arquitectura-de-Computadoras\PROYECTO FINAL - MARQUESINA\Proyecto Final - Marquesina\Proyecto Final - Marquesina\main.asm</FILE><LINE>163</LINE></ltrL>
-  <ltrU><FILE>C:\Users\colun\Documents\Arquitectura-de-Computadoras\PROYECTO FINAL - MARQUESINA\Proyecto Final - Marquesina\Proyecto Final - Marquesina\main.asm</FILE><LINE>190</LINE></ltrU>
-  <ltrN><FILE>C:\Users\colun\Documents\Arquitectura-de-Computadoras\PROYECTO FINAL - MARQUESINA\Proyecto Final - Marquesina\Proyecto Final - Marquesina\main.asm</FILE><LINE>172</LINE></ltrN>
-  <ltrG><FILE>C:\Users\colun\Documents\Arquitectura-de-Computadoras\PROYECTO FINAL - MARQUESINA\Proyecto Final - Marquesina\Proyecto Final - Marquesina\main.asm</FILE><LINE>193</LINE></ltrG>
-  <ltrA><FILE>C:\Users\colun\Documents\Arquitectura-de-Computadoras\PROYECTO FINAL - MARQUESINA\Proyecto Final - Marquesina\Proyecto Final - Marquesina\main.asm</FILE><LINE>160</LINE></ltrA>
-  <ltrE><FILE>C:\Users\colun\Documents\Arquitectura-de-Computadoras\PROYECTO FINAL - MARQUESINA\Proyecto Final - Marquesina\Proyecto Final - Marquesina\main.asm</FILE><LINE>166</LINE></ltrE>
-  <ltrJ><FILE>C:\Users\colun\Documents\Arquitectura-de-Computadoras\PROYECTO FINAL - MARQUESINA\Proyecto Final - Marquesina\Proyecto Final - Marquesina\main.asm</FILE><LINE>169</LINE></ltrJ>
-  <ltrD><FILE>C:\Users\colun\Documents\Arquitectura-de-Computadoras\PROYECTO FINAL - MARQUESINA\Proyecto Final - Marquesina\Proyecto Final - Marquesina\main.asm</FILE><LINE>175</LINE></ltrD>
-  <ltrR><FILE>C:\Users\colun\Documents\Arquitectura-de-Computadoras\PROYECTO FINAL - MARQUESINA\Proyecto Final - Marquesina\Proyecto Final - Marquesina\main.asm</FILE><LINE>178</LINE></ltrR>
+  <reset_delay><FILE>C:\Users\colun\Documents\Arquitectura-de-Computadoras\PROYECTO FINAL - MARQUESINA\Proyecto Final - Marquesina\Proyecto Final - Marquesina\main.asm</FILE><LINE>37</LINE></reset_delay>
+  <multdigitos><FILE>C:\Users\colun\Documents\Arquitectura-de-Computadoras\PROYECTO FINAL - MARQUESINA\Proyecto Final - Marquesina\Proyecto Final - Marquesina\main.asm</FILE><LINE>39</LINE></multdigitos>
+  <an7><FILE>C:\Users\colun\Documents\Arquitectura-de-Computadoras\PROYECTO FINAL - MARQUESINA\Proyecto Final - Marquesina\Proyecto Final - Marquesina\main.asm</FILE><LINE>55</LINE></an7>
+  <an6><FILE>C:\Users\colun\Documents\Arquitectura-de-Computadoras\PROYECTO FINAL - MARQUESINA\Proyecto Final - Marquesina\Proyecto Final - Marquesina\main.asm</FILE><LINE>61</LINE></an6>
+  <an5><FILE>C:\Users\colun\Documents\Arquitectura-de-Computadoras\PROYECTO FINAL - MARQUESINA\Proyecto Final - Marquesina\Proyecto Final - Marquesina\main.asm</FILE><LINE>67</LINE></an5>
+  <an4><FILE>C:\Users\colun\Documents\Arquitectura-de-Computadoras\PROYECTO FINAL - MARQUESINA\Proyecto Final - Marquesina\Proyecto Final - Marquesina\main.asm</FILE><LINE>73</LINE></an4>
+  <an3><FILE>C:\Users\colun\Documents\Arquitectura-de-Computadoras\PROYECTO FINAL - MARQUESINA\Proyecto Final - Marquesina\Proyecto Final - Marquesina\main.asm</FILE><LINE>79</LINE></an3>
+  <an2><FILE>C:\Users\colun\Documents\Arquitectura-de-Computadoras\PROYECTO FINAL - MARQUESINA\Proyecto Final - Marquesina\Proyecto Final - Marquesina\main.asm</FILE><LINE>85</LINE></an2>
+  <an1><FILE>C:\Users\colun\Documents\Arquitectura-de-Computadoras\PROYECTO FINAL - MARQUESINA\Proyecto Final - Marquesina\Proyecto Final - Marquesina\main.asm</FILE><LINE>91</LINE></an1>
+  <an0><FILE>C:\Users\colun\Documents\Arquitectura-de-Computadoras\PROYECTO FINAL - MARQUESINA\Proyecto Final - Marquesina\Proyecto Final - Marquesina\main.asm</FILE><LINE>97</LINE></an0>
+  <desplazamiento><FILE>C:\Users\colun\Documents\Arquitectura-de-Computadoras\PROYECTO FINAL - MARQUESINA\Proyecto Final - Marquesina\Proyecto Final - Marquesina\main.asm</FILE><LINE>103</LINE></desplazamiento>
+  <digito_final><FILE>C:\Users\colun\Documents\Arquitectura-de-Computadoras\PROYECTO FINAL - MARQUESINA\Proyecto Final - Marquesina\Proyecto Final - Marquesina\main.asm</FILE><LINE>113</LINE></digito_final>
+  <lazo3><FILE>C:\Users\colun\Documents\Arquitectura-de-Computadoras\PROYECTO FINAL - MARQUESINA\Proyecto Final - Marquesina\Proyecto Final - Marquesina\main.asm</FILE><LINE>213</LINE></lazo3>
+  <reset_ciclo><FILE>C:\Users\colun\Documents\Arquitectura-de-Computadoras\PROYECTO FINAL - MARQUESINA\Proyecto Final - Marquesina\Proyecto Final - Marquesina\main.asm</FILE><LINE>173</LINE></reset_ciclo>
+  <ltrO><FILE>C:\Users\colun\Documents\Arquitectura-de-Computadoras\PROYECTO FINAL - MARQUESINA\Proyecto Final - Marquesina\Proyecto Final - Marquesina\main.asm</FILE><LINE>198</LINE></ltrO>
+  <espacio><FILE>C:\Users\colun\Documents\Arquitectura-de-Computadoras\PROYECTO FINAL - MARQUESINA\Proyecto Final - Marquesina\Proyecto Final - Marquesina\main.asm</FILE><LINE>201</LINE></espacio>
+  <ltrC><FILE>C:\Users\colun\Documents\Arquitectura-de-Computadoras\PROYECTO FINAL - MARQUESINA\Proyecto Final - Marquesina\Proyecto Final - Marquesina\main.asm</FILE><LINE>204</LINE></ltrC>
+  <ltrL><FILE>C:\Users\colun\Documents\Arquitectura-de-Computadoras\PROYECTO FINAL - MARQUESINA\Proyecto Final - Marquesina\Proyecto Final - Marquesina\main.asm</FILE><LINE>180</LINE></ltrL>
+  <ltrU><FILE>C:\Users\colun\Documents\Arquitectura-de-Computadoras\PROYECTO FINAL - MARQUESINA\Proyecto Final - Marquesina\Proyecto Final - Marquesina\main.asm</FILE><LINE>207</LINE></ltrU>
+  <ltrN><FILE>C:\Users\colun\Documents\Arquitectura-de-Computadoras\PROYECTO FINAL - MARQUESINA\Proyecto Final - Marquesina\Proyecto Final - Marquesina\main.asm</FILE><LINE>189</LINE></ltrN>
+  <ltrG><FILE>C:\Users\colun\Documents\Arquitectura-de-Computadoras\PROYECTO FINAL - MARQUESINA\Proyecto Final - Marquesina\Proyecto Final - Marquesina\main.asm</FILE><LINE>210</LINE></ltrG>
+  <ltrA><FILE>C:\Users\colun\Documents\Arquitectura-de-Computadoras\PROYECTO FINAL - MARQUESINA\Proyecto Final - Marquesina\Proyecto Final - Marquesina\main.asm</FILE><LINE>177</LINE></ltrA>
+  <ltrE><FILE>C:\Users\colun\Documents\Arquitectura-de-Computadoras\PROYECTO FINAL - MARQUESINA\Proyecto Final - Marquesina\Proyecto Final - Marquesina\main.asm</FILE><LINE>183</LINE></ltrE>
+  <ltrJ><FILE>C:\Users\colun\Documents\Arquitectura-de-Computadoras\PROYECTO FINAL - MARQUESINA\Proyecto Final - Marquesina\Proyecto Final - Marquesina\main.asm</FILE><LINE>186</LINE></ltrJ>
+  <ltrD><FILE>C:\Users\colun\Documents\Arquitectura-de-Computadoras\PROYECTO FINAL - MARQUESINA\Proyecto Final - Marquesina\Proyecto Final - Marquesina\main.asm</FILE><LINE>192</LINE></ltrD>
+  <ltrR><FILE>C:\Users\colun\Documents\Arquitectura-de-Computadoras\PROYECTO FINAL - MARQUESINA\Proyecto Final - Marquesina\Proyecto Final - Marquesina\main.asm</FILE><LINE>195</LINE></ltrR>
+  <lazo2><FILE>C:\Users\colun\Documents\Arquitectura-de-Computadoras\PROYECTO FINAL - MARQUESINA\Proyecto Final - Marquesina\Proyecto Final - Marquesina\main.asm</FILE><LINE>214</LINE></lazo2>
+  <lazo1><FILE>C:\Users\colun\Documents\Arquitectura-de-Computadoras\PROYECTO FINAL - MARQUESINA\Proyecto Final - Marquesina\Proyecto Final - Marquesina\main.asm</FILE><LINE>215</LINE></lazo1>
  </LABELS>
 </ASSEMBLER_INFO>

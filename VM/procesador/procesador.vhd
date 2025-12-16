@@ -229,7 +229,7 @@ cto7 : registro port map( clk=>clk,   --port B
            I=>O_r_aux,
            Q=>portb);
 			  
-cto12 : registro port map( clk=>clk,   --port C
+cto12 : registro port map( clk=>clk,   --port D
            clr=>clr,
            en=>en_port_d_aux, 
            I=>O_r_aux,

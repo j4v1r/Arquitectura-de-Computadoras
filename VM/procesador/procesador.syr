@@ -5,14 +5,14 @@ Parameter TMPDIR set to xst/projnav.tmp
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.13 secs
+Total CPU time to Xst completion: 0.04 secs
  
 --> 
 Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.14 secs
+Total CPU time to Xst completion: 0.04 secs
  
 --> 
 Reading design: procesador.prj
@@ -246,7 +246,7 @@ Unit <program_c> synthesized.
 
 Synthesizing Unit <ROM>.
     Related source file is "/home/ise/VM/ROM/ROM.vhd".
-    Found 128x16-bit Read Only RAM for signal <_n0385>
+    Found 256x16-bit Read Only RAM for signal <_n0469>
     Summary:
 	inferred   1 RAM(s).
 	inferred   1 Multiplexer(s).
@@ -354,8 +354,8 @@ HDL Synthesis Report
 
 Macro Statistics
 # RAMs                                                 : 4
- 128x16-bit single-port Read Only RAM                  : 1
  16x1-bit single-port Read Only RAM                    : 1
+ 256x16-bit single-port Read Only RAM                  : 1
  32x32-bit single-port Read Only RAM                   : 1
  8x1-bit single-port Read Only RAM                     : 1
 # Adders/Subtractors                                   : 9
@@ -395,14 +395,14 @@ INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmet
 
 
 Synthesizing (advanced) Unit <ROM>.
-INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram__n0385> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram__n0469> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
     -----------------------------------------------------------------------
     | ram_type           | Distributed                         |          |
     -----------------------------------------------------------------------
     | Port A                                                              |
-    |     aspect ratio   | 128-word x 16-bit                   |          |
+    |     aspect ratio   | 256-word x 16-bit                   |          |
     |     weA            | connected to signal <GND>           | high     |
-    |     addrA          | connected to signal <A<6:0>>        |          |
+    |     addrA          | connected to signal <A<7:0>>        |          |
     |     diA            | connected to signal <GND>           |          |
     |     doA            | connected to internal node          |          |
     -----------------------------------------------------------------------
@@ -452,8 +452,8 @@ Advanced HDL Synthesis Report
 
 Macro Statistics
 # RAMs                                                 : 4
- 128x16-bit single-port distributed Read Only RAM      : 1
  16x1-bit single-port distributed Read Only RAM        : 1
+ 256x16-bit single-port distributed Read Only RAM      : 1
  32x32-bit single-port distributed Read Only RAM       : 1
  8x1-bit single-port distributed Read Only RAM         : 1
 # Adders/Subtractors                                   : 9
@@ -632,7 +632,6 @@ WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_7_12> ha
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_7_11> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_7_10> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_7_9> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_7_8> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_9_15> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_9_14> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_9_13> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
@@ -640,7 +639,6 @@ WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_9_12> ha
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_9_11> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_9_10> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_9_9> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_9_8> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_11_15> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_11_14> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_11_13> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
@@ -648,7 +646,6 @@ WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_11_12> h
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_11_11> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_11_10> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_11_9> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_11_8> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_13_15> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_13_14> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_13_13> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
@@ -656,7 +653,6 @@ WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_13_12> h
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_13_11> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_13_10> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_13_9> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_13_8> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_15_15> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_15_14> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_15_13> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
@@ -664,7 +660,6 @@ WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_15_12> h
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_15_11> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_15_10> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_15_9> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_15_8> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_1_15> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_1_14> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_1_13> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
@@ -672,7 +667,6 @@ WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_1_12> ha
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_1_11> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_1_10> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_1_9> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_1_8> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_3_15> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_3_14> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_3_13> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
@@ -680,7 +674,6 @@ WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_3_12> ha
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_3_11> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_3_10> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_3_9> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_3_8> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_5_15> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_5_14> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_5_13> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
@@ -688,7 +681,6 @@ WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_5_12> ha
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_5_11> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_5_10> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_5_9> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cto11/dato_5_8> has a constant value of 0 in block <procesador>. This FF/Latch will be trimmed during the optimization process.
 INFO:Xst:2261 - The FF/Latch <cto10/primer_ciclo> in Unit <procesador> is equivalent to the following FF/Latch, which will be removed : <cto4/primer_ciclo> 
 
 Mapping all equations...
@@ -701,8 +693,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 357
- Flip-Flops                                            : 357
+# Registers                                            : 365
+ Flip-Flops                                            : 365
 
 =========================================================================
 
@@ -725,23 +717,23 @@ Top Level Output File Name         : procesador.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 722
+# BELS                             : 769
 #      GND                         : 1
 #      INV                         : 1
-#      LUT1                        : 7
-#      LUT2                        : 22
-#      LUT3                        : 51
+#      LUT1                        : 8
+#      LUT2                        : 24
+#      LUT3                        : 55
 #      LUT4                        : 16
-#      LUT5                        : 56
-#      LUT6                        : 395
-#      MUXCY                       : 51
-#      MUXF7                       : 57
-#      MUXF8                       : 8
+#      LUT5                        : 75
+#      LUT6                        : 390
+#      MUXCY                       : 52
+#      MUXF7                       : 66
+#      MUXF8                       : 23
 #      VCC                         : 1
-#      XORCY                       : 56
-# FlipFlops/Latches                : 365
+#      XORCY                       : 57
+# FlipFlops/Latches                : 373
 #      FDC                         : 16
-#      FDCE                        : 337
+#      FDCE                        : 345
 #      FDP                         : 4
 #      LD                          : 8
 # Clock Buffers                    : 1
@@ -757,15 +749,15 @@ Selected Device : 7a100tcsg324-3
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:             365  out of  126800     0%  
- Number of Slice LUTs:                  548  out of  63400     0%  
-    Number used as Logic:               548  out of  63400     0%  
+ Number of Slice Registers:             373  out of  126800     0%  
+ Number of Slice LUTs:                  569  out of  63400     0%  
+    Number used as Logic:               569  out of  63400     0%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    860
-   Number with an unused Flip Flop:     495  out of    860    57%  
-   Number with an unused LUT:           312  out of    860    36%  
-   Number of fully used LUT-FF pairs:    53  out of    860     6%  
+ Number of LUT Flip Flop pairs used:    868
+   Number with an unused Flip Flop:     495  out of    868    57%  
+   Number with an unused LUT:           299  out of    868    34%  
+   Number of fully used LUT-FF pairs:    74  out of    868     8%  
    Number of unique control sets:        45
 
 IO Utilization: 
@@ -796,7 +788,7 @@ Clock Information:
 ------------------------------------------------------------------+------------------------+-------+
 Clock Signal                                                      | Clock buffer(FF name)  | Load  |
 ------------------------------------------------------------------+------------------------+-------+
-clk                                                               | BUFGP                  | 357   |
+clk                                                               | BUFGP                  | 365   |
 cto8/sel[3]_GND_20_o_Mux_14_o(cto8/sel[3]_GND_20_o_Mux_14_o<3>1:O)| NONE(*)(cto8/F_cpi_1)  | 8     |
 ------------------------------------------------------------------+------------------------+-------+
 (*) This 1 clock signal(s) are generated by combinatorial logic,
@@ -812,8 +804,8 @@ Timing Summary:
 ---------------
 Speed Grade: -3
 
-   Minimum period: 8.113ns (Maximum Frequency: 123.263MHz)
-   Minimum input arrival time before clock: 0.786ns
+   Minimum period: 7.876ns (Maximum Frequency: 126.961MHz)
+   Minimum input arrival time before clock: 0.787ns
    Maximum output required time after clock: 0.640ns
    Maximum combinational path delay: No path found
 
@@ -823,45 +815,46 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 8.113ns (frequency: 123.263MHz)
-  Total number of paths / destination ports: 83561150 / 693
+  Clock period: 7.876ns (frequency: 126.961MHz)
+  Total number of paths / destination ports: 69800908 / 709
 -------------------------------------------------------------------------
-Delay:               8.113ns (Levels of Logic = 15)
-  Source:            cto4/q_aux_15 (FF)
+Delay:               7.876ns (Levels of Logic = 16)
+  Source:            cto4/q_aux_0 (FF)
   Destination:       cto9/q_aux (FF)
   Source Clock:      clk rising
   Destination Clock: clk rising
 
-  Data Path: cto4/q_aux_15 to cto9/q_aux
+  Data Path: cto4/q_aux_0 to cto9/q_aux
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDC:C->Q              2   0.361   0.561  cto4/q_aux_15 (cto4/q_aux_15)
-     LUT4:I0->O            1   0.097   0.295  cto5/_n0386<15>_SW0 (N0)
-     LUT6:I5->O           97   0.097   0.496  cto5/_n0386<15> (cto5/_n0386)
-     LUT2:I0->O            4   0.097   0.707  Mmux_off_rjmp_aux[15]_off_br_aux[15]_mux_5_OUT_A141 (I_aux<7>)
-     LUT6:I0->O            1   0.097   0.295  cto1/I[9]_I[8]_equal_2_o5_SW0 (N8)
-     LUT6:I5->O            6   0.097   0.302  cto1/I[9]_I[8]_equal_2_o5 (cto1/I[9]_I[8]_equal_2_o)
-     MUXF7:S->O           64   0.335   0.491  cto1/Mmux_sel_read_r21 (sel_read_r_aux<0>)
-     LUT6:I4->O            2   0.097   0.561  cto6/mux_r/Mmux_O_81 (cto6/mux_r/Mmux_O_81)
-     LUT6:I2->O            2   0.097   0.383  cto6/mux_r/Mmux_O_2_f7_SW2 (N68)
-     LUT6:I4->O            1   0.097   0.000  cto8/Msub_GND_18_o_GND_18_o_sub_9_OUT<8:0>_lut<0> (cto8/Msub_GND_18_o_GND_18_o_sub_9_OUT<8:0>_lut<0>)
+     FDC:C->Q             49   0.361   0.803  cto4/q_aux_0 (cto4/q_aux_0)
+     LUT6:I0->O            1   0.097   0.000  cto5/Mram__n046922 (cto5/Mram__n046922)
+     MUXF7:I1->O           1   0.279   0.000  cto5/Mram__n04692_f7_0 (cto5/Mram__n04692_f71)
+     MUXF8:I0->O          11   0.218   0.729  cto5/Mram__n04692_f8 (cto5/_n0469<15>)
+     LUT6:I1->O            1   0.097   0.295  cto1/I[9]_I[8]_equal_2_o5_SW0 (N140)
+     LUT6:I5->O            6   0.097   0.318  cto1/I[9]_I[8]_equal_2_o5 (cto1/I[9]_I[8]_equal_2_o)
+     LUT6:I5->O           64   0.097   0.491  cto1/Mmux_sel_read_r21 (sel_read_r_aux<0>)
+     LUT6:I4->O            1   0.097   0.556  cto6/mux_r/Mmux_O_81 (cto6/mux_r/Mmux_O_81)
+     LUT6:I2->O            1   0.097   0.000  cto6/mux_r/Mmux_O_2_f7_G (N209)
+     MUXF7:I1->O           6   0.279   0.318  cto6/mux_r/Mmux_O_2_f7 (O_r_aux<0>)
+     LUT5:I4->O            1   0.097   0.000  cto8/Msub_GND_18_o_GND_18_o_sub_9_OUT<8:0>_lut<0> (cto8/Msub_GND_18_o_GND_18_o_sub_9_OUT<8:0>_lut<0>)
      MUXCY:S->O            1   0.353   0.000  cto8/Msub_GND_18_o_GND_18_o_sub_9_OUT<8:0>_cy<0> (cto8/Msub_GND_18_o_GND_18_o_sub_9_OUT<8:0>_cy<0>)
      MUXCY:CI->O           1   0.023   0.000  cto8/Msub_GND_18_o_GND_18_o_sub_9_OUT<8:0>_cy<1> (cto8/Msub_GND_18_o_GND_18_o_sub_9_OUT<8:0>_cy<1>)
      XORCY:CI->O           4   0.370   0.309  cto8/Msub_GND_18_o_GND_18_o_sub_9_OUT<8:0>_xor<2> (cto8/GND_18_o_GND_18_o_sub_9_OUT<2>)
-     LUT6:I5->O            1   0.097   0.683  cto8/Z4_SW0 (N55)
-     LUT6:I1->O            1   0.097   0.511  cto8/Z7_SW0 (N32)
+     LUT6:I5->O            1   0.097   0.683  cto8/Z4_SW0 (N129)
+     LUT6:I1->O            1   0.097   0.511  cto8/Z7_SW0 (N36)
      LUT6:I3->O            1   0.097   0.000  cto8/Z8 (ent_sreg_aux)
      FDCE:D                    0.008          cto9/q_aux
     ----------------------------------------
-    Total                      8.113ns (2.517ns logic, 5.596ns route)
-                                       (31.0% logic, 69.0% route)
+    Total                      7.876ns (2.861ns logic, 5.015ns route)
+                                       (36.3% logic, 63.7% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
-  Total number of paths / destination ports: 357 / 357
+  Total number of paths / destination ports: 365 / 365
 -------------------------------------------------------------------------
-Offset:              0.786ns (Levels of Logic = 1)
+Offset:              0.787ns (Levels of Logic = 1)
   Source:            clr (PAD)
   Destination:       cto12/q_aux_7 (FF)
   Destination Clock: clk rising
@@ -870,10 +863,10 @@ Offset:              0.786ns (Levels of Logic = 1)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O           357   0.001   0.436  clr_IBUF (clr_IBUF)
+     IBUF:I->O           365   0.001   0.437  clr_IBUF (clr_IBUF)
      FDCE:CLR                  0.349          cto12/q_aux_0
     ----------------------------------------
-    Total                      0.786ns (0.350ns logic, 0.436ns route)
+    Total                      0.787ns (0.350ns logic, 0.437ns route)
                                        (44.5% logic, 55.5% route)
 
 =========================================================================
@@ -905,7 +898,7 @@ Clock to Setup on destination clock clk
                              | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock                 |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 -----------------------------+---------+---------+---------+---------+
-clk                          |    8.113|         |         |         |
+clk                          |    7.876|         |         |         |
 cto8/sel[3]_GND_20_o_Mux_14_o|         |    1.957|         |         |
 -----------------------------+---------+---------+---------+---------+
 
@@ -914,21 +907,21 @@ Clock to Setup on destination clock cto8/sel[3]_GND_20_o_Mux_14_o
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |         |         |    4.793|         |
+clk            |         |         |    4.723|         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 40.00 secs
-Total CPU time to Xst completion: 35.36 secs
+Total REAL time to Xst completion: 19.00 secs
+Total CPU time to Xst completion: 16.38 secs
  
 --> 
 
 
-Total memory usage is 608292 kilobytes
+Total memory usage is 608300 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :  205 (   0 filtered)
+Number of warnings :  197 (   0 filtered)
 Number of infos    :   10 (   0 filtered)
 
