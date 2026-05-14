@@ -38,7 +38,7 @@ architecture Behavioral of ROM is
 
 begin
 
-    O<=x"E010" when A=x"0000" else -- 10 e0
+    O<=x"E011" when A=x"0000" else -- 11 e0
        x"E858" when A=x"0001" else -- 58 e8
        x"EF61" when A=x"0002" else -- 61 ef
        x"EB70" when A=x"0003" else -- 70 eb
@@ -189,11 +189,15 @@ begin
        x"0000" when A=x"0094" else -- 00 00
        x"0000" when A=x"0095" else -- 00 00
        x"0000" when A=x"0096" else -- 00 00
-       x"954A" when A=x"0097" else -- 4a 95
-       x"F7A1" when A=x"0098" else -- a1 f7
-       x"953A" when A=x"0099" else -- 3a 95
-       x"F789" when A=x"009A" else -- 89 f7
-       x"9508" when A=x"009B" else -- 08 95
+       x"0000" when A=x"0097" else -- 00 00
+       x"0000" when A=x"0098" else -- 00 00
+       x"0000" when A=x"0099" else -- 00 00
+       x"954A" when A=x"009A" else -- 4a 95
+       x"F7A1" when A=x"009B" else -- a1 f7
+       x"953A" when A=x"009C" else -- 3a 95
+       x"F789" when A=x"009D" else -- 89 f7
+       x"9508" when A=x"009E" else -- 08 95
        x"FFFF";
+		 
 end Behavioral;
 

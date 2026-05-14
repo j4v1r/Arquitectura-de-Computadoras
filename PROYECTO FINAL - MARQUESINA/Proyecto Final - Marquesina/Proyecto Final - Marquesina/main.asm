@@ -23,7 +23,7 @@
 	.def ltr1=r27
 	.def ltr0=r28
 
-	ldi cont,$00
+	ldi cont,$01
 	ldi ltr7,$88;A
 	ldi ltr6,$F1;L
 	ldi ltr5,$B0;E
